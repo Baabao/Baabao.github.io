@@ -69,22 +69,98 @@
 <!--part3-->
 	<div class="ebook-content-grey">
      <h2 class="e-center-grey">八寶讓你透過網播找到志同道合的朋友們，<br>建立專家形象，成為全球矚目的焦點。
-     </h2><br>
-		  <p class="ebook-p-grey">如果你懷抱著天馬行空的想法，八寶網播平台就是讓你揮灑創意的自由空間；<br>  最好上手、成本低廉、在家就能完成節目的平台，就在八寶！</p><br>
-		<form>
-		  <input type="text" class="ebook-form" name="name" placeholder="姓名">
-		  <input type="text" class="ebook-form" name="lastname"  placeholder="電子信箱">
-	      <a href=""><input type="button" class="ebook-send" id="download" value="立即下載"></a>
-		</form>
-<br><br>
+	 </h2><br>
+	 	<p class="ebook-p-grey">如果你懷抱著天馬行空的想法，八寶網播平台就是讓你揮灑創意的自由空間；<br>  最好上手、成本低廉、在家就能完成節目的平台，就在八寶！</p><br>
 
-<!-- ======下載後跳出的訊息提示 ========-->
-	 <div>  
+		<form id="info-submit-form" 
+			action="//baabao.us15.list-manage.com/subscribe/post?u=1ba2549748b3ac346e600238d&amp;id=11dc4539c8" 
+			method="post">
+
+			<input id="name_value" type="text" class="ebook-form" name="FNAME" placeholder="姓名">
+			<input id="email_value" type="text" class="ebook-form" name="EMAIL"  placeholder="電子信箱">
+
+			<div id="mce-responses" class="clear">
+				<div class="response" id="mce-error-response" style="display:none"></div>
+				<div class="response" id="mce-success-response" style="display:none"></div>
+			</div>
+			<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_1ba2549748b3ac346e600238d_11dc4539c8" tabindex="-1" value=""></div>
+			
+			<div class="center-button">
+				<button type="submit" class="ebook-send" id="download" value="立即下載" >立即下載</button>
+			</div>
+		</form>
+
+	<br><br>
+
+	
+			
+
+	 <div id="download-success-block">  
 		<h2 class="e-center-grey">電子書下載成功，現在開始製作網播節目吧！</h2>
 	</div><!-- /content--><br><br>
-<!-- end ========下載傳送後跳出的訊息提示 ========-->
-
 
 </div> <!-- wrapper-->
 </body>
+
+<script type="text/javascript" src="static/js/mandrillAPI.js"></script>
+<script>
+	var form = document.getElementById('info-submit-form');
+	var d_block = document.getElementById('download-success-block');
+	d_block.style.display = 'none';
+
+	function processForm(e) {
+		if (e.preventDefault) e.preventDefault();
+			//console.log("Capture form submit event")
+
+			var name_value = document.getElementById("name_value").value;
+			var email_value = document.getElementById("email_value").value;
+
+			if (name_value == "" || email_value == "") {
+				return 
+			}
+
+			//console.log("name value " + name_value);
+			//console.log("email_value " + email_value);
+
+			var m = new mandrill.Mandrill('6NuTgvWqFHX5tEkiNBqVJg');
+
+			var params = {
+				"template_name": "感謝下載電子書",
+				"template_content": [
+					{
+						"name": "template example name",
+						"content": "template example content"
+					}
+				],
+				
+				"message": {
+					"from_email":"mkt@baabao.com",
+					"from_name": "Baabao",
+					"to":[{"email":email_value, "name": name_value}],
+					"subject": "恭喜！你已成功下載《輕鬆製作網播節目，你也做得到！》"
+				}
+			};
+
+			m.messages.sendTemplate(params, function(res) {
+				console.log(res);
+			}, function(err) {
+				console.log(err);
+			});
+
+			window.open('baabao_ebook.pdf');
+
+			form.style.display = 'none'
+			d_block.style.display = 'block'
+
+		return true;
+	}
+	
+	if (form.attachEvent) {
+		form.attachEvent("submit", processForm);
+	} else {
+		form.addEventListener("submit", processForm);
+	}
+
+</script>
+
 </html>
