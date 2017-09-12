@@ -10,7 +10,7 @@ img.left{
 .hero-banner-2 {
   width: 100%;
   height: 500px;
-  background-image: url(https://raw.githubusercontent.com/Baabao/Baabao-iOS-design/master/Slice/hero-image.png?token=Acd63vqCrgZEeCaS2OMGGb9Ir9cq-yGLks5Zt4PAwA%3D%3D);
+  background-image: url(../images/hero-image.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
