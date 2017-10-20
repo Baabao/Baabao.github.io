@@ -166,10 +166,10 @@ p.padding-p{padding-top:21px !important;}
 		color: #2f2f35 !important;
 	}
 	.blog-title{
-		font-size: 18px;
-		letter-spacing: 0.6px;
-		color: #2f2f35;
-		font-weight: 600;
+		font-size: 18px !important;
+		letter-spacing: 0.6px !important;
+		color: #2f2f35 !important;
+		font-weight: 600 !important;
 	}
 	.blog-preview{
 		width: 100%;
