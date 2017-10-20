@@ -1,10 +1,9 @@
 body{
 		font-family:"Noto Sans","Noto Serif CJK TC",sans-serif;
-		background-color: #F3F3F3;
+		background-color: #FFFFFF;
 		}
 table{
 
-     width:100%;max-width:720px;background-color:#FFF;
 }
 .section-one{
 		width:100%;
@@ -34,10 +33,6 @@ table{
 			width:23%;
 		}
 
-.play ul li{
-		float: left;
-		text-align: left;
-	}
 .eps_title{
 	font-size: 1.1em;
 }
