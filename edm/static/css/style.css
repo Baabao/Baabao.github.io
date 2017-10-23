@@ -2,28 +2,13 @@ body{
 		font-family:"Noto Sans","Noto Serif CJK TC",sans-serif;
 		background-color: #FFFFFF;
 		}
-table{
-
-}
 .section-one{
 		width:100%;
 
 		}
-.section-one {
-			width:100%;
-			display:inline-block;
-			color:#414141;
-			margin:0 auto;
-			text-align: center;
-			font-weight:500;
-			padding-top: 20px;
-		}
+
 .section-one .s-one{
-			display: block;
-			float:left;
-			padding-left:30px;
-			padding-right:30px;
-			width:23%;
+			
 		}
 .section-one .s-two{
 			display: block;
@@ -70,7 +55,6 @@ table{
     	    font-size: 16px;
 			font-weight: 600;
 			letter-spacing: 0.6px;
-			color: #4a4a4a;   
         }
  .podcast-cta{
         	float: left;
@@ -190,110 +174,4 @@ p.padding-p{padding-top:21px !important;}
 		font-weight: 600;
 		letter-spacing: 0.5px;
 	}   	
-@media screen and (max-width: 670px) {
-.podcast-cover{
-		width: 100% !important;
-		text-align: center !important;
-		margin-left: 0px !important;
-	}
-.podcast-cover img{ width: 42% !important;}	
-.podcast-cta{width:100% !important;text-align: center !important; margin: 0 auto!important;}
-.podcast-title{
-		width: 90% !important;
-		margin: 0 auto !important;
-		height:auto !important;
-		text-align: center !important;
-		text-overflow: ellipsis !important;
-  		white-space: nowrap !important;
-  		overflow: hidden !important;
-}
-.section-one  {
-		display: block !important;
-		padding-left: 0px !important;
-		padding-right: 0px !important;
-		width:100% !important;
-		padding-top: 50px !important;
-		margin-top: -55px !important;
-		font-size: 1.2em !important;
-}
 
-
-.section-one .s-one{
-	width: 100% !important;
-	padding-left: 0px !important;
-	padding-right: 0px !important;
-}
-.section-one .s-two{
-	width: 100% !important;
-	margin-top: 30px !important;
-	padding-left: 0px !important;
-	padding-right: 0px !important;
-}
-.part-3{		
-	margin-top: 30px !important;
-	padding-left: 0px !important;
-	padding-right: 0px;width: 100% !important;
-}
-.title{
-		padding-top: 55px !important;
-		font-size: 26px !important;
-		}
-.cta{
-			margin-top: 20px !important;
-		}
-.cta-blog{float:left !important;}
-.podcast{
-			margin-bottom: 50px !important;
-		}
-}
-@media screen and (max-width: 420px) {
-	.blog-title{font-size: 1.2em !important;}
-	.blog-preview{font-size: 1em !important;}
-	.first{
-
-		border-left:none !important;	
-		border-right:none !important;	
-		border-bottom:none !important;	}
-
-	.section-2{		
-		border-left:none !important;	
-		border-right:none !important;	
-		border-bottom:none !important;	}
-	.play{
-		text-align: center !important;	
-		font-size: 22px !important;	
-		width: 100% !important;
-		padding-top: 5px !important;
-
-	}
-
-	.title{padding-left: 0px !important;padding-top: 55px !important;}
-	.icon-up{
-		text-align: center !important;
-		margin:0 auto !important;
-	}
-	.cta{
-		margin-top: 0px !important;
-	}
-	.podcast{
-		width: 100% !important;
-		text-align: center !important;
-	}
-.podcast-cover{
-		margin-left: 0px !important;
-	}
-	.podcast-cta{text-align: center !important;}
-	.blog-ui{
-		margin-left: 0px !important;
-		padding-left:6px !important;
-
-	}
-
-}
-
-@media screen and (max-width: 320px) {
-.play {padding-top:25px !important;}
-.play .title{font-size: 20px !important;}
-.blog-ui{width:90% !important;padding-left: 15px !important;padding-right: 15px !important;}
-
-}
