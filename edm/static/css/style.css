@@ -17,10 +17,6 @@ body{
 			padding-right:30px;
 			width:23%;
 		}
-
-.eps_title{
-	font-size: 1.1em !important;
-}
 .part-3{
 	display: block; float:left;
 	padding-left:40px;width:23%;}		
@@ -32,7 +28,6 @@ body{
         	position:relative;
         }
 .podcast{
-			width:100%;
             height:auto;
             margin-bottom:20px;
  			float:left;
@@ -79,13 +74,7 @@ p.number{
 			margin-top:60px !important;
 			margin-bottom:40px !important;
 		}
-.title{
-			font-size:30px !important; 
-			padding-left:15px !important;
-			padding-right:15px !important;
-			color:#414141 !important;
-			display:inline-block !important;
-		}
+
 .number{
 			font-size:3em !important;
 			padding-left:15px !important;
