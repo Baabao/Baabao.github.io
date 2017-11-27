@@ -1,0 +1,249 @@
+<% @title= "數據統計 - Baabao 八寶網路廣播" %>
+<h2 class="breadcrumb ellipsis m-bottom-5">
+	<a href="analytics.html">數據分析</a><a href="analytics-program.html">超無狄der</a>超無狄der。青少年變種忍者龜與電影忍者龜變種世代
+</h2> <!-- /breadcrumb -->
+<div class="chart-header m-bottom-5 clearfix">
+  <ul class="nav-tab tab-underline">
+		<li class="active"><a href="javascript: void(0)"><span>1,253</span>收聽次數</a></li>
+		<li><a href="javascript: void(0)"><span>569</span>收聽人數</a></li>
+		<li><a href="javascript: void(0)"><span>2:35</span>平均時間</a></li>
+		<li><a href="javascript: void(0)"><span>08:00</span>收聽時段</a></li>
+	</ul> <!-- /nav-tab -->
+	<%= render :partial => "datepicker" %>
+</div> <!-- /chart-header -->
+<div class="m-bottom-8 chart-area">
+  <div id="chart-ep-play"></div> <!-- /chart-ep-play -->
+  <script>
+    var chart = c3.generate({
+      bindto: '#chart-ep-play',
+      size: {
+        height: 320
+      },
+      padding: {
+        right: 30
+      },
+      color: {
+        pattern: ['#7876DD']
+      },
+      legend: {
+        show: false
+      },
+      data: {
+        x: 'x',
+        columns: [
+          ['x', '2016-11-15', '2016-11-16', '2016-11-17', '2016-11-18', '2016-11-19', '2016-11-20', '2016-11-21'],
+          ['超無狄der', 260, 220, 250, 300, 180, 250, 120]
+        ],
+        type: 'area'
+      },
+      axis: {
+        x: {
+          type: 'timeseries',
+          tick: {
+            format: '%Y/%m/%d'
+          }
+        },
+        y: {
+          label: {
+            text: '單位(次數)',
+            position: 'outer-middle'
+          }
+        }
+      }
+    });
+  </script>
+</div> <!-- /m-bottom-8 -->
+<div class="m-bottom-8 chart-area hide">
+  <div id="chart-ep-listener"></div> <!-- /chart-ep-listener -->
+  <script>
+    var chart = c3.generate({
+      bindto: '#chart-ep-listener',
+      size: {
+        height: 320
+      },
+      padding: {
+        right: 30
+      },
+      color: {
+        pattern: ['#7876DD']
+      },
+      legend: {
+        show: false
+      },
+      data: {
+        x: 'x',
+        columns: [
+          ['x', '2016-11-15', '2016-11-16', '2016-11-17', '2016-11-18', '2016-11-19', '2016-11-20', '2016-11-21'],
+          ['超無狄der', 22, 46, 35, 32, 28, 45, 32]
+        ],
+        type: 'area'
+      },
+      axis: {
+        x: {
+          type: 'timeseries',
+          tick: {
+            format: '%Y/%m/%d'
+          }
+        },
+        y: {
+          label: {
+            text: '單位(人數)',
+            position: 'outer-middle'
+          }
+        }
+      }
+    });
+  </script>
+</div> <!-- /m-bottom-8 -->
+<div class="m-bottom-8 chart-area hide">
+  <div id="chart-ep-duration"></div> <!-- /chart-ep-duration -->
+  <script>
+    var chart = c3.generate({
+      bindto: '#chart-ep-duration',
+      size: {
+        height: 320
+      },
+      padding: {
+        right: 30
+      },
+      color: {
+        pattern: ['#7876DD']
+      },
+      legend: {
+        show: false
+      },
+      data: {
+        x: 'x',
+        columns: [
+          ['x', '2016-11-15', '2016-11-16', '2016-11-17', '2016-11-18', '2016-11-19', '2016-11-20', '2016-11-21'],
+          ['超無狄der', '145', '135', '225', '305', '165', '125', '100']
+        ],
+        type: 'area'
+      },
+      axis: {
+        x: {
+          type: 'timeseries',
+          tick: {
+            format: '%Y/%m/%d'
+          }
+        },
+        y: {
+          label: {
+            text: '單位(分鐘)',
+            position: 'outer-middle'
+          }
+        }
+      }
+    });
+  </script>
+</div> <!-- /m-bottom-8 -->
+<div class="m-bottom-8 chart-area hide">
+  <div id="chart-ep-time"></div> <!-- /chart-ep-time -->
+  <script>
+    var chart = c3.generate({
+      bindto: '#chart-ep-time',
+      size: {
+        height: 320
+      },
+      padding: {
+        right: 30
+      },
+      color: {
+        pattern: ['#7876DD']
+      },
+      legend: {
+        show: false
+      },
+      data: {
+        x: 'x',
+        columns: [
+          ['x', '00:00','01:00','02:00','03:00','04:00','05:00','06:00','07:00','08:00','09:00','10:00','11:00','12:00','13:00','14:00','15:00','16:00','17:00','18:00','19:00','20:00','21:00','22:00','23:00'],
+          ['超無狄der', '18', '12', '8', '3', '3', '5', '8', '25', '35', '32', '28', '25', '25', '28', '22', '20', '10', '8', '22', '18', '19', '12', '15', '20']
+        ],
+        type: 'area'
+      },
+      axis: {
+        x: {
+            type: 'category'
+        },
+        y: {
+          label: {
+            text: '單位(人數)',
+            position: 'outer-middle'
+          }
+        }
+      }
+    });
+  </script>
+</div> <!-- /m-bottom-8 -->
+<div class="chart-wrapper m-bottom-8">
+	<div class="chart-wrapper-top">
+		<h4>單集詳細收聽佔比 <div class="tooltip tooltip-top tooltip-center tooltip-lg" data-tooltip="所有聽眾收聽至單集各段落的次數比例，例如 1:30 處有 15% 的聽眾收聽至此時段。"><i class="ic ic-tip text-lightgray"></i></div></h4>
+		<div id="chart-episode" class="chart"></div> <!-- /chart-episode -->
+		<script>
+			var chart = c3.generate({
+				bindto: '#chart-episode',
+		    size: {
+	        height: 320
+		    },
+		    padding: {
+	        right: 30
+		    },
+		    data: {
+	        x: 'x',
+	        xFormat: '%H:%M',
+	        columns: [
+	          ['x', '00:10', '00:20', '00:30', '00:40', '00:50', '01:00', '01:10', '01:20', '01:30', '01:40', '01:50', '02:00', '02:10', '02:20', '02:30', '02:40', '02:50', '03:00', '03:10', '03:20', '03:30', '03:40', '03:50', '03:55'],
+	          ['y', 0.1, 0.12, 0.13, 0.12, 0.08, 0.05, 0.05, 0.03, 0.02, 0.02, 0.01, 0.01, 0.02, 0.02, 0.03, 0.06, 0.05, 0.06, 0.05, 0.04, 0.02, 0.01, 0.01, 0],
+	        ],
+	        names: {
+	          y: '收聽佔比'
+	        },
+	        type: 'area',
+	        colors: {
+	          y: '#7876DD'
+	        }
+		    },
+		    legend: {
+	        show: false
+		    },
+		    axis: {
+	        x: {
+	          type: 'timeseries',
+	          localtime: true,
+	          tick: {
+	              format: '%H:%M'
+	          }
+	        },
+	        y : {
+	          tick: {
+	              format: d3.format("%")
+	          }
+	        }
+		    }
+			});
+		</script>
+	</div> <!-- /chart-wrapper-top -->
+	<div class="chart-wrapper-bottom">
+		<div class="row">
+			<div class="col-1">
+				<button class="btn btn-secondary btn-icon" type="button">
+					<i class="ic ic-play"></i>
+				</button>
+			</div> <!-- /col-1 -->
+			<div class="col-11">
+				<div class="cms-seeking-bar">
+					<span class="time-played t-right">0:00</span>		
+		  		<div class="seeking-bar">
+		  		  <div id="player_seeking_back" class="bar seeking-back"></div>
+		  		  <div id="player_seeking_buffer" class="bar seeking-buffer" style="width: 0%;"></div>
+		  		  <div id="player_seeking_progress" class="bar seeking-progress" style="width: 0%;"></div>
+		  		  <a id="player_seeking_scrubber" class="seeking-handle" style="left: 0%;"></a>
+		  		</div> <!-- /seeking-bar -->
+		  		<span class="time-remaining pull-right">3:55</span>
+				</div> <!-- /cms-seeking-bar -->
+			</div> <!-- /col-11 -->
+		</div> <!-- /row -->
+	</div> <!-- /chart-wrapper-bottom -->
+</div> <!-- /chart-wrapper -->
+<%= render :partial => "chart-pie" %>

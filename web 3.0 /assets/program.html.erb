@@ -1,0 +1,76 @@
+<% @title= "超無狄der - Baabao 八寶網路廣播" %>
+<div class="row">
+	<div class="col-4">
+		<div class="m-bottom-4">
+			<img class="pg-cover" src="static/images/cover.jpg" alt="超無狄der">
+		</div> <!-- /m-bottom-4 -->
+		<div class="m-bottom-4">
+			<div class="row">
+				<div class="col-6 pg-meta">
+					<p class="number">6</p>
+					<p>單集數</p>
+				</div> 
+				<div class="col-6 pg-meta">
+					<p class="number">135</p>
+					<p>訂閱數</p>
+				</div> <!-- /col-6 -->
+			</div> <!-- /row -->
+		</div> <!-- /m-bottom-4 -->
+		<div class="pg-subscribe">
+			<div class="btn btn-primary btn-lg btn-block btn-subscribe"><i class="ic ic-star"></i> 訂閱節目</div>
+			<div class="btn btn-default btn-lg btn-block btn-unsubscribe hide">訂閱中</div>
+		</div> <!-- /pg-subscribe -->
+	</div> <!-- /col-4 -->
+	<div class="col-8 p-top-2 p-left-6">
+		<article>
+			<header class="pg-header m-bottom-3">
+				<div class="pg-header-content">
+					<h1 class="m-bottom-1">超無狄der</h1>
+					<div>
+						<a href="category.html" class="label" title="節目分類：脫口秀">脫口秀</a><span class="producer">DJ：DJ小狄</span>
+					</div>
+				</div> <!-- /pg-header-content -->
+				<button class="btn btn-default btn-share-pg"><i class="ic ic-share"></i> 分享</button>
+			</header> <!-- /pg-header -->
+			<section class="m-bottom-8">
+				<p>陳小狄+吳阿超=無敵脫口秀。 什麼都能聊，什麼都敢聊，聊到停不了!! 什麼都能喬，什麼都敢喬，喬到停不了!! 什麼都能笑，什麼都好笑，笑到彎腰了!!</p>
+			</section> <!-- /pg-des -->
+			<section class="m-bottom-8">
+				<header class="header-other-ep">
+					<h2 class="m-bottom-2">全部單集</h2>
+				</header> <!-- /header-other-ep -->
+				<ul class="list list-hover list-other-ep">
+					<li class="played">
+						<div class="row">
+							<div class="col-9 other-ep-title">
+								<span class="dot tooltip tooltip-left" data-tooltip="已播放"></span>
+								<h4><a class="ellipsis" href="episode.html">超無狄der。一刀不剪的馬來西亞變性歌手</a></h4>
+							</div> <!-- /other-ep-title -->
+							<div class="col-3 other-ep-date">
+								<span>2016/11/12</span>
+							</div> <!-- /other-ep-date -->
+						</div>
+					</li>
+					<% 9.times do %>
+					<li>
+						<div class="row">
+							<div class="col-9 other-ep-title">
+								<span class="dot tooltip tooltip-left" data-tooltip="尚未播放"></span>
+								<h4><a class="ellipsis.html" href="episode.html">超無狄der。一刀不剪的馬來西亞變性歌手</a></h4>
+							</div> <!-- /other-ep-title -->
+							<div class="col-3 other-ep-date">
+								<span>2016/11/11</span>
+							</div> <!-- /other-ep-date -->
+						</div> <!-- /row -->
+					</li>
+					<% end %>
+				</ul> <!-- /list-other-ep -->
+				<div class="p-top-3 t-center">
+					<button class="btn btn-default" type="button">載入更多</button>
+				</div> <!-- /p-top-3 -->
+			</section> <!-- /m-bottom-8 -->
+			<%= render :partial => "promote" %>
+		</article>
+	</div> <!-- /pg-content -->
+</div> <!-- /row -->
+<%= render :partial => "modal-share-pg" %>

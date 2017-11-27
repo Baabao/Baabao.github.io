@@ -1,0 +1,68 @@
+<% @title= "數據總覽 - Baabao 八寶管理系統" %>
+<% content_for :fullpage do %>
+<div class="inner">
+  <div class="row">
+    <h2 class="col-9">數據總覽</h2>
+    <div class="col-3 t-right m-bottom-2 overview-datepicker" >
+      <%= render :partial => "../datepicker" %>
+    </div> <!-- overview-datepicker -->
+  </div> <!-- /row -->
+</div> <!-- /inner -->
+<div class="search-nav m-bottom-3">
+	<div class="inner">
+		<ul class="nav-tab tab-underline">
+			<li><a href="overview.html">節目</a></li>
+			<li class="active"><a href="javascript: void(0)">單集</a></li>
+		</ul> <!-- /nav-rab -->
+	</div> <!-- /inner -->
+</div> <!-- /search-nav -->
+<div class="inner">
+  <table class="table table-hover table-cms m-bottom-8">
+    <thead>
+      <tr>
+        <th style="width: 8%">
+          <a class="sorting sorting-desc" href="javascript: void(0)">ID</a>
+        </th>
+        <th style="width: 37%">單集</th>
+        <th style="width: 12%">
+          <a class="sorting" href="javascript: void(0)">收聽次數</a>
+        </th>
+        <th style="width: 12%">
+          <a class="sorting" href="javascript: void(0)">收聽人數</a>
+        </th>
+        <th style="width: 12%">
+          <a class="sorting" href="javascript: void(0)">平均時間</a>
+        </th>
+        <th style="width: 12%"><a class="sorting sorting-desc" href="javascript: void(0)">發佈時間</a></th>
+        <th style="width: 7%" class="t-center">預覽</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% 20.times do%>
+      <tr>
+        <td>
+          <span class="cms-meta">12345</span>
+        </td>
+        <td>
+			    <a href="analytics-episode.html">超無狄der。青少年變種忍者龜與電影忍者龜變種世代</a>
+			    <span class="cms-meta m-top-1">節目：超無狄der</span>
+          <span class="cms-meta">長度：1:23:45</span>
+        </td>
+        <td>856</td>
+        <td>265</td>
+        <td>2:35</td>
+        <td>
+          <span class="cms-meta">2017/02/15<br>15:00</span>
+        </td>
+        <td class="t-center">
+          <a href="../episode.html" target="_blank"><i class="ic ic-preview"></i></a>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table> <!-- /table-cms -->
+  <div class="t-center">
+    <%= render :partial => "../pagination" %>
+  </div> <!-- /t-center -->
+</div> <!-- /inner -->
+<% end %>

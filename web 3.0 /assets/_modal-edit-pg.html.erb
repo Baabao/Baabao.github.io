@@ -1,0 +1,54 @@
+<!-- modal-edit-pg
+================================================== -->
+<div id="modal-edit-pg" class="modal hide fade">
+	<div class="modal-dialog modal-group modal-lg">
+	  <div class="modal-header">
+	    <h4>編輯節目資訊</h4>
+	    <button class="btn btn-transparent btn-icon btn-close-modal" type="button" title="關閉視窗">
+	    	<i class="ic ic-close"></i>
+    	</button>
+	  </div> <!-- /modal-header -->
+	  <div class="modal-body">
+		  <div class="row">
+		  	<div class="col-4">
+		  		<label for="episode-cvoer"><span class="text-warning tooltip tooltip-left" data-tooltip="必填">＊</span>節目封面</label>
+		  		<div class="upload-cover">
+	  				<img src="static/images/cover.jpg">
+	  				<div class="upload-cover-bottom">
+	  					<a href="javascript:void(0)" class="btn btn-default btn-upload btn-upload-cover">上傳封面
+	  						<input type="file">
+  						</a>
+	  				</div> <!-- /upload-cover-bottom -->
+		  		</div> <!-- /upload-cover -->
+		  		<%= render :partial => "modal-upload-cover" %>
+		  		<% content_for :wran_text do %>上傳失敗，圖片不符合規定。<% end %>
+					<%= render :partial => "text-warning" %>
+		  		<p class="text-des">僅支援 jpg 格式，檔案不得超過 2MB，長寬不得小於 400px。</p>
+		  	</div> <!-- /col-4 -->
+		  	<div class="col-8">
+  		    <label for="program-title"><span class="text-warning tooltip tooltip-left" data-tooltip="必填">＊</span>節目名稱</label>
+  		    <input name="program-title" type="text" value="超無狄der" maxlength="40">
+  		    <p class="text-des">最多40個中文字</p>
+  				<label for="program-title">節目介紹</label>
+  				<textarea name="program-title" rows="5">陳小狄+吳阿超=無敵脫口秀。什麼都能聊，什麼都敢聊，聊到停不了!! 什麼都能喬，什麼都敢喬，喬到停不了!!什麼都能笑，什麼都好笑，笑到彎腰了!!</textarea>
+  				<label for="program-catgory">分類</label>
+  				<select name="program-catgory" class="m-bottom-0">
+					  <option value="cat-talkshow">脫口秀</option>
+					  <option value="cat-life">生活</option>
+					  <option value="cat-health">健康</option>
+					  <option value="cat-music">音樂</option>
+					  <option value="cat-movie">電影</option>
+					  <option value="cat-spirit">心靈</option>
+					  <option value="cat-news">新聞</option>
+					  <option value="cat-game">遊戲</option>
+					  <option value="cat-entertainment">娛樂</option>
+					</select>
+		  	</div> <!-- /col-8 -->
+		  </div> <!-- /row -->
+	  </div> <!-- /modal-body -->
+	  <div class="modal-footer">
+	    <button class="btn btn-default btn-cancel" type="button">取消</button>
+	    <button class="btn btn-primary btn-save" type="button">儲存</button>
+	  </div> <!-- /modal-footer -->
+	</div> <!-- /modal-dialog -->
+</div> <!-- /modal -->

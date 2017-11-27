@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<%= render :partial => "../head" %>
+
+	<!-- style -->
+	<link href="../static/css/main.css" rel="stylesheet">
+
+</head>
+<body>
+	<div class="m-only">
+		<%= render :partial => "header" %>
+		<!-- content
+		================================================== -->
+		<div class="content">
+			<%= yield %>
+		</div> <!-- /content -->
+		<div class="open-app t-center">
+			<div class="btn-group">
+				<a href="#" class="btn btn-secondary">使用 APP 開啟</a>
+				<a href="javascript: void(0)" class="btn btn-secondary btn-close"><i class="ic ic-close"></i></a>
+			</div>
+		</div> <!-- /open-app -->
+		<%= render :partial => "download" %>
+		<%= render :partial => "footer" %>
+	</div>
+</body>
+</html>

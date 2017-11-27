@@ -1,0 +1,64 @@
+@import "compass/css3";
+/* nav tab */
+.nav-tab {
+  width: 100%;
+  @extend .clearfix;
+  li {
+    float: left;
+    padding: 0;
+    margin-right: 30px;
+    border: 1px solid transparent;
+    border-bottom: 1px solid $gray-border;
+    text-align: center;
+    &.active {
+      border: 1px solid $gray-border;
+      border-bottom: 1px solid #fff;
+      @include border-radius(3px 3px 0 0);
+      background-color: #fff;
+      a {
+        color: $gray;
+        pointer-events :none;
+        cursor: not-allowed;
+      }
+    }
+    a {
+      display: block;
+      padding: 5px 0;
+      color: $light-gray;
+      &:hover {
+        color: $gray;
+        text-decoration: none;
+      }
+    }
+  }
+  &.tab-underline {
+    li {
+      border: transparent;
+      a {
+        color: $gray;
+      }
+      a:hover {
+        color: $purple;
+      }
+      &.active {
+        border: transparent;
+        border-bottom: 3px solid $purple;
+        background-color: transparent;
+        a {
+          color: $purple;
+        }
+      }
+    }
+  }
+  &.is-divided {
+    width: 100%;
+    @extend .clearfix;
+    li {
+      float: none;
+      display: table-cell;
+      width: 1%;
+      text-align: center;
+    }
+  }
+}
+/* nav tab end*/

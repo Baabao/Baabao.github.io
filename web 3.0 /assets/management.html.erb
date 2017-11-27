@@ -1,0 +1,98 @@
+<% @title= "節目管理 - Baabao 八寶網路廣播" %>
+
+<% content_for :alert_text do %>節目已新增。<% end %>
+<%= render :partial => "alert" %>
+
+<div class="row m-bottom-3">
+	<div class="col-10">
+		<h2 class="breadcrumb ellipsis m-bottom-0">節目管理</h2>
+	</div> <!-- /col-10 -->
+	<div class="col-2 t-right">
+		<button class="btn btn-primary btn-create-pg" type="button">建立新節目</button>
+	</div> <!-- /col-2 -->
+</div> <!-- /row -->
+<div class="table-cms-wrapper">
+  <table class="table table-hover table-cms">
+    <thead>
+      <tr>
+        <th style="width: 56%">節目</th>
+        <th style="width: 14%">建立時間</th>
+        <th style="width: 30%" class="t-right">
+          <span>新增</span>
+          <span>編輯</span>
+          <span>檢視</span>
+          <span>更多</span>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <a class="cms-cover" href="management-program.html" title="超無狄der">
+            <img src="static/images/cover.jpg" alt="超無狄der">
+          </a>
+          <div class="cms-content">
+            <div class="vertical-wrapper">
+              <a href="management-program.html">超無狄der</a>
+              <span class="cms-meta">共0集</span>
+            </div> <!-- /vertical-wrapper -->
+          </div> <!-- /cms-content -->
+        </td>
+        <td>
+          <span class="cms-meta">2016/06/30</span>
+        </td>
+        <td>
+          <div class="cms-action t-right">
+            <button class="btn btn-icon btn-create-ep tooltip tooltip-top tooltip-center tooltip-show" type="button" title="新增單集" data-tooltip="還沒有單集，點我新增"><i class="ic ic-add"></i></button>
+            <button class="btn btn-icon btn-edit-pg" type="button" title="編輯節目資訊"><i class="ic ic-edit"></i></button>
+            <a href="program.html" class="btn btn-icon" title="檢視頁面"><i class="ic ic-preview"></i></a>
+            <div class="dropdown-cms-more dropdown">
+              <button class="btn btn-icon btn-dropdown-toggle" type="button" title="更多選項"><i class="ic ic-more"></i></button>
+              <ul class="dropdown-menu right bottom">
+                <li><a href="analytics-program.html"><i class="ic ic-analytics"></i> 數據</a></li>
+                <li><a href="javascript: void(0)" class="btn-share-pg"><i class="ic ic-share"></i> 分享</a></li>
+                <li><a href="javascript: void(0)" class="btn-delete-pg"><i class="ic ic-delete"></i> 刪除</a></li>
+              </ul>
+            </div> <!-- /dropdown-cms-more -->  
+          </div> <!-- /cms-action --> 
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a class="cms-cover" href="management-program.html" title="超無狄der">
+            <img src="static/images/cover.jpg" alt="超無狄der">
+          </a>
+          <div class="cms-content">
+            <div class="vertical-wrapper">
+              <a href="management-program.html">超無狄der</a>
+              <span class="cms-meta">共7集</span>
+            </div> <!-- /vertical-wrapper -->
+          </div> <!-- /cms-content -->
+        </td>
+        <td>
+          <span class="cms-meta">2016/06/30</span>
+        </td>
+        <td>
+          <div class="cms-action t-right">
+            <button class="btn btn-icon btn-create-ep" type="button" title="新增單集"><i class="ic ic-add"></i></button>
+            <button class="btn btn-icon btn-edit-pg" type="button" title="編輯節目資訊"><i class="ic ic-edit"></i></button>
+            <a href="program.html" class="btn btn-icon" title="檢視頁面"><i class="ic ic-preview"></i></a>
+            <div class="dropdown-cms-more dropdown">
+              <button class="btn btn-icon btn-dropdown-toggle" type="button" title="更多選項"><i class="ic ic-more"></i></button>
+              <ul class="dropdown-menu right bottom">
+                <li><a href="analytics-program.html"><i class="ic ic-analytics"></i> 數據</a></li>
+                <li><a href="javascript: void(0)" class="btn-share-pg"><i class="ic ic-share"></i> 分享</a></li>
+                <li><a href="javascript: void(0)" class="btn-delete-pg"><i class="ic ic-delete"></i> 刪除</a></li>
+              </ul>
+            </div> <!-- /dropdown-cms-more -->  
+          </div> <!-- /cms-action --> 
+        </td>
+      </tr>
+    </tbody>
+  </table> <!-- /table-cms -->
+</div> <!-- /table-cms-wrapper -->
+<%= render :partial => "modal-create-ep" %>
+<%= render :partial => "modal-create-pg" %>
+<%= render :partial => "modal-edit-pg" %>
+<%= render :partial => "modal-delete-pg" %>
+<%= render :partial => "modal-share-pg" %>

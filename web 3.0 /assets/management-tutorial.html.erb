@@ -1,0 +1,50 @@
+<% @title= "節目管理 - Baabao 八寶網路廣播" %>
+<div class="row m-bottom-3">
+  <div class="col-10">
+    <h2 class="breadcrumb ellipsis m-bottom-0"><a href="management_empty.html">節目管理</a>新手教學</h2>
+  </div> <!-- /col-10 -->
+</div> <!-- /row -->
+<ul class="nav-tab is-divided nav-tutorial-step m-bottom-5">
+	<li class="active"><a href="javascript: void(0)" class="is-block">1. 建立節目</a></li>
+	<li><a href="management-tutorial_2.html" class="is-block">2. 上傳檔案</a></li>
+	<li><a href="management-tutorial_3.html" class="is-block">3. 分享</a></li>
+</ul> <!-- /nav-tutotial -->
+<div class="step-content m-bottom-5">
+	<h3 class="t-center">為你的新節目命名與上傳封面</h3>
+	<p class="m-bottom-5">你可以將暱稱、節目主題以及內容相互搭配，有趣簡短的名稱會讓大家更容易記得，例如「部長電影報報」、「科學爆米花」。別擔心，你稍後仍可以在節目管理內更改這些資訊。</p>
+	<div class="divider m-bottom-5"></div> <!-- /divider -->
+	<div class="row m-bottom-5">
+		<div class="col-4">
+			<label for="episode-cvoer"><span class="text-warning tooltip tooltip-left" data-tooltip="必填">＊</span>節目封面</label>
+			<div class="upload-cover">
+				<img src="static/images/cover.jpg" style="display: none;">
+				<div class="upload-cover-bottom">
+					<button class="btn btn-default btn-upload btn-upload-cover" type="button">上傳封面
+						<input type="file" name="episode-cvoer">
+					</button>
+				</div> <!-- /upload-cover-bottom -->
+			</div> <!-- /upload-cover -->
+			<%= render :partial => "modal-upload-cover" %>
+			<% content_for :wran_text do %>上傳失敗，圖片不符合規定。<% end %>
+			<%= render :partial => "text-warning" %>
+			<p class="text-des m-bottom-0">僅支援 jpg 格式，檔案不得超過 2MB，長寬不得小於 400px。</p>
+		</div> <!-- /col-4 -->
+  	<div class="col-8">
+	    <label for="program-title"><span class="text-warning tooltip tooltip-left" data-tooltip="必填">＊</span>節目名稱</label>
+	    <input name="program-title" type="text" value="" maxlength="40">
+	    <p class="text-des">最多40個中文字</p>
+			<label for="program-catgory">分類</label>
+			<select name="program-catgory" class="m-bottom-0">
+			  <option value="cat-talkshow">脫口秀</option>
+			  <option value="cat-lohas">樂活</option>
+			  <option value="cat-entertainment">娛樂</option>
+			  <option value="cat-news">新聞</option>
+			</select>
+  	</div> <!-- /col-8 -->
+	</div> <!-- /row -->
+	<div class="divider m-top-5"></div> <!-- /divider -->
+</div> <!-- /step-content -->
+<div class="t-center">
+	<a href="management_empty.html" class="btn btn-default m-right-1">取消</a>
+	<a href="management-tutorial_2.html" class="btn btn-primary btn-save disabled">建立節目</a>
+</div> <!-- /t-center -->

@@ -1,0 +1,30 @@
+<!-- modal-upload-cover
+================================================== -->
+<div class="modal modal-upload-cover hide fade">
+	<div class="modal-dialog modal-group modal-lg">
+	  <div class="modal-header">
+	    <h4>編輯新封面</h4>
+	    <button class="btn btn-transparent btn-icon btn-close-modal" type="button" title="關閉視窗">
+	    	<i class="ic ic-close"></i>
+    	</button>
+	  </div> <!-- /modal-header -->
+	  <div class="modal-body">
+	  	<div class="cropper-wrapper">
+	  		<img src="static/images/cover.jpg" id="cover-image" />
+	  	</div>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.0.0-alpha/cropper.min.js"></script>
+      <script>
+          var image = document.getElementById('cover-image');
+          var cropper = new Cropper(image, {
+              aspectRatio: 1
+          });
+      </script>
+  		<p class="text-warning hide"><i class="ic ic-alert"></i> 截圖區域不得小於 400 * 400 px。</p>
+	  </div> <!-- /modal-body -->
+	  <div class="modal-footer">
+	    <button class="btn btn-default btn-cancel" type="button">取消</button>
+	    <button class="btn btn-primary btn-save" type="button">儲存</button>
+	  </div> <!-- /modal-footer -->
+	</div> <!-- /modal-dialog -->
+	<div class="modal-backdrop"></div> <!-- /modal-backdrop -->
+</div> <!-- /modal -->

@@ -1,0 +1,140 @@
+/* player style */
+.player {
+	position: fixed;
+	bottom: -70px;
+	left: 0;
+	width: 100%;
+	min-width: 960px;
+	height: 70px;
+	background-color: #1E2023;
+	z-index: 998;
+	@include transition(bottom, .5s);
+	&.open {
+		bottom: 0;
+	}
+}
+.player-control {
+	position: relative;
+}
+.player-btn-group {
+	position: absolute;
+	top: 12px;
+	left: 15px;
+	z-index: 1;
+	.btn {
+		font-size: 30px;
+	}
+	.spinner {
+		position: relative;
+		top: 4px;
+	}
+	.play-btn-wrapper {
+		display: inline-block;
+		margin: 0 10px;
+		width: 44px;
+		height: 44px;
+    vertical-align: middle;
+    text-align: center;
+	}
+}
+.player-seeking-bar {
+	position: relative;
+	padding: 0 15px 0 180px;
+  margin-top: 20px;
+	width: 100%;
+	height: 30px;
+}
+.player-ep {
+  margin-top: 10px;
+	position: relative;
+}
+.player-ep-cover {
+	width: 50px;
+	height: 50px;
+}
+.player-ep-info {
+	position: absolute;
+	top: 0;
+	left: 75px;
+	right: 0;
+	height: 50px;
+	a {
+		display: inline-block;
+    width: 100%;
+    &:hover {
+    	color: $purple;
+    }
+	}
+}
+.player-ep-title {
+	margin-top: 2px;
+	font-size: .9em;
+	color: #fff;
+}
+.player-pg-title {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	font-size: .8em;
+	color: rgba(255,255,255,.8);
+}
+.time-played {
+	display: inline-block;
+	width: 60px;
+	font-size: .9em;
+	color: rgba(255,255,255,.8);
+	line-height: 30px;
+}
+.time-remaining {
+	@extend .time-played;
+	padding-left: 15px;
+	position: relative;
+	width: 70px;
+	&:before {
+		content: '-';
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		color: inherit;
+		font-size: inherit;
+	}
+}
+.seeking-bar {
+	position: absolute;
+	top: 4px;
+	left: 260px;
+	right: 110px;
+	height: 20px;
+	cursor: pointer;
+	.bar {
+		position: absolute;
+		top: 8px;
+		left: 0;
+		width: 100%;
+		height: 4px;
+	}
+}
+.seeking-back {
+	background-color: rgba(255, 255, 255, .3);
+}
+.seeking-buffer {
+	background-color: rgba(255, 255, 255, .3);
+}
+.seeking-progress {
+	background-color: $purple;
+}
+.seeking-handle {
+	position: absolute;
+	top: 8px;
+	left: 0;
+	margin: -8px 0 0 -10px;
+	display: block;
+	width: 20px;
+	height: 20px;
+	@include border-radius(50%);
+	@include box-shadow(0 1px 4px rgba(0,0,0,.2));
+	background-color: #fff;
+	cursor: pointer;
+}
+/* player style end */

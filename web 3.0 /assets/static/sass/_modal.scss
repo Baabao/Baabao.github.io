@@ -1,0 +1,354 @@
+/* modal style */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,.5);
+  z-index: 999;
+  overflow-x: hidden;
+  overflow-y: auto;
+  &.fade {
+  	@include transition(opacity .2s linear);
+  	.modal-dialog,
+  	.modal-tip {
+  		@include transform(scale(.95, .95));
+  		@include transition(transform .1s linear);
+  	}
+  }
+  &.in {
+  	.modal-dialog,
+  	.modal-tip {
+  		@include transform(scale(1, 1));
+  	}
+  }
+}
+.modal-dialog {
+	position: relative;
+  width: 600px;
+  margin: 100px auto;
+  padding: 25px;
+  display: block;
+  // border: 1px solid darken($gray-border, 10%);
+  @include border-radius(5px);
+  background-color: #fff;
+  @include box-shadow(0 0 30px rgba(0, 0, 0, 0.2));
+  z-index: 999;
+}
+.modal-group {
+  padding: 0;
+}
+.modal-tip {
+  width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  h4 {
+    margin: 0;
+  }
+}
+.modal-header {
+	position: relative;
+  padding: 20px 25px;
+  color: #000;
+  border-bottom: 1px solid #e6e6e6;
+  @include border-radius(4px 4px 0 0);
+  h4 {
+    margin: 0;
+    font-size: 20px;
+  }
+  > .btn-close-modal {
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    color: lighten($light-gray, 10%);
+    &:hover {
+      color: #666;
+    }
+  }
+}
+.modal-body {
+  padding: 30px 25px;
+  &:last-child {
+    margin: 0;
+  }
+}
+.modal-footer {
+  padding: 15px 25px;
+  border-top: 1px solid #e6e6e6;
+  @include border-radius(0 0 4px 4px);
+  background-color: #f9f9f9;
+  text-align: right;
+  .btn {
+    margin-left: 5px;
+  }
+}
+.modal-lg {
+  width: 880px;
+}
+.modal-sm {
+  width: 360px;
+}
+.fade {
+  @include opacity(0);
+  &.in {
+  	@include opacity(1);
+  }
+}
+// modal-spinner
+.modal-spinner {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: table;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	background-color: rgba(0,0,0,.3);
+	z-index: 999;
+}
+
+// modal-share-ep style
+#modal-share-ep {
+	.modal-header {
+		padding-bottom: 0;
+		h4 {
+			position: relative;
+			top: -5px;
+		}
+	}
+	.tab-underline {
+	  li {
+	  	padding-bottom: 10px;
+	    a:hover {
+	      color: $dark-gray;
+	    }           
+	    &.active {
+	    	border-bottom: none;
+	      box-shadow: inset 0 -3px 0 $dark-gray;
+	      a {
+	        color: $dark-gray;
+	      }
+	    }
+	  }
+	}
+	.embed-demo {
+		iframe {
+			margin-bottom: 20px;
+			pointer-events: none;
+		}
+	}
+}
+
+// modal-create-ep style
+.upload-cover {
+	position: relative;
+	margin-bottom: 30px;
+	width: 255px;
+	height: 255px;
+	border: 1px solid darken($gray-border, 10%);
+	@include border-radius(5px);
+	background-color: #f9f9f9;
+	overflow: hidden;
+	&:before {
+		// content:'節目封面';
+		position: absolute;
+		top: 45%;
+		left: 0;
+		display: block;
+		width: 100%;
+		color: $light-gray;
+		text-align: center;
+		z-index: 1;
+	}
+	img {
+		width: 100%;
+		position: relative;
+		z-index: 2;
+	}
+}
+.upload-cover-bottom {
+	position: absolute;
+	left: 0;
+	bottom: 10px;
+	width: 100%;
+	text-align: center;
+	z-index: 3;
+}
+.btn-upload {
+  position: relative;
+  overflow: hidden;
+  input[type="file"] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    height: inherit;
+    font-size: 18px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+  }
+}
+.audio-wrapper {
+	~ p {
+		margin-top: -20px;
+		&:last-child {
+			margin-bottom: 30px;
+		}
+	}
+}
+.audio-choose {
+	padding: 30px;
+	width: 100%;
+	border: 3px dashed #ccc;
+	@include border-radius(5px);
+	background-color: $gray-bg;
+	text-align: center;
+	overflow: hidden;
+}
+.audio-drag {
+	position: relative;
+	border: 3px solid $purple;
+	&:before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: $light-purple;
+		z-index: 1;
+	}
+	&:after {
+		content: '將檔案拖放至此並放開，將會自動開始上傳';
+		position: absolute;
+		top: 72px;
+		left: 0;
+		display: block;
+		width: 100%;
+		color: $dark-purple;
+		text-align: center;
+		z-index: 2;
+	}
+}
+.audio-uploaded,
+.audio-uploading {
+	padding: 10px 20px;
+	border: 1px solid darken($gray-border, 10%);
+	@include border-radius(5px);
+	background-color: $gray-bg;
+	color: $light-gray;
+	font-size: .9em;
+	.spinner {
+		position: relative;
+		top: 6px;
+	}
+}
+.upload-progress-bar {
+	position: relative;
+  margin-top: 21px;
+  height: 4px;
+  .progress-bar {
+  	position: absolute;
+  	width: 100%;
+  	height: 4px;
+  }
+  .bar {
+  	position: absolute;
+  	top: 0;
+  	left: 0;
+  	width: 100%;
+  	height: 4px;
+  }
+  .progress-back {
+  	background-color: $light-gray;
+  }
+  .progress-current {
+  	background-color: $purple;
+  }
+}
+.cms-seeking-bar {
+	position: relative;
+  margin-top: 10px;
+	width: 100%;
+	height: 30px;
+	span {
+		color: $light-gray;
+	}
+	.seeking-bar {
+		left: 80px;
+		right: 90px;
+	}
+	.seeking-back {
+		background-color: $light-gray;
+	}
+	.seeking-handle {
+		border: 1px solid darken($gray-border, 10%);
+	}
+}
+.upload-text {
+	line-height: 44px;
+}
+.ep-tag-wrapper {
+	margin-bottom: 30px;
+  padding: 5px 10px 0;
+  min-height: 48px;
+	border: 1px solid darken($gray-border, 10%);
+	@include border-radius(5px);
+	cursor: text;
+	@extend .clearfix;
+	input {
+		float: left;
+		padding: 0;
+		width: auto;
+		height: 36px;
+		border: none;
+	}
+	.tag {
+		margin-bottom: 5px;
+		&:hover {
+			background-color: $gray-bg;
+			color: inherit;
+		}
+	}
+}
+//modal-upload-cover style
+.modal-upload-cover {
+	.modal-dialog {
+    height: 600px;
+	}
+	.modal-body {
+		height: calc(100% - 142px);
+	}
+	&.error {
+		.cropper-view-box {
+			outline-color: $dark-pink;
+		}
+		.cropper-point {
+			background-color: $dark-pink;
+		}
+		.cropper-dashed {
+			border-color: $dark-pink;
+		}
+		.cropper-face {
+			background-color: $dark-pink;
+			opacity: 0.2;
+		}
+		.text-warning {
+			margin: 10px 0 0;
+		}
+		.modal-body {
+	    height: calc(100% - 110px);
+		}
+	}
+}
+.modal-body {
+	.modal-upload-cover {
+		.modal-dialog {
+			margin: 0;
+		}
+	}
+}
+/* modal style end */

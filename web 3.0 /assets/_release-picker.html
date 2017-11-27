@@ -1,0 +1,60 @@
+<label>發佈時間</label>
+<div class="radio-group release-radio-group">
+	<label class="radio-inline">
+	  <input type="radio" name="epRelease" checked> 立即發佈
+	</label>
+	<label class="radio-inline">
+	   <input type="radio" name="epRelease"> 自訂時間
+	</label>
+</div> <!-- /radio-group -->
+<div class="ep-release-datetime" style="display: none;">
+	<div class="row">
+		<div class="col-6">
+			<input id="release-date" class="m-bottom-0" type="text" value="2016/11/16">
+			<div id="calendar"></div>
+			<script>
+			  var startPicker = new Pikaday({
+			    field: document.getElementById('release-date'),
+			    format: 'YYYY/MM/D',
+			    position: 'top left',
+			    minDate: moment().toDate(),
+			    i18n: {
+			      previousMonth : '上個月',
+			      nextMonth     : '下個月',
+			      months        : ['一月','二月','三月','四月','五月','六月','七月','八月','九月','十月','十一月','十二月'],
+			      weekdays      : ['週日','週一','週二','週三','週四','週五','週六'],
+			      weekdaysShort : ['日','一','二','三','四','五','六']
+			    }
+			  })
+			</script>
+		</div> <!-- /col-6 -->
+		<div class="col-6">
+			<select name="release-time" class="m-bottom-0">
+			  <option value="">00:00</option>
+				<option value="">01:00</option>
+				<option value="">02:00</option>
+				<option value="">03:00</option>
+				<option value="">04:00</option>
+				<option value="">05:00</option>
+				<option value="">06:00</option>
+				<option value="">07:00</option>
+				<option value="">08:00</option>
+				<option value="">09:00</option>
+			  <option value="">10:00</option>
+			  <option value="">11:00</option>
+			  <option value="">12:00</option>
+			  <option value="">13:00</option>
+			  <option value="">14:00</option>
+			  <option value="">15:00</option>
+			  <option value="">16:00</option>
+			  <option value="">17:00</option>
+			  <option value="">18:00</option>
+			  <option value="">19:00</option>
+			  <option value="">20:00</option>
+			  <option value="">21:00</option>
+			  <option value="">22:00</option>
+			  <option value="">23:00</option>
+			</select>
+		</div> <!-- /col-6 -->
+	</div> <!-- /row -->
+</div> <!-- /ep-release-datetime -->

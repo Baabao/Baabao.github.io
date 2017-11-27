@@ -1,0 +1,189 @@
+<!-- modal-create-ep
+================================================== -->
+<div id="modal-create-ep" class="modal hide fade">
+	<div class="modal-dialog modal-group modal-lg">
+	  <div class="modal-header">
+	    <h4>新增單集</h4>
+	    <button class="btn btn-transparent btn-icon btn-close-modal" type="button" title="關閉視窗">
+	    	<i class="ic ic-close"></i>
+    	</button>
+	  </div> <!-- /modal-header -->
+	  <div class="modal-body">
+		  <div class="row">
+		  	<div class="col-12">
+		  		<label for="program-title"><span class="text-warning tooltip tooltip-left" data-tooltip="必填">＊</span>音訊檔案</label>
+		  		<div class="audio-wrapper m-bottom-3">
+			  		<div class="audio-choose"><!-- Add 'audio-drag' in class when user drags files to this area. -->
+			  			<p class="t-center m-bottom-1">請將檔案拖放到這邊上傳<br>或</p>
+	  					<a href="javascript:void(0)" class="btn btn-default btn-upload">選擇檔案
+	  						<input type="file">
+  						</a>
+			  		</div> <!-- /audio-choose -->
+			  		<div class="audio-uploading hide">
+			  			<div class="row">
+			  				<div class="col-2 t-center">
+					  			<span class="upload-text">0% 上傳中</span>
+			  				</div> <!-- /col-2 -->
+			  				<div class="col-10">
+			  					<div class="upload-progress-bar">
+			  						<div class="progress-bar">
+			  							<div class="bar progress-back"></div>
+			  							<div class="bar progress-current" style="width: 0%;"></div>
+			  						</div>
+			  					</div> <!-- /upload-progress -->
+			  				</div> <!-- /col-10 -->
+			  			</div> <!-- /row -->
+			  		</div> <!-- /audio-uploading -->
+			  		<div class="audio-uploaded hide">
+			  			<div class="row">
+			  				<div class="col-1">
+					  			<button class="btn btn-secondary btn-icon" type="button" title="播放">
+					  				<i class="ic ic-play"></i>
+				  				</button>
+					  			<button class="btn btn-secondary btn-icon hide" type="button" title="暫停">
+					  				<i class="ic ic-pause"></i>
+				  				</button>
+				  				<button class="btn btn-secondary btn-icon hide" type="button" title="讀取中">
+				  					<div class="spinner spinner-white spinner-s"></div>
+			  					</button>
+			  				</div> <!-- /col-1 -->
+			  				<div class="col-10">
+	  							<div class="cms-seeking-bar">
+	  								<span class="time-played t-right">0:00</span>		
+	  					  		<div class="seeking-bar">
+	  					  		  <div id="player_seeking_back" class="bar seeking-back"></div>
+	  					  		  <div id="player_seeking_buffer" class="bar seeking-buffer" style="width: 0%;"></div>
+	  					  		  <div id="player_seeking_progress" class="bar seeking-progress" style="width: 0%;"></div>
+	  					  		  <a id="player_seeking_scrubber" class="seeking-handle" style="left: 0%;"></a>
+	  					  		</div> <!-- /seeking-bar -->
+	  					  		<span class="time-remaining pull-right">--:--</span>
+	  							</div> <!-- /cms-seeking-bar -->
+			  				</div> <!-- /col-10 -->
+			  				<div class="col-1 t-right">
+					  			<button class="btn btn-default btn-icon" type="button" title="刪除音檔">
+					  				<i class="ic ic-delete"></i>
+				  				</button>
+			  				</div> <!-- /col-1 -->
+			  			</div> <!-- /row -->
+			  		</div> <!-- /audio-uploaded -->
+		  		</div> <!-- /audio-wrapper -->
+		  		<% content_for :wran_text do %>上傳失敗，音檔不符合規定。<% end %>
+					<%= render :partial => "text-warning" %>
+		  		<p class="text-des">僅支援 mp3 格式。</p>
+		  	</div> <!-- /col-12 -->
+		  	<div class="col-4">
+		  		<label for="episode-cvoer"><span class="text-warning tooltip tooltip-left" data-tooltip="必填">＊</span>單集封面</label>
+		  		<div class="upload-cover">
+		  			<img src="static/images/cover.jpg">
+	  				<div class="upload-cover-bottom">
+	  					<a href="javascript:void(0)" class="btn btn-default btn-upload btn-upload-cover">上傳封面
+	  						<input type="file">
+  						</a>
+	  				</div> <!-- /upload-cover-bottom -->
+		  		</div> <!-- /upload-cover -->
+          <%= render :partial => "modal-upload-cover" %>
+		  		<% content_for :wran_text do %>上傳失敗，圖片不符合規定。<% end %>
+					<%= render :partial => "text-warning" %>
+		  		<p class="text-des">僅支援 jpg 格式，檔案不得超過 2MB，長寬不得小於 400px。</p>
+		  	</div> <!-- /col-4 -->
+		  	<div class="col-8">
+  		    <label for="episode-title"><span class="text-warning tooltip tooltip-left" data-tooltip="必填">＊</span>單集名稱</label>
+  		    <input name="episode-title" type="text" value="" maxlength="40">
+  		    <p class="text-des">最多40個中文字。</p>
+  				<label for="episode-des">單集介紹</label>
+  				<textarea name="episode-des" rows="5"></textarea>
+  				<label>標籤</label>
+  				<div class="ep-tag-wrapper">
+  					<input type="text">
+  				</div> <!-- /ep-tag-wrapper -->
+  				<p class="text-des">你可以將此集內容提到的關鍵字設為標籤，如電影、訪談、林書豪。最多可以填寫5個標籤。</p>
+  				<label>表情按鈕</label>
+  				<div class="emoji-btn-setting m-bottom-2">
+  					<button class="btn btn-default btn-lg btn-emoji tooltip tooltip-top" type="button" data-tooltip="給個鼓勵">
+  						<span class="emoji emoji1"></span> 0
+  					</button>
+  	        <div class="dropdown dropdown-emoji">
+              <button class="btn btn-outline-secondary btn-lg btn-emoji btn-add-emoji btn-dropdown-toggle" type="button">
+                <span class="emoji emoji15"></span> 新增
+              </button>
+              <div class="dropdown-menu top">
+                <ul class="emoji-list clearfix">
+                  <li>
+                    <button class="btn btn-icon btn-transparent btn-emoji tooltip tooltip-top" type="button" data-tooltip="笑到飆淚" emj-index="2">
+                      <span class="emoji emoji2"></span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="btn btn-icon btn-transparent btn-emoji tooltip tooltip-top" type="button" data-tooltip="超級喜歡" emj-index="3">
+                      <span class="emoji emoji3"></span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="btn btn-icon btn-transparent btn-emoji tooltip tooltip-top" type="button" data-tooltip="搞怪逗趣" emj-index="4">
+                      <span class="emoji emoji4"></span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="btn btn-icon btn-transparent btn-emoji tooltip tooltip-top" type="button" data-tooltip="幸福滿意" emj-index="5">
+                      <span class="emoji emoji5"></span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="btn btn-icon btn-transparent btn-emoji tooltip tooltip-top" type="button" data-tooltip="臉紅害羞" emj-index="6">
+                      <span class="emoji emoji6"></span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="btn btn-icon btn-transparent btn-emoji tooltip tooltip-top" type="button" data-tooltip="酷炫" emj-index="7">
+                      <span class="emoji emoji7"></span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="btn btn-icon btn-transparent btn-emoji tooltip tooltip-top" type="button" data-tooltip="驚喜新奇" emj-index="8">
+                      <span class="emoji emoji8"></span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="btn btn-icon btn-transparent btn-emoji tooltip tooltip-top" type="button" data-tooltip="獲得啟發" emj-index="9">
+                      <span class="emoji emoji9"></span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="btn btn-icon btn-transparent btn-emoji tooltip tooltip-top" type="button" data-tooltip="祝福滿滿" emj-index="10">
+                      <span class="emoji emoji10"></span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="btn btn-icon btn-transparent btn-emoji tooltip tooltip-top" type="button" data-tooltip="十分好奇" emj-index="11">
+                      <span class="emoji emoji11"></span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="btn btn-icon btn-transparent btn-emoji tooltip tooltip-top" type="button" data-tooltip="值得一看" emj-index="12">
+                      <span class="emoji emoji12"></span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="btn btn-icon btn-transparent btn-emoji tooltip tooltip-top" type="button" data-tooltip="享受音樂" emj-index="13">
+                      <span class="emoji emoji13"></span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="btn btn-icon btn-transparent btn-emoji tooltip tooltip-top" type="button" data-tooltip="意志堅定" emj-index="14">
+                      <span class="emoji emoji14"></span>
+                    </button>
+                  </li>
+                </ul> <!-- /emoji-list -->
+              </div> <!-- /dropdown-menu -->
+            </div> <!-- /dropdown-emoji -->
+  				</div> <!-- /emoji-btn-setting -->
+  				<p class="text-des m-bottom-0">表情按鈕可以讓聽眾與你有更多互動。除鼓掌外，最多可再增加2組按鈕。移除按鈕將會清除累積數字。</p>
+		  	</div> <!-- /col-8 -->
+		  </div> <!-- /row -->
+	  </div> <!-- /modal-body -->
+	  <div class="modal-footer">
+	    <button class="btn btn-default btn-cancel" type="button">取消</button>
+	    <button class="btn btn-primary btn-save disabled" type="button">儲存</button>
+	  </div> <!-- /modal-footer -->
+	</div> <!-- /modal-dialog -->
+</div> <!-- /modal -->

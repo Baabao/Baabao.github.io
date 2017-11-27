@@ -1,0 +1,60 @@
+<% @title= "管理精選 - Baabao 八寶管理系統" %>
+
+<% content_for :alert_text do %>精選集已新增。<% end %>
+<%= render :partial => "../alert" %>
+
+<div class="row m-bottom-3">
+	<div class="col-10">
+		<h2 class="m-bottom-0">精選管理</h2>
+	</div> <!-- /col-10 -->
+	<div class="col-2 t-right">
+		<button class="btn btn-primary btn-create-collection" type="button">建立精選集</button>
+	</div> <!-- /col-10 -->
+</div>  <!-- /row -->
+<div class="table-cms-wrapper">
+  <table class="table table-hover table-cms m-bottom-8">
+    <thead>
+      <tr>
+      	<th style="width: 8%"><a class="sorting" href="javascript: void(0)">ID</a></th>
+        <th style="width: 42%">精選名稱</th>
+        <th style="width: 12%">單集數</th>
+        <th style="width: 12%"><a class="sorting" href="javascript: void(0)">權限</a></th>
+        <th style="width: 12%"><a class="sorting sorting-desc" href="javascript: void(0)">發佈時間</a></th>
+        <th style="width: 7%" class="t-center">編輯</th>
+        <th style="width: 7%" class="t-center">刪除</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% 20.times do%>
+      <tr>
+    	  <td>
+    	  	<span class="cms-meta">123</span>
+    		</td>
+        <td><a href="collection-detail.html">新鮮上架</a></td>
+        <td>
+        	<span class="cms-meta">10</span>
+      	</td>
+      	<td>
+        	<span class="cms-meta">公開</span>
+      	</td>
+        <td>
+          <span class="cms-meta">2016/11/11<br>15:00</span>
+        </td>
+        
+        <td class="t-center">
+          <a class="btn-edit-collection" href="javascript: void(0)"><i class="ic ic-edit"></i></a>
+        </td>
+        <td class="t-center">
+          <a class="btn-delete-collection" href="javascript: void(0)"><i class="ic ic-delete"></i></a>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table> <!-- /table-cms -->
+  <div class="t-center">
+    <%= render :partial => "../pagination" %>
+  </div>
+</div> <!-- /table-cms-wrapper -->
+<%= render :partial => "modal-create-collection" %>
+<%= render :partial => "modal-edit-collection" %>
+<%= render :partial => "modal-delete-collection" %>

@@ -1,0 +1,45 @@
+<% @title= "節目分類 - Baabao 八寶網路廣播" %>
+<% content_for :fullpage do %>
+<div class="inner">
+	<h2>節目分類</h2>
+</div>
+<div class="nav-tab-wrapper m-bottom-3">
+	<div class="inner">
+		<ul class="nav-tab tab-underline">
+			<li class="active"><a href="javascript: void(0)">全部</a></li>
+			<li><a href="javascript: void(0)">脫口秀</a></li>
+			<li><a href="javascript: void(0)">生活</a></li>
+			<li><a href="javascript: void(0)">健康</a></li>
+			<li><a href="javascript: void(0)">音樂</a></li>
+			<li><a href="javascript: void(0)">電影</a></li>
+			<li><a href="javascript: void(0)">心靈</a></li>
+			<li><a href="javascript: void(0)">新聞</a></li>
+			<li><a href="javascript: void(0)">遊戲</a></li>
+			<li><a href="javascript: void(0)">娛樂</a></li>
+		</ul> <!-- /nav-rab -->
+	</div> <!-- /inner -->
+</div> <!-- /nav-tab-wrapper -->
+<div class="inner">
+	<ul class="list-hover list-category m-bottom-3">
+		<% 10.times do %>
+		<li>
+			<div class="row">
+				<div class="col-2">
+					<a href="program.html" title="超無狄der"><img class="sb-pg-cover" src="static/images/cover.jpg" alt="超無狄der"></a> <!-- /sb-pg-cover -->
+				</div> <!-- /col-2 -->
+				<div class="list-tag-content col-10">
+					<h3 class="ellipsis m-bottom-1"><a href="program.html">超無狄der</a></h3>
+					<p class="webkit-ellipsis-2 m-bottom-1">陳小狄+吳阿超=無敵脫口秀。 什麼都能聊，什麼都敢聊，聊到停不了!! 什麼都能喬，什麼都敢喬，喬到停不了!! 什麼都能笑，什麼都好笑，笑到彎腰了!!</p>
+					<div class="meta">
+						<span class="m-right-3">DJ：DJ小狄</span><span class="m-right-3">單集數：11</span><span class="m-right-3">訂閱數：123</span>
+					</div> <!-- /meta -->
+				</div> <!-- /list-tag-content -->
+			</div> <!-- /row -->
+		</li>
+		<% end %>
+	</ul> <!-- /list-ep -->
+	<div class="t-center">
+		<button class="btn btn-default" type="button">載入更多</button>
+	</div> <!-- /t-center -->
+</div> <!-- /inner -->
+<% end %>

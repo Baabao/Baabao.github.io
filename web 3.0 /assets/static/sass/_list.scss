@@ -1,0 +1,430 @@
+@import "compass/css3";
+
+/* list style */
+.list {
+  > li {
+    position: relative;
+    padding: 10px;
+    border-bottom: 1px solid lighten($gray-border, 5%);
+    background-color: #fff;
+    &:last-child {
+      border-bottom: transparent;
+    }   
+    &.divider {
+      border-bottom: none;
+      &:hover {
+        background-color: transparent;
+      }
+    }
+    > a {
+      display: block;
+      color: inherit;
+      &:hover {
+        color: $purple;
+        background-color: transparent;
+      }
+    }
+    .meta {
+      font-size: .9em;
+      font-weight: normal;
+      color: $light-gray;
+    }
+  }
+  a {
+    &.is-block {
+      display: block;
+      margin: -10px;
+      padding: 10px 10px;
+      width: auto;
+    }
+  }
+  &-link {
+    > li {
+      border-bottom: none;
+    }
+  }
+  &-hover {
+    > li {
+      &:hover {
+        background-color: $gray-bg;
+      }
+      &.active {
+        // background-color: $gray-bg;
+      }
+    }
+  }
+  &-with-dot {
+    list-style-type: disc;
+    padding-left: 30px;
+    li {
+      margin-bottom: 10px;
+    }
+  }
+  &-with-number {
+    list-style-type: decimal;
+    padding-left: 30px;
+    li {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+// list-side-link style
+.list-side-link {
+  li {
+    position: relative;
+    padding: 10px 20px;
+    &.active {
+      a {
+        margin-left: -20px;
+        padding-left: 15px;
+        border-left: 5px solid $purple;
+        color: $purple;
+        pointer-events: none;
+        cursor: default;
+      }
+      &:before, &:after {
+        content: '';
+        position: absolute;
+        top: 12px;
+        right: -15px;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 10px 12px 10px 0;
+        border-color: transparent darken($gray-border, 10%) transparent transparent;
+      }
+      &:after {
+        right: -16px;
+        border-right-color: #fff;
+        z-index: 1;
+      }
+    }
+  }
+}
+
+// list-other-ep style
+.list-other-ep {
+  position: relative;
+  min-height: 66px;
+  border-top: 1px solid $gray-border;
+  border-bottom: 1px solid $gray-border;
+  &:before {
+    content: '沒有其他單集';
+    position: absolute;
+    display: block;
+    width: 100%;
+    text-align: center;
+    line-height: 66px;
+    z-index: 0;
+  }
+  li {
+    @extend .clearfix;
+    padding: 20px;
+    &.played {
+      a{
+        color: $light-gray;
+        &:hover {
+          color: $purple;
+        }
+      }
+      .dot {
+        background-color: $light-purple;
+      }
+    }
+    .dot {
+      position: absolute;
+      left: 4px;
+      top: 8px;
+      display: block;
+      width: 8px;
+      height: 8px;
+      @include border-radius(50%);
+      background-color: $purple;
+    }
+  }
+}
+.other-ep-title {
+  padding-left: 20px;
+  position: relative;
+  h4 {
+    margin-bottom: 0;
+    font-size: 1em;
+    font-weight: normal;
+  }
+  a {
+    display: block;
+    padding-left: 5px;
+    color: $gray;
+    &:hover {
+      color: $purple;
+    }
+  }
+}
+.other-ep-date {
+  color: $light-gray;
+  font-size: .9em;
+  text-align: right;
+}
+.ep-clap {
+  span {
+    color: $light-gray;
+    font-size: .9em;
+  }
+  img {
+    float: left;
+    margin-top: 3px;
+    margin-right: 5px;
+  }
+}
+
+//list-ep-results style
+.list-ep-results {
+  border-top: 1px solid $gray-border;
+  border-bottom: 1px solid $gray-border;
+  li {
+    padding: 20px;
+  }
+  .result-cover {
+    float: left;
+    width: 80px;
+    height: 80px;
+    margin-right: 20px;
+    background-color: $dark-gray;
+    background-image: url(../images/cover-default.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    @include border-radius(5px);
+    overflow: hidden;
+    img {
+      display: block;
+      width: 100%;
+    } 
+  }
+  .result-title {
+    margin-top: 14px;
+    margin-bottom: 0;
+    font-size: 1em;
+    font-weight: normal;
+    color: inherit;
+  }
+  .result-meta {
+    margin-bottom: 0;
+    display: inline-block;
+    margin-top: 10px;
+  }
+  a {
+    color: inherit;
+    &:hover {
+      color: $purple;
+    }
+  }
+  .ep-clap {
+    visibility: hidden;
+    img {
+      margin-top: 5px;
+    }
+  }
+}
+
+// list-sb-pg style
+.list-sb-pg {
+  position: relative;
+  &:before {
+    content: '你還沒有訂閱任何節目';
+    position: absolute;
+    display: block;
+    width: 100%;
+    padding-top: 30px;
+    font-size: 1em;
+    color: $gray;
+    text-align: center;
+    border-top: 1px solid $gray-border;
+    z-index: 0;
+  }
+  
+  > li {
+    position: relative;
+    padding: 30px;
+    background-color: #fff;
+    border-bottom: 1px solid $gray-border;
+    z-index: 1;
+    &:first-child {
+      border-top: 1px solid $gray-border;
+    }
+  }
+}
+.with-toggle {
+  .list-other-ep {
+    max-height: 191px;
+    padding-bottom: 45px;
+  }
+}
+.sb-pg-cover {
+  display: block;
+  width: 100%;
+  @include border-radius(5px);
+}
+.sb-pg-title {
+  a {
+    color: inherit;
+    &:hover {
+      color: $purple;
+    }
+  }
+}
+.sb-pg-des {
+  max-height: 50px;
+  overflow: hidden;
+}
+.sb-pg-content {
+  p {
+    font-size: .9em;
+  }
+  .list-other-ep {
+    min-height: auto;
+    border-color: lighten($gray-border, 5%);
+    overflow: hidden;
+    &:before {
+      height: auto;
+    }
+    &.extend {
+      max-height: none;
+      li.toggle {
+        .ic-caret {
+          border-top: none;
+          border-bottom: 5px solid;
+        }
+      }
+    }
+    li {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      font-size: .9em;
+      h4 {
+        margin-top: 3px;
+      }
+      .ep-clap {
+        display: none;
+      }
+      &:hover {
+        .btn-play {
+          visibility: visible;
+        }
+      }
+      &.toggle {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        color: $light-gray;
+      }
+    }
+  }
+  .btn-play {
+    margin-top: -3px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    visibility: hidden;
+    i {
+      top: 1px;
+      left: 1px;
+    }
+  }
+  .other-ep-date {
+    font-size: 1em;
+  }
+}
+
+//list-ep style 
+.list-tag {
+  position: relative;
+  &:before {
+    content: '沒有任何單集';
+    position: absolute;
+    display: block;
+    width: 100%;
+    padding-top: 30px;
+    font-size: 1em;
+    color: $gray;
+    text-align: center;
+    border-top: 1px solid $gray-border;
+    z-index: 0;
+  }
+  > li {
+    position: relative;
+    padding: 30px;
+    background-color: #fff;
+    border-bottom: 1px solid $gray-border;
+    z-index: 1;
+    &:first-child {
+      border-top: 1px solid $gray-border;
+    }
+    &:hover {
+      .card-overlay {
+        visibility: visible;
+      }
+      .card-artwork {
+        box-shadow: none;
+      }
+    }
+  }
+}
+.list-tag-content {
+  h3 {
+    a {
+      color: $dark-gray;
+      &:hover {
+        color: $purple;
+      }
+    }
+  }
+  p {
+    font-size: .9em;
+    max-height: 50px;
+    overflow: hidden;
+  }
+  .pg-title {
+    a {
+      color: inherit;
+      &:hover {
+        color: $purple;
+      }
+    }
+  }
+  .meta {
+    font-size: .9em;
+    color: $light-gray;
+    span {
+      display: inline-block;
+    }
+  }
+}
+
+//list-category style
+.list-category {
+  position: relative;
+  &:before {
+    content: '此分類暫無任何節目';
+    position: absolute;
+    display: block;
+    width: 100%;
+    padding-top: 30px;
+    font-size: 1em;
+    color: $gray;
+    text-align: center;
+    z-index: 0;
+  }
+  > li {
+    position: relative;
+    padding: 30px;
+    background-color: #fff;
+    border-bottom: 1px solid $gray-border;
+    z-index: 1;
+    &:first-child {
+      border-top: 1px solid $gray-border;
+    }
+  }
+}
+/* list style end */

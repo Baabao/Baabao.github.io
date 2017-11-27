@@ -1,0 +1,83 @@
+<% @title= "節目管理 - Baabao 八寶網路廣播" %>
+<div class="row m-bottom-3">
+  <div class="col-10">
+    <h2 class="breadcrumb ellipsis m-bottom-0"><a href="management_empty.html">節目管理</a>新手教學</h2>
+  </div> <!-- /col-10 -->
+</div> <!-- /row -->
+<ul class="nav-tab is-divided m-bottom-5 nav-tutorial-step">
+	<li class="done"><a href="management-tutorial.html" class="is-block">1. 建立節目</a></li>
+	<li class="active"><a href="#" class="is-block">2. 上傳檔案</a></li>
+	<li><a href="management-tutorial_3.html" class="is-block">3. 分享</a></li>
+</ul> <!-- /nav-tutotial-step -->
+<div class="step-content m-bottom-5">
+	<h3 class="t-center">上傳聲音檔案並為這個單集命名</h3>
+	<p class="m-bottom-5">命名能幫助聽眾瞭解這集在聊什麼主題，如果節目有連續性，可以加上集數。建議不要重複節目名稱，會讓名稱太冗長而難以閱讀。例如「No.7 帶也不是不帶也不是的伴手禮文化」。</p>
+	<div class="divider m-bottom-5"></div> <!-- /divider -->
+	<label for="program-title"><span class="text-warning">＊</span>音訊檔案</label>
+	<div class="audio-wrapper m-bottom-3">
+		<div class="audio-choose">
+			<p class="t-center m-bottom-1">請將檔案拖放到這邊上傳<br>或</p>
+			<button class="btn btn-default btn-upload" type="button">選擇檔案
+				<input type="file">
+			</button>
+		</div> <!-- /audio-choose -->
+		<div class="audio-uploading hide">
+			<div class="row">
+				<div class="col-2 t-center">
+	  			<span class="upload-text">0% 上傳中</span>
+				</div> <!-- /col-2 -->
+				<div class="col-10">
+					<div class="upload-progress-bar">
+						<div class="progress-bar">
+							<div class="bar progress-back" style="width: 100%;"></div>
+							<div class="bar progress-current" style="width: 0%;"></div>
+						</div>
+					</div> <!-- /upload-progress -->
+				</div> <!-- /col-10 -->
+			</div> <!-- /row -->
+		</div> <!-- /audio-uploading -->
+		<div class="audio-uploaded hide">
+			<div class="row">
+				<div class="col-1">
+	  			<button class="btn btn-secondary btn-icon" type="button">
+	  				<i class="ic ic-play"></i>
+  				</button>
+	  			<button class="btn btn-secondary btn-icon hide" type="button">
+	  				<i class="ic ic-pause"></i>
+  				</button>
+  				<button class="btn btn-secondary btn-icon hide" type="button">
+  					<div class="spinner spinner-white spinner-s"></div>
+					</button>
+				</div> <!-- /col-1 -->
+				<div class="col-10">
+					<div class="cms-seeking-bar">
+						<span class="time-played t-right">0:00</span>		
+			  		<div class="seeking-bar">
+			  		  <div id="player_seeking_back" class="bar seeking-back"></div>
+			  		  <div id="player_seeking_buffer" class="bar seeking-buffer" style="width: 0%;"></div>
+			  		  <div id="player_seeking_progress" class="bar seeking-progress" style="width: 0%;"></div>
+			  		  <a id="player_seeking_scrubber" class="seeking-handle" style="left: 0%;"></a>
+			  		</div> <!-- /seeking-bar -->
+			  		<span class="time-remaining pull-right">1:03:47</span>
+					</div> <!-- /cms-seeking-bar -->
+				</div> <!-- /col-10 -->
+				<div class="col-1 t-right">
+	  			<button class="btn btn-default btn-icon" type="button">
+	  				<i class="ic ic-delete"></i>
+  				</button>
+				</div> <!-- /col-1 -->
+			</div> <!-- /row -->
+		</div> <!-- /audio-uploaded -->
+	</div> <!-- /audio-wrapper -->
+	<% content_for :wran_text do %>上傳失敗，音檔不符合規定。<% end %>
+	<%= render :partial => "text-warning" %>
+	<p class="text-des">僅支援 mp3 格式。</p>
+	<label for="episode-title"><span class="text-warning tooltip tooltip-left" data-tooltip="必填">＊</span>單集名稱</label>
+  <input name="episode-title" type="text" value="" maxlength="40">
+  <p class="text-des">最多40個中文字。</p>
+	<div class="divider m-top-5"></div> <!-- /divider -->
+</div> <!-- /step-content -->
+<div class="t-center">
+	<a href="management.html" class="btn btn-default m-right-1">取消</a>
+	<a href="management-tutorial_3.html" class="btn btn-primary btn-save disabled">發佈</a>
+</div> <!-- /t-center -->

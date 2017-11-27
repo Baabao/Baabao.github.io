@@ -1,0 +1,46 @@
+@import "compass/css3";
+
+/* spinner style */
+.spinner {
+	display: inline-block;
+  border-top: 4px solid rgba($light-gray, 0.2);
+  border-right: 4px solid rgba($light-gray, 0.2);
+  border-bottom: 4px solid rgba($light-gray, 0.2);
+  border-left: 4px solid $light-gray;
+  @include transform(translateZ(0));
+  @include animation(rotate .7s infinite linear);
+  &, &:after {
+  	@include border-radius(50%);
+		width: 36px;
+		height: 36px;
+  }
+}
+.spinner-white {
+	border-top-color: rgba(255, 255, 255, 0.2);
+	border-right-color: rgba(255, 255, 255, 0.2);
+	border-bottom-color: rgba(255, 255, 255, 0.2);
+	border-left-color: #ffffff;
+}
+.spinner-l {
+	border-width: 5px;
+  &, &:after {
+		width: 48px;
+		height: 48px;
+  }
+}
+.spinner-s {
+	border-width: 3px;
+  &, &:after {
+		width: 24px;
+		height: 24px;
+  }
+}
+@keyframes rotate {
+  0% {
+    @include transform(rotate(0deg));
+  }
+  100% {
+    @include transform(rotate(360deg));
+  }
+}
+/* spinner style end */

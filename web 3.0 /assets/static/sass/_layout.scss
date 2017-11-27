@@ -1,0 +1,118 @@
+* {
+  box-sizing: border-box;
+  &:before, &:after {
+    box-sizing: border-box;
+  }
+  &:focus {
+  outline: 0;
+  }
+}
+.clearfix {
+  zoom: 1;
+  /*IE6, IE7*/
+  &:before {
+    content: "";
+    display: table;
+  }
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+.hide-text {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.webkit-ellipsis {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  &-2 {
+    @extend .webkit-ellipsis;
+    -webkit-line-clamp: 2;
+  }
+  &-3 {
+    @extend .webkit-ellipsis;
+    -webkit-line-clamp: 3;
+  }
+}
+.hide {
+  display: none !important;
+}
+.show {
+  display: block !important;
+}
+.vertical-wrapper {
+  position: static;
+  display: table-cell;
+  vertical-align: middle;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+}
+.pull-right {
+	float: right !important;
+}
+.pull-left {
+	float: left !important;
+}
+.t-left {
+	text-align: left !important;
+}
+.t-center {
+	text-align: center !important;
+}
+.t-right {
+	text-align: right !important;
+}
+@for $i from 0 through 10 {
+  .p-#{$i} {
+    padding: 10px * $i !important;
+  }
+  .p-top-#{$i} {
+    padding-top: 10px * $i !important;
+  }
+  .p-right-#{$i} {
+    padding-right: 10px * $i !important;
+  }
+  .p-bottom-#{$i} {
+    padding-bottom: 10px * $i !important;
+  }
+  .p-left-#{$i} {
+    padding-left: 10px * $i !important;
+  }
+}
+@for $i from 0 through 10 {
+  .m-#{$i} {
+    margin: 10px * $i !important;
+  }
+  .m-top-#{$i} {
+    margin-top: 10px * $i !important;
+  }
+  .m-right-#{$i} {
+    margin-right: 10px * $i !important;
+  }
+  .m-bottom-#{$i} {
+    margin-bottom: 10px * $i !important;
+  }
+  .m-left-#{$i} {
+    margin-left: 10px * $i !important;
+  }
+}
+.whole-block {
+  display: block !important;
+  width: 100% !important;
+}
+.bg-white {
+  background-color: #fff;
+}
+.bg-gray {
+  background-color: $gray-bg;
+}

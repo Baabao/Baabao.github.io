@@ -1,0 +1,17 @@
+<% @title= "帳號設定 - Baabao 八寶網路廣播" %>
+<% content_for :alert_text do %>DJ 暱稱已完成修改。<% end %>
+<%= render :partial => "alert" %>
+
+<h2>帳號設定</h2>
+<div class="divider m-bottom-5"></div> <!-- /divider -->
+<div class="row">
+	<div class="col-8 offset-2">
+		<label for="account-email">帳號郵件</label>
+		<input name="account-email" type="text" value="panda@baabao.com" disabled>
+		<label for="producer-name">DJ 暱稱 <span class="text-warning">＊暱稱僅限更動一次，請不要使用不尋常的標點符號、字元。</span></label>
+		<input name="producer-name" type="text" value="八寶熊貓">
+		<div class="t-center">
+			<button class="btn btn-primary btn-save disabled" type="button">儲存</button>
+		</div> <!-- /t-center -->
+	</div> <!-- /col-8 -->
+</div> <!-- /row -->

@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+	<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta name="description" content="最好聽的網播節目都在八寶網路廣播。八寶匯集音樂、電影、心靈成長等各種最具原創性的網路自製有聲節目，加入八寶社群，讓你再也不孤單。">
+<meta name="keywords" content="網播, 網路廣播, 電台, 電台DJ, 廣播">
+<title>節目管理 - Baabao 八寶網路廣播</title>
+
+<!-- og meta -->
+<meta property="og:title" content="節目管理 - Baabao 八寶網路廣播"/>
+<meta property="og:description" content="最好聽的網播節目都在八寶網路廣播。八寶匯集音樂、電影、心靈成長等各種最具原創性的網路自製有聲節目，加入八寶社群，讓你再也不孤單。"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content=""/>
+<meta property="og:image" itemprop="image" content="static/images/og-img.jpg"/>
+<meta property="og:site_name" content="Baabao 八寶網路廣播"/>
+
+<!-- fav icon -->
+<link rel="shortcut icon" href="static/images/ico/favicon.ico">
+	<!-- c3.css -->
+	<link href="static/css/c3.css" rel="stylesheet" type="text/css">
+	<link href="static/css/cropper.css" rel="stylesheet">
+
+	<!-- style -->
+	<link href="static/css/main.css" rel="stylesheet">
+
+	<!-- d3.and c3.js -->
+	<script src="static/js/d3.min.js"></script>
+	<script src="static/js/c3.min.js"></script>
+
+	<!-- moment and pikaday js -->
+	<script src="static/js/moment.js"></script>
+	<script src="static/js/pikaday.js"></script>
+
+	<!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div class="wrapper" id="top">
+		<!-- header
+================================================== -->
+<header class="site-header">
+	<div class="inner">
+		<h1 class="site-header-logo pull-left"><a class="hide-text" href="./" title="返回首頁">Baabao 八寶網路廣播</a></h1>
+		<div class="site-header-search input-group pull-left m-left-2">
+			<input type="text" class="input-search with-icon" placeholder="搜尋">
+			<i class="ic ic-search"></i>
+		</div>
+		<div class="pull-right">
+			<ul class="site-header-link pull-left">
+				<li><a href="category.html" title="節目分類">節目分類</a></li>
+				<li class="hide"><a href="tutorial.html" title="製作教學">製作教學</a></li>
+			</ul> <!-- /site-header-link -->
+			<div class="site-header-login pull-left m-left-2">
+				<button class="btn btn-outline-default btn-apply hide" type="button">成為 DJ</button>
+				<button class="btn btn-outline-default btn-login hide" type="button">登入/註冊</button>
+				<div class="dropdown dropdown-member">
+				  <button class="btn btn-transparent btn-link-reverse btn-dropdown-toggle btn-member" type="button">
+					  <img class="member-img" src="static/images/member.jpg" alt="八寶熊貓">
+					  <span class="member-name ellipsis">八寶熊貓<i class="ic-caret"></i></span>
+					</button>
+				  <ul class="dropdown-menu right bottom">
+				  	<li><a href="management.html">節目管理</a></li>
+				  	<li><a href="analytics.html">數據統計</a></li>
+				    <li><a href="subscription.html">我的訂閱</a></li>
+				    <li><a href="account.html">帳號設定</a></li>
+				    <li><a href="javascript: void(0)">登出</a></li>
+				  </ul> <!-- /dropdown-menu -->
+				</div> <!-- /dropdown-member -->
+			</div> <!-- /site-header-login -->
+		</div> <!-- /pull-right -->
+	</div> <!-- /inner -->
+</header> <!-- /site-header -->
+		<!-- content
+		================================================== -->
+		<div class="content">
+			
+			  <div class="inner">
+					
+<div class="alert-wrapper fadeInOut">
+	<div class="alert alert-dismissible alert-info">
+	  單集已新增。
+	  <button class="btn btn-icon btn-transparent btn-close" type="button"><i class="ic ic-close"></i></button>
+	</div>
+</div>
+<div class="row m-bottom-3">
+	<div class="col-10">
+		<h2 class="breadcrumb ellipsis m-bottom-0"><a href="management.html">節目管理</a>超無狄der</h2>
+	</div> <!-- /col-10 -->
+	<div class="col-2 t-right">
+		<button class="btn btn-primary btn-create-ep" type="button">
+      <i class="ic ic-add"></i> 新增單集
+    </button>
+	</div> <!-- /col-10 -->
+</div>  <!-- /row -->
+<div class="table-cms-wrapper">
+  <table class="table table-hover table-cms m-bottom-8">
+    <thead>
+      <tr>
+        <th style="width: 54%">單集</th>
+        <th style="width: 10%"><a class="sorting" href="javascript: void(0)">長度</a></th>
+        <th style="width: 14%"><a class="sorting sorting-desc" href="javascript: void(0)">發佈時間</i></a></th>
+        <th style="width: 22%" class="t-right">
+          <span>編輯</span>
+          <span>檢視</span>
+          <span>更多</span>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      <tr>
+        <td>
+          <div class="cms-cover">
+            <img src="static/images/cover.jpg" alt="單集名稱">
+          </div> <!-- /cms-cover -->
+          <div class="cms-content">
+            <div class="vertical-wrapper">超無狄der。帥帥的韓國歐巴日本求學記</div> <!-- /vertical-wrapper -->
+          </div> <!-- /cms-content -->
+        </td>
+        <td>
+          <span class="cms-meta">25:16</span>
+        </td>
+        <td>
+          <span class="cms-meta">2016/11/11</span>
+        </td>
+        <td class="t-right">
+          <div class="cms-action">
+            <button class="btn btn-icon btn-edit-ep" type="button" title="編輯單集"><i class="ic ic-edit"></i></button>
+            <a href="episode.html" class="btn btn-icon" title="檢視頁面"><i class="ic ic-preview"></i></a>
+            <div class="dropdown-cms-more dropdown">
+              <button class="btn btn-icon btn-dropdown-toggle" type="button" title="更多選項"><i class="ic ic-more"></i></button>
+              <ul class="dropdown-menu right bottom">
+                <li><a href="analytics-episode.html"><i class="ic ic-analytics"></i> 數據</a></li>
+                <li><a href="javascript: void(0)" class="btn-share-ep"><i class="ic ic-share"></i> 分享</a></li>
+                <li><a href="javascript: void(0)" class="btn-delete-ep"><i class="ic ic-delete"></i> 刪除</a></li>
+              </ul>
+            </div> <!-- /dropdown-cms-more -->  
+          </div> <!-- /cms-action --> 
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          <div class="cms-cover">
+            <img src="static/images/cover.jpg" alt="單集名稱">
+          </div> <!-- /cms-cover -->
+          <div class="cms-content">
+            <div class="vertical-wrapper">超無狄der。帥帥的韓國歐巴日本求學記</div> <!-- /vertical-wrapper -->
+          </div> <!-- /cms-content -->
+        </td>
+        <td>
+          <span class="cms-meta">25:16</span>
+        </td>
+        <td>
+          <span class="cms-meta">2016/11/11</span>
+        </td>
+        <td class="t-right">
+          <div class="cms-action">
+            <button class="btn btn-icon btn-edit-ep" type="button" title="編輯單集"><i class="ic ic-edit"></i></button>
+            <a href="episode.html" class="btn btn-icon" title="檢視頁面"><i class="ic ic-preview"></i></a>
+            <div class="dropdown-cms-more dropdown">
+              <button class="btn btn-icon btn-dropdown-toggle" type="button" title="更多選項"><i class="ic ic-more"></i></button>
+              <ul class="dropdown-menu right bottom">
+                <li><a href="analytics-episode.html"><i class="ic ic-analytics"></i> 數據</a></li>
+                <li><a href="javascript: void(0)" class="btn-share-ep"><i class="ic ic-share"></i> 分享</a></li>
+                <li><a href="javascript: void(0)" class="btn-delete-ep"><i class="ic ic-delete"></i> 刪除</a></li>
+              </ul>
+            </div> <!-- /dropdown-cms-more -->  
+          </div> <!-- /cms-action --> 
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          <div class="cms-cover">
+            <img src="static/images/cover.jpg" alt="單集名稱">
+          </div> <!-- /cms-cover -->
+          <div class="cms-content">
+            <div class="vertical-wrapper">超無狄der。帥帥的韓國歐巴日本求學記</div> <!-- /vertical-wrapper -->
+          </div> <!-- /cms-content -->
+        </td>
+        <td>
+          <span class="cms-meta">25:16</span>
+        </td>
+        <td>
+          <span class="cms-meta">2016/11/11</span>
+        </td>
+        <td class="t-right">
+          <div class="cms-action">
+            <button class="btn btn-icon btn-edit-ep" type="button" title="編輯單集"><i class="ic ic-edit"></i></button>
+            <a href="episode.html" class="btn btn-icon" title="檢視頁面"><i class="ic ic-preview"></i></a>
+            <div class="dropdown-cms-more dropdown">
+              <button class="btn btn-icon btn-dropdown-toggle" type="button" title="更多選項"><i class="ic ic-more"></i></button>
+              <ul class="dropdown-menu right bottom">
+                <li><a href="analytics-episode.html"><i class="ic ic-analytics"></i> 數據</a></li>
+                <li><a href="javascript: void(0)" class="btn-share-ep"><i class="ic ic-share"></i> 分享</a></li>
+                <li><a href="javascript: void(0)" class="btn-delete-ep"><i class="ic ic-delete"></i> 刪除</a></li>
+              </ul>
+            </div> <!-- /dropdown-cms-more -->  
+          </div> <!-- /cms-action --> 
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          <div class="cms-cover">
+            <img src="static/images/cover.jpg" alt="單集名稱">
+          </div> <!-- /cms-cover -->
+          <div class="cms-content">
+            <div class="vertical-wrapper">超無狄der。帥帥的韓國歐巴日本求學記</div> <!-- /vertical-wrapper -->
+          </div> <!-- /cms-content -->
+        </td>
+        <td>
+          <span class="cms-meta">25:16</span>
+        </td>
+        <td>
+          <span class="cms-meta">2016/11/11</span>
+        </td>
+        <td class="t-right">
+          <div class="cms-action">
+            <button class="btn btn-icon btn-edit-ep" type="button" title="編輯單集"><i class="ic ic-edit"></i></button>
+            <a href="episode.html" class="btn btn-icon" title="檢視頁面"><i class="ic ic-preview"></i></a>
+            <div class="dropdown-cms-more dropdown">
+              <button class="btn btn-icon btn-dropdown-toggle" type="button" title="更多選項"><i class="ic ic-more"></i></button>
+              <ul class="dropdown-menu right bottom">
+                <li><a href="analytics-episode.html"><i class="ic ic-analytics"></i> 數據</a></li>
+                <li><a href="javascript: void(0)" class="btn-share-ep"><i class="ic ic-share"></i> 分享</a></li>
+                <li><a href="javascript: void(0)" class="btn-delete-ep"><i class="ic ic-delete"></i> 刪除</a></li>
+              </ul>
+            </div> <!-- /dropdown-cms-more -->  
+          </div> <!-- /cms-action --> 
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          <div class="cms-cover">
+            <img src="static/images/cover.jpg" alt="單集名稱">
+          </div> <!-- /cms-cover -->
+          <div class="cms-content">
+            <div class="vertical-wrapper">超無狄der。帥帥的韓國歐巴日本求學記</div> <!-- /vertical-wrapper -->
+          </div> <!-- /cms-content -->
+        </td>
+        <td>
+          <span class="cms-meta">25:16</span>
+        </td>
+        <td>
+          <span class="cms-meta">2016/11/11</span>
+        </td>
+        <td class="t-right">
+          <div class="cms-action">
+            <button class="btn btn-icon btn-edit-ep" type="button" title="編輯單集"><i class="ic ic-edit"></i></button>
+            <a href="episode.html" class="btn btn-icon" title="檢視頁面"><i class="ic ic-preview"></i></a>
+            <div class="dropdown-cms-more dropdown">
+              <button class="btn btn-icon btn-dropdown-toggle" type="button" title="更多選項"><i class="ic ic-more"></i></button>
+              <ul class="dropdown-menu right bottom">
+                <li><a href="analytics-episode.html"><i class="ic ic-analytics"></i> 數據</a></li>
+                <li><a href="javascript: void(0)" class="btn-share-ep"><i class="ic ic-share"></i> 分享</a></li>
+                <li><a href="javascript: void(0)" class="btn-delete-ep"><i class="ic ic-delete"></i> 刪除</a></li>
+              </ul>
+            </div> <!-- /dropdown-cms-more -->  
+          </div> <!-- /cms-action --> 
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          <div class="cms-cover">
+            <img src="static/images/cover.jpg" alt="單集名稱">
+          </div> <!-- /cms-cover -->
+          <div class="cms-content">
+            <div class="vertical-wrapper">超無狄der。帥帥的韓國歐巴日本求學記</div> <!-- /vertical-wrapper -->
+          </div> <!-- /cms-content -->
+        </td>
+        <td>
+          <span class="cms-meta">25:16</span>
+        </td>
+        <td>
+          <span class="cms-meta">2016/11/11</span>
+        </td>
+        <td class="t-right">
+          <div class="cms-action">
+            <button class="btn btn-icon btn-edit-ep" type="button" title="編輯單集"><i class="ic ic-edit"></i></button>
+            <a href="episode.html" class="btn btn-icon" title="檢視頁面"><i class="ic ic-preview"></i></a>
+            <div class="dropdown-cms-more dropdown">
+              <button class="btn btn-icon btn-dropdown-toggle" type="button" title="更多選項"><i class="ic ic-more"></i></button>
+              <ul class="dropdown-menu right bottom">
+                <li><a href="analytics-episode.html"><i class="ic ic-analytics"></i> 數據</a></li>
+                <li><a href="javascript: void(0)" class="btn-share-ep"><i class="ic ic-share"></i> 分享</a></li>
+                <li><a href="javascript: void(0)" class="btn-delete-ep"><i class="ic ic-delete"></i> 刪除</a></li>
+              </ul>
+            </div> <!-- /dropdown-cms-more -->  
+          </div> <!-- /cms-action --> 
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          <div class="cms-cover">
+            <img src="static/images/cover.jpg" alt="單集名稱">
+          </div> <!-- /cms-cover -->
+          <div class="cms-content">
+            <div class="vertical-wrapper">超無狄der。帥帥的韓國歐巴日本求學記</div> <!-- /vertical-wrapper -->
+          </div> <!-- /cms-content -->
+        </td>
+        <td>
+          <span class="cms-meta">25:16</span>
+        </td>
+        <td>
+          <span class="cms-meta">2016/11/11</span>
+        </td>
+        <td class="t-right">
+          <div class="cms-action">
+            <button class="btn btn-icon btn-edit-ep" type="button" title="編輯單集"><i class="ic ic-edit"></i></button>
+            <a href="episode.html" class="btn btn-icon" title="檢視頁面"><i class="ic ic-preview"></i></a>
+            <div class="dropdown-cms-more dropdown">
+              <button class="btn btn-icon btn-dropdown-toggle" type="button" title="更多選項"><i class="ic ic-more"></i></button>
+              <ul class="dropdown-menu right bottom">
+                <li><a href="analytics-episode.html"><i class="ic ic-analytics"></i> 數據</a></li>
+                <li><a href="javascript: void(0)" class="btn-share-ep"><i class="ic ic-share"></i> 分享</a></li>
+                <li><a href="javascript: void(0)" class="btn-delete-ep"><i class="ic ic-delete"></i> 刪除</a></li>
+              </ul>
+            </div> <!-- /dropdown-cms-more -->  
+          </div> <!-- /cms-action --> 
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          <div class="cms-cover">
+            <img src="static/images/cover.jpg" alt="單集名稱">
+          </div> <!-- /cms-cover -->
+          <div class="cms-content">
+            <div class="vertical-wrapper">超無狄der。帥帥的韓國歐巴日本求學記</div> <!-- /vertical-wrapper -->
+          </div> <!-- /cms-content -->
+        </td>
+        <td>
+          <span class="cms-meta">25:16</span>
+        </td>
+        <td>
+          <span class="cms-meta">2016/11/11</span>
+        </td>
+        <td class="t-right">
+          <div class="cms-action">
+            <button class="btn btn-icon btn-edit-ep" type="button" title="編輯單集"><i class="ic ic-edit"></i></button>
+            <a href="episode.html" class="btn btn-icon" title="檢視頁面"><i class="ic ic-preview"></i></a>
+            <div class="dropdown-cms-more dropdown">
+              <button class="btn btn-icon btn-dropdown-toggle" type="button" title="更多選項"><i class="ic ic-more"></i></button>
+              <ul class="dropdown-menu right bottom">
+                <li><a href="analytics-episode.html"><i class="ic ic-analytics"></i> 數據</a></li>
+                <li><a href="javascript: void(0)" class="btn-share-ep"><i class="ic ic-share"></i> 分享</a></li>
+                <li><a href="javascript: void(0)" class="btn-delete-ep"><i class="ic ic-delete"></i> 刪除</a></li>
+              </ul>
+            </div> <!-- /dropdown-cms-more -->  
+          </div> <!-- /cms-action --> 
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          <div class="cms-cover">
+            <img src="static/images/cover.jpg" alt="單集名稱">
+          </div> <!-- /cms-cover -->
+          <div class="cms-content">
+            <div class="vertical-wrapper">超無狄der。帥帥的韓國歐巴日本求學記</div> <!-- /vertical-wrapper -->
+          </div> <!-- /cms-content -->
+        </td>
+        <td>
+          <span class="cms-meta">25:16</span>
+        </td>
+        <td>
+          <span class="cms-meta">2016/11/11</span>
+        </td>
+        <td class="t-right">
+          <div class="cms-action">
+            <button class="btn btn-icon btn-edit-ep" type="button" title="編輯單集"><i class="ic ic-edit"></i></button>
+            <a href="episode.html" class="btn btn-icon" title="檢視頁面"><i class="ic ic-preview"></i></a>
+            <div class="dropdown-cms-more dropdown">
+              <button class="btn btn-icon btn-dropdown-toggle" type="button" title="更多選項"><i class="ic ic-more"></i></button>
+              <ul class="dropdown-menu right bottom">
+                <li><a href="analytics-episode.html"><i class="ic ic-analytics"></i> 數據</a></li>
+                <li><a href="javascript: void(0)" class="btn-share-ep"><i class="ic ic-share"></i> 分享</a></li>
+                <li><a href="javascript: void(0)" class="btn-delete-ep"><i class="ic ic-delete"></i> 刪除</a></li>
+              </ul>
+            </div> <!-- /dropdown-cms-more -->  
+          </div> <!-- /cms-action --> 
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          <div class="cms-cover">
+            <img src="static/images/cover.jpg" alt="單集名稱">
+          </div> <!-- /cms-cover -->
+          <div class="cms-content">
+            <div class="vertical-wrapper">超無狄der。帥帥的韓國歐巴日本求學記</div> <!-- /vertical-wrapper -->
+          </div> <!-- /cms-content -->
+        </td>
+        <td>
+          <span class="cms-meta">25:16</span>
+        </td>
+        <td>
+          <span class="cms-meta">2016/11/11</span>
+        </td>
+        <td class="t-right">
+          <div class="cms-action">
+            <button class="btn btn-icon btn-edit-ep" type="button" title="編輯單集"><i class="ic ic-edit"></i></button>
+            <a href="episode.html" class="btn btn-icon" title="檢視頁面"><i class="ic ic-preview"></i></a>
+            <div class="dropdown-cms-more dropdown">
+              <button class="btn btn-icon btn-dropdown-toggle" type="button" title="更多選項"><i class="ic ic-more"></i></button>
+              <ul class="dropdown-menu right bottom">
+                <li><a href="analytics-episode.html"><i class="ic ic-analytics"></i> 數據</a></li>
+                <li><a href="javascript: void(0)" class="btn-share-ep"><i class="ic ic-share"></i> 分享</a></li>
+                <li><a href="javascript: void(0)" class="btn-delete-ep"><i class="ic ic-delete"></i> 刪除</a></li>
+              </ul>
+            </div> <!-- /dropdown-cms-more -->  
+          </div> <!-- /cms-action --> 
+        </td>
+      </tr>
+      
+    </tbody>
+  </table> <!-- /table-cms -->
+</div> <!-- /table-cms-wrapper -->
+
+<!-- pagination
+================================================== -->
+<div class="pagination-wrap">
+  <ul class="pagination">
+    <li><a class="btn btn-default" href="#" title="上一頁">«</a></li>
+    <li><a class="btn btn-default" href="#" title="往前5頁">...</a></li>
+    <li><a class="btn btn-default" href="#" title="第2頁">2</a></li>
+    <li><a class="btn btn-default" href="#" title="第3頁">3</a></li>
+    <li><a class="btn btn-default" href="#" title="第4頁">4</a></li>
+    <li><a class="btn btn-default" href="#" title="第5頁">5</a></li>
+    <li><a class="btn btn-default active" href="#" title="第6頁">6</a></li>
+    <li><a class="btn btn-default" href="#" title="第7頁">7</a></li>
+    <li><a class="btn btn-default" href="#" title="第8頁">8</a></li>
+    <li><a class="btn btn-default" href="#" title="第9頁">9</a></li>
+    <li><a class="btn btn-default" href="#" title="第10頁">10</a></li>
+    <li><a class="btn btn-default" href="#" title="往後5頁">...</a></li>
+    <li><a class="btn btn-default" href="#" title="下一頁">»</a></li>
+  </ul> <!-- /pagination -->
+</div> <!-- /pagination-wrap --><!-- modal-create-ep
+================================================== -->
+<div id="modal-create-ep" class="modal hide fade">
+	<div class="modal-dialog modal-group modal-lg">
+	  <div class="modal-header">
+	    <h4>新增單集</h4>
+	    <button class="btn btn-transparent btn-icon btn-close-modal" type="button" title="關閉視窗">
+	    	<i class="ic ic-close"></i>
+    	</button>
+	  </div> <!-- /modal-header -->
+	  <div class="modal-body">
+		  <div class="row">
+		  	<div class="col-12">
+		  		<label for="program-title"><span class="text-warning tooltip tooltip-left" data-tooltip="必填">＊</span>音訊檔案</label>
+		  		<div class="audio-wrapper m-bottom-3">
+			  		<div class="audio-choose"><!-- Add 'audio-drag' in class when user drags files to this area. -->
+			  			<p class="t-center m-bottom-1">請將檔案拖放到這邊上傳<br>或</p>
+	  					<a href="javascript:void(0)" class="btn btn-default btn-upload">選擇檔案
+	  						<input type="file">
+  						</a>
+			  		</div> <!-- /audio-choose -->
+			  		<div class="audio-uploading hide">
+			  			<div class="row">
+			  				<div class="col-2 t-center">
+					  			<span class="upload-text">0% 上傳中</span>
+			  				</div> <!-- /col-2 -->
+			  				<div class="col-10">
+			  					<div class="upload-progress-bar">
+			  						<div class="progress-bar">
+			  							<div class="bar progress-back"></div>
+			  							<div class="bar progress-current" style="width: 0%;"></div>
+			  						</div>
+			  					</div> <!-- /upload-progress -->
+			  				</div> <!-- /col-10 -->
+			  			</div> <!-- /row -->
+			  		</div> <!-- /audio-uploading -->
+			  		<div class="audio-uploaded hide">
+			  			<div class="row">
+			  				<div class="col-1">
+					  			<button class="btn btn-secondary btn-icon" type="button" title="播放">
+					  				<i class="ic ic-play"></i>
+				  				</button>
+					  			<button class="btn btn-secondary btn-icon hide" type="button" title="暫停">
+					  				<i class="ic ic-pause"></i>
+				  				</button>
+				  				<button class="btn btn-secondary btn-icon hide" type="button" title="讀取中">
+				  					<div class="spinner spinner-white spinner-s"></div>
+			  					</button>
+			  				</div> <!-- /col-1 -->
+			  				<div class="col-10">
+	  							<div class="cms-seeking-bar">
+	  								<span class="time-played t-right">0:00</span>		
+	  					  		<div class="seeking-bar">
+	  					  		  <div id="player_seeking_back" class="bar seeking-back"></div>
+	  					  		  <div id="player_seeking_buffer" class="bar seeking-buffer" style="width: 0%;"></div>
+	  					  		  <div id="player_seeking_progress" class="bar seeking-progress" style="width: 0%;"></div>
+	  					  		  <a id="player_seeking_scrubber" class="seeking-handle" style="left: 0%;"></a>
+	  					  		</div> <!-- /seeking-bar -->
+	  					  		<span class="time-remaining pull-right">--:--</span>
+	  							</div> <!-- /cms-seeking-bar -->
+			  				</div> <!-- /col-10 -->
+			  				<div class="col-1 t-right">
+					  			<button class="btn btn-default btn-icon" type="button" title="刪除音檔">
+					  				<i class="ic ic-delete"></i>
+				  				</button>
+			  				</div> <!-- /col-1 -->
+			  			</div> <!-- /row -->
+			  		</div> <!-- /audio-uploaded -->
+		  		</div> <!-- /audio-wrapper -->
+		  		
+					<p class="text-warning hide"><i class="ic ic-alert"></i> 上傳失敗，音檔不符合規定。</p>
+		  		<p class="text-des">僅支援 mp3 格式。</p>
+		  	</div> <!-- /col-12 -->
+		  	<div class="col-4">
+		  		<label for="episode-cvoer"><span class="text-warning tooltip tooltip-left" data-tooltip="必填">＊</span>單集封面</label>
+		  		<div class="upload-cover">
+		  			<img src="static/images/cover.jpg">
+	  				<div class="upload-cover-bottom">
+	  					<a href="javascript:void(0)" class="btn btn-default btn-upload btn-upload-cover">上傳封面
+	  						<input type="file">
+  						</a>
+	  				</div> <!-- /upload-cover-bottom -->
+		  		</div> <!-- /upload-cover -->
+          <!-- modal-upload-cover
+================================================== -->
+<div class="modal modal-upload-cover hide fade">
+	<div class="modal-dialog modal-group modal-lg">
+	  <div class="modal-header">
+	    <h4>編輯新封面</h4>
+	    <button class="btn btn-transparent btn-icon btn-close-modal" type="button" title="關閉視窗">
+	    	<i class="ic ic-close"></i>
+    	</button>
+	  </div> <!-- /modal-header -->
+	  <div class="modal-body">
+	  	<div class="cropper-wrapper">
+	  		<img src="static/images/cover.jpg" id="cover-image" />
+	  	</div>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.0.0-alpha/cropper.min.js"></script>
+      <script>
+          var image = document.getElementById('cover-image');
+          var cropper = new Cropper(image, {
+              aspectRatio: 1
+          });
+      </script>
+  		<p class="text-warning hide"><i class="ic ic-alert"></i> 截圖區域不得小於 400 * 400 px。</p>
+	  </div> <!-- /modal-body -->
+	  <div class="modal-footer">
+	    <button class="btn btn-default btn-cancel" type="button">取消</button>
+	    <button class="btn btn-primary btn-save" type="button">儲存</button>
+	  </div> <!-- /modal-footer -->
+	</div> <!-- /modal-dialog -->
+	<div class="modal-backdrop"></div> <!-- /modal-backdrop -->
+</div> <!-- /modal -->
+		  		
+					<p class="text-warning hide"><i class="ic ic-alert"></i> 上傳失敗，圖片不符合規定。</p>
+		  		<p class="text-des">僅支援 jpg 格式，檔案不得超過 2MB，長寬不得小於 400px。</p>
+		  	</div> <!-- /col-4 -->
+		  	<div class="col-8">
+  		    <label for="episode-title"><span class="text-warning tooltip tooltip-left" data-tooltip="必填">＊</span>單集名稱</label>
+  		    <input name="episode-title" type="text" value="" maxlength="40">
+  		    <p class="text-des">最多40個中文字。</p>
+  				<label for="episode-des">單集介紹</label>
+  				<textarea name="episode-des" rows="5"></textarea>
+  				<label>標籤</label>
+  				<div class="ep-tag-wrapper">
+  					<input type="text">
+  				</div> <!-- /ep-tag-wrapper -->
+  				<p class="text-des">你可以將此集內容提到的關鍵字設為標籤，如電影、訪談、林書豪。最多可以填寫5個標籤。</p>
+  				<label>表情按鈕</label>
+  				<div class="emoji-btn-setting m-bottom-2">
+  					<button class="btn btn-default btn-lg btn-emoji tooltip tooltip-top" type="button" data-tooltip="給個鼓勵">
+  						<span class="emoji emoji1"></span> 0
+  					</button>
+  	        <div class="dropdown dropdown-emoji">
+              <button class="btn btn-outline-secondary btn-lg btn-emoji btn-add-emoji btn-dropdown-toggle" type="button">
+                <span class="emoji emoji15"></span> 新增
+              </button>
+              <div class="dropdown-menu top">
+                <ul class="emoji-list clearfix">
+                  <li>
+                    <button class="btn btn-icon btn-transparent btn-emoji tooltip tooltip-top" type="button" data-tooltip="笑到飆淚" emj-index="2">
+                      <span class="emoji emoji2"></span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="btn btn-icon btn-transparent btn-emoji tooltip tooltip-top" type="button" data-tooltip="超級喜歡" emj-index="3">
+                      <span class="emoji emoji3"></span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="btn btn-icon btn-transparent btn-emoji tooltip tooltip-top" type="button" data-tooltip="搞怪逗趣" emj-index="4">
+                      <span class="emoji emoji4"></span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="btn btn-icon btn-transparent btn-emoji tooltip tooltip-top" type="button" data-tooltip="幸福滿意" emj-index="5">
+                      <span class="emoji emoji5"></span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="btn btn-icon btn-transparent btn-emoji tooltip tooltip-top" type="button" data-tooltip="臉紅害羞" emj-index="6">
+                      <span class="emoji emoji6"></span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="btn btn-icon btn-transparent btn-emoji tooltip tooltip-top" type="button" data-tooltip="酷炫" emj-index="7">
+                      <span class="emoji emoji7"></span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="btn btn-icon btn-transparent btn-emoji tooltip tooltip-top" type="button" data-tooltip="驚喜新奇" emj-index="8">
+                      <span class="emoji emoji8"></span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="btn btn-icon btn-transparent btn-emoji tooltip tooltip-top" type="button" data-tooltip="獲得啟發" emj-index="9">
+                      <span class="emoji emoji9"></span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="btn btn-icon btn-transparent btn-emoji tooltip tooltip-top" type="button" data-tooltip="祝福滿滿" emj-index="10">
+                      <span class="emoji emoji10"></span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="btn btn-icon btn-transparent btn-emoji tooltip tooltip-top" type="button" data-tooltip="十分好奇" emj-index="11">
+                      <span class="emoji emoji11"></span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="btn btn-icon btn-transparent btn-emoji tooltip tooltip-top" type="button" data-tooltip="值得一看" emj-index="12">
+                      <span class="emoji emoji12"></span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="btn btn-icon btn-transparent btn-emoji tooltip tooltip-top" type="button" data-tooltip="享受音樂" emj-index="13">
+                      <span class="emoji emoji13"></span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="btn btn-icon btn-transparent btn-emoji tooltip tooltip-top" type="button" data-tooltip="意志堅定" emj-index="14">
+                      <span class="emoji emoji14"></span>
+                    </button>
+                  </li>
+                </ul> <!-- /emoji-list -->
+              </div> <!-- /dropdown-menu -->
+            </div> <!-- /dropdown-emoji -->
+  				</div> <!-- /emoji-btn-setting -->
+  				<p class="text-des m-bottom-0">表情按鈕可以讓聽眾與你有更多互動。除鼓掌外，最多可再增加2組按鈕。移除按鈕將會清除累積數字。</p>
+		  	</div> <!-- /col-8 -->
+		  </div> <!-- /row -->
+	  </div> <!-- /modal-body -->
+	  <div class="modal-footer">
+	    <button class="btn btn-default btn-cancel" type="button">取消</button>
+	    <button class="btn btn-primary btn-save disabled" type="button">儲存</button>
+	  </div> <!-- /modal-footer -->
+	</div> <!-- /modal-dialog -->
+</div> <!-- /modal --><!-- modal-edit-ep
+================================================== -->
+<div id="modal-edit-ep" class="modal hide fade">
+	<div class="modal-dialog modal-group modal-lg">
+	  <div class="modal-header">
+	    <h4>編輯單集資訊</h4>
+	    <button class="btn btn-transparent btn-icon btn-close-modal" type="button" title="關閉視窗">
+	    	<i class="ic ic-close"></i>
+    	</button>
+	  </div> <!-- /modal-header -->
+	  <div class="modal-body">
+		  <div class="row">
+		  	<div class="col-12">
+		  		<label for="program-title"><span class="text-warning tooltip tooltip-left" data-tooltip="必填">＊</span>音訊檔案</label>
+		  		<div class="audio-wrapper m-bottom-3">
+			  		<div class="audio-choose hide">
+			  			<p class="t-center m-bottom-1">請將檔案拖放到這邊上傳<br>或</p>
+	  					<a href="javascript:void(0)" class="btn btn-default btn-upload">選擇檔案
+	  						<input type="file">
+  						</a>
+			  		</div> <!-- /audio-choose -->
+			  		<div class="audio-uploading hide">
+			  			<div class="row">
+			  				<div class="col-2 t-center">
+					  			<span class="upload-text">0% 上傳中</span>
+			  				</div> <!-- /col-2 -->
+			  				<div class="col-10">
+			  					<div class="upload-progress-bar">
+			  						<div class="progress-bar">
+			  							<div class="bar progress-back"></div>
+			  							<div class="bar progress-current" style="width: 0%;"></div>
+			  						</div>
+			  					</div> <!-- /upload-progress -->
+			  				</div> <!-- /col-10 -->
+			  			</div> <!-- /row -->
+			  		</div> <!-- /audio-uploading -->
+			  		<div class="audio-uploaded">
+			  			<div class="row">
+			  				<div class="col-1">
+					  			<button class="btn btn-secondary btn-icon" type="button" title="播放">
+					  				<i class="ic ic-play"></i>
+				  				</button>
+					  			<button class="btn btn-secondary btn-icon hide" type="button" title="暫停">
+					  				<i class="ic ic-pause"></i>
+				  				</button>
+				  				<button class="btn btn-secondary btn-icon hide" type="button" title="讀取中">
+				  					<div class="spinner spinner-white spinner-s"></div>
+			  					</button>
+			  				</div> <!-- /col-1 -->
+			  				<div class="col-10">
+	  							<div class="cms-seeking-bar">
+	  								<span class="time-played t-right">0:00</span>		
+	  					  		<div class="seeking-bar">
+	  					  		  <div id="player_seeking_back" class="bar seeking-back"></div>
+	  					  		  <div id="player_seeking_buffer" class="bar seeking-buffer" style="width: 0%;"></div>
+	  					  		  <div id="player_seeking_progress" class="bar seeking-progress" style="width: 0%;"></div>
+	  					  		  <a id="player_seeking_scrubber" class="seeking-handle" style="left: 0%;"></a>
+	  					  		</div> <!-- /seeking-bar -->
+	  					  		<span class="time-remaining pull-right">--:--</span>
+	  							</div> <!-- /cms-seeking-bar -->
+			  				</div> <!-- /col-10 -->
+			  				<div class="col-1 t-right">
+					  			<button class="btn btn-default btn-icon" type="button" title="刪除音檔">
+					  				<i class="ic ic-delete"></i>
+				  				</button>
+			  				</div> <!-- /col-1 -->
+			  			</div> <!-- /row -->
+			  		</div> <!-- /audio-uploaded -->
+		  		</div> <!-- /audio-wrapper -->
+		  		
+					<p class="text-warning hide"><i class="ic ic-alert"></i> 上傳失敗，音檔不符合規定。</p>
+		  		<p class="text-des">僅支援 mp3 格式。</p>
+		  	</div> <!-- /col-12 -->
+		  	<div class="col-4">
+		  		<label for="episode-cvoer"><span class="text-warning tooltip tooltip-left" data-tooltip="必填">＊</span>單集封面</label>
+		  		<div class="upload-cover">
+		  			<img src="static/images/cover.jpg">
+	  				<div class="upload-cover-bottom">
+	  					<a href="javascript:void(0)" class="btn btn-default btn-upload btn-upload-cover">上傳封面
+	  						<input type="file">
+  						</a>
+	  				</div> <!-- /upload-cover-bottom -->
+		  		</div> <!-- /upload-cover -->
+          <!-- modal-upload-cover
+================================================== -->
+<div class="modal modal-upload-cover hide fade">
+	<div class="modal-dialog modal-group modal-lg">
+	  <div class="modal-header">
+	    <h4>編輯新封面</h4>
+	    <button class="btn btn-transparent btn-icon btn-close-modal" type="button" title="關閉視窗">
+	    	<i class="ic ic-close"></i>
+    	</button>
+	  </div> <!-- /modal-header -->
+	  <div class="modal-body">
+	  	<div class="cropper-wrapper">
+	  		<img src="static/images/cover.jpg" id="cover-image" />
+	  	</div>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.0.0-alpha/cropper.min.js"></script>
+      <script>
+          var image = document.getElementById('cover-image');
+          var cropper = new Cropper(image, {
+              aspectRatio: 1
+          });
+      </script>
+  		<p class="text-warning hide"><i class="ic ic-alert"></i> 截圖區域不得小於 400 * 400 px。</p>
+	  </div> <!-- /modal-body -->
+	  <div class="modal-footer">
+	    <button class="btn btn-default btn-cancel" type="button">取消</button>
+	    <button class="btn btn-primary btn-save" type="button">儲存</button>
+	  </div> <!-- /modal-footer -->
+	</div> <!-- /modal-dialog -->
+	<div class="modal-backdrop"></div> <!-- /modal-backdrop -->
+</div> <!-- /modal -->
+		  		
+					<p class="text-warning hide"><i class="ic ic-alert"></i> 上傳失敗，圖片不符合規定。</p>
+		  		<p class="text-des">僅支援 jpg 格式，檔案不得超過 2MB，長寬不得小於 400px。</p>
+		  	</div> <!-- /col-4 -->
+		  	<div class="col-8">
+  		    <label for="episode-title"><span class="text-warning tooltip tooltip-left" data-tooltip="必填">＊</span>單集名稱</label>
+  		    <input name="episode-title" type="text" value="超無狄der。4。神童櫃哥好會賣 ?!" maxlength="40">
+  		    <p class="text-des">最多40個中文字。</p>
+  		    <!-- /episode-title -->
+  				<label for="episode-des">單集介紹</label>
+  				<textarea name="episode-des" rows="5">銷售天王神童櫃哥今日來談談辛苦的百貨業， 他會遇到哪些奇奇怪怪的客人呢? 銷售天王透漏銷售技巧 讓你們業績嚇嚇叫!!</textarea>
+  				<label>標籤</label>
+  				<div class="ep-tag-wrapper">
+  					<span class="tag">百貨公司<a href="javascript: void(0)" class="btn btn-transparent btn-icon btn-close" title="刪除標籤"><i class="ic ic-close"></i></a></span>
+  					<span class="tag">訪談<a href="javascript: void(0)" class="btn btn-transparent btn-icon btn-close" title="刪除標籤"><i class="ic ic-close"></i></a></span>
+  					<span class="tag">神童<a href="javascript: void(0)" class="btn btn-transparent btn-icon btn-close" title="刪除標籤"><i class="ic ic-close"></i></a></span>
+  					<input type="text">
+  				</div> <!-- /episode-tag-wrapper -->
+  				<p class="text-des">你可以將此集內容提到的關鍵字設為標籤，如電影、訪談、林書豪。最多可以填寫5個標籤。</p>
+  				<label>表情按鈕</label>
+  				<div class="emoji-btn-setting m-bottom-2">
+  					<a href="javascript: void(0)" class="btn btn-default btn-lg btn-emoji tooltip tooltip-top" data-tooltip="給個鼓勵">
+  						<span class="emoji emoji1"></span> 108
+  					</a>
+            <a href="javascript: void(0)" class="btn btn-default btn-lg btn-emoji tooltip tooltip-top" data-tooltip="笑到飆淚" emj-index="2">
+              <span class="emoji emoji2"></span> 9
+              <button class="btn btn-default btn-icon btn-close" type="button">
+                <i class="ic ic-close"></i>
+              </button>
+            </a>
+            <a href="javascript: void(0)" class="btn btn-default btn-lg btn-emoji tooltip tooltip-top" data-tooltip="值得一看" emj-index="12">
+              <span class="emoji emoji12"></span> 32
+              <button class="btn btn-default btn-icon btn-close" type="button">
+                <i class="ic ic-close"></i>
+              </button>
+            </a>
+  					<div class="dropdown dropdown-emoji">
+  						<button class="btn btn-outline-secondary btn-lg btn-emoji btn-add-emoji btn-dropdown-toggle disabled" type="button">
+                <span class="emoji emoji15"></span> 新增
+              </button>
+  					  <div class="dropdown-menu top">
+  							<ul class="emoji-list clearfix">
+  								<li>
+  					  			<button class="btn btn-icon btn-transparent btn-emoji tooltip tooltip-top disabled" type="button" data-tooltip="笑到飆淚" emj-index="2">
+  					  				<span class="emoji emoji2"></span>
+  									</button>
+  								</li>
+  								<li>
+  									<button class="btn btn-icon btn-transparent btn-emoji tooltip tooltip-top" type="button" data-tooltip="超級喜歡" emj-index="3">
+  					  				<span class="emoji emoji3"></span>
+  									</button>
+  								</li>
+  								<li>
+  					  			<button class="btn btn-icon btn-transparent btn-emoji tooltip tooltip-top" type="button" data-tooltip="搞怪逗趣" emj-index="4">
+  					  				<span class="emoji emoji4"></span>
+  									</button>
+  								</li>
+  								<li>
+  					  			<button class="btn btn-icon btn-transparent btn-emoji tooltip tooltip-top" type="button" data-tooltip="幸福滿意" emj-index="5">
+  					  				<span class="emoji emoji5"></span>
+  									</button>
+  								</li>
+  								<li>
+  					  			<button class="btn btn-icon btn-transparent btn-emoji tooltip tooltip-top" type="button" data-tooltip="臉紅害羞" emj-index="6">
+  					  				<span class="emoji emoji6"></span>
+  									</button>
+  								</li>
+  								<li>
+  					  			<button class="btn btn-icon btn-transparent btn-emoji tooltip tooltip-top" type="button" data-tooltip="酷炫" emj-index="7">
+  					  				<span class="emoji emoji7"></span>
+  									</button>
+  								</li>
+  								<li>
+  					  			<button class="btn btn-icon btn-transparent btn-emoji tooltip tooltip-top" type="button" data-tooltip="驚喜新奇" emj-index="8">
+  					  				<span class="emoji emoji8"></span>
+  									</button>
+  								</li>
+  								<li>
+  					  			<button class="btn btn-icon btn-transparent btn-emoji tooltip tooltip-top" type="button" data-tooltip="獲得啟發" emj-index="9">
+  					  				<span class="emoji emoji9"></span>
+  									</button>
+  								</li>
+  								<li>
+  					  			<button class="btn btn-icon btn-transparent btn-emoji tooltip tooltip-top" type="button" data-tooltip="祝福滿滿" emj-index="10">
+  					  				<span class="emoji emoji10"></span>
+  									</button>
+  								</li>
+  								<li>
+  					  			<button class="btn btn-icon btn-transparent btn-emoji tooltip tooltip-top" type="button" data-tooltip="十分好奇" emj-index="11">
+  					  				<span class="emoji emoji11"></span>
+  									</button>
+  								</li>
+  								<li>
+  					  			<button class="btn btn-icon btn-transparent btn-emoji tooltip tooltip-top disabled" type="button" data-tooltip="值得一看" emj-index="12">
+  					  				<span class="emoji emoji12"></span>
+  									</button>
+  								</li>
+  								<li>
+  					  			<button class="btn btn-icon btn-transparent btn-emoji tooltip tooltip-top" type="button" data-tooltip="享受音樂" emj-index="2">
+  					  				<span class="emoji emoji13"></span>
+  									</button>
+  								</li>
+  								<li>
+  					  			<button class="btn btn-icon btn-transparent btn-emoji tooltip tooltip-top" type="button" data-tooltip="意志堅定" emj-index="2">
+  					  				<span class="emoji emoji14"></span>
+  									</button>
+  								</li>
+  							</ul> <!-- /emoji-list -->
+  					  </div> <!-- /dropdown-menu -->
+  					</div> <!-- /dropdown-emoji -->
+  				</div> <!-- /emoji-btn-setting -->
+  				<p class="text-des m-bottom-0">表情按鈕可以讓聽眾與你有更多互動。除鼓掌外，最多可再增加2組按鈕。移除按鈕將會清除累積數字。</p>
+		  	</div> <!-- /col-8 -->
+		  </div> <!-- /row -->
+	  </div> <!-- /modal-body -->
+	  <div class="modal-footer">
+	    <button class="btn btn-default btn-cancel" type="button">取消</button>
+	    <button class="btn btn-primary btn-save" type="button">儲存</button>
+	  </div> <!-- /modal-footer -->
+	  <!-- modal-upload-cover
+================================================== -->
+<div class="modal modal-upload-cover hide fade">
+	<div class="modal-dialog modal-group modal-lg">
+	  <div class="modal-header">
+	    <h4>編輯新封面</h4>
+	    <button class="btn btn-transparent btn-icon btn-close-modal" type="button" title="關閉視窗">
+	    	<i class="ic ic-close"></i>
+    	</button>
+	  </div> <!-- /modal-header -->
+	  <div class="modal-body">
+	  	<div class="cropper-wrapper">
+	  		<img src="static/images/cover.jpg" id="cover-image" />
+	  	</div>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.0.0-alpha/cropper.min.js"></script>
+      <script>
+          var image = document.getElementById('cover-image');
+          var cropper = new Cropper(image, {
+              aspectRatio: 1
+          });
+      </script>
+  		<p class="text-warning hide"><i class="ic ic-alert"></i> 截圖區域不得小於 400 * 400 px。</p>
+	  </div> <!-- /modal-body -->
+	  <div class="modal-footer">
+	    <button class="btn btn-default btn-cancel" type="button">取消</button>
+	    <button class="btn btn-primary btn-save" type="button">儲存</button>
+	  </div> <!-- /modal-footer -->
+	</div> <!-- /modal-dialog -->
+	<div class="modal-backdrop"></div> <!-- /modal-backdrop -->
+</div> <!-- /modal -->
+	</div> <!-- /modal-dialog -->
+</div> <!-- /modal --><!-- modal-delete-ep
+================================================== -->
+<div id="modal-delete-ep" class="modal hide fade">
+	<div class="modal-dialog modal-group modal-sm">
+	  <div class="modal-header">
+	    <h4>刪除單集</h4>
+	    <button class="btn btn-transparent btn-icon btn-close-modal" type="button" title="關閉視窗">
+	    	<i class="ic ic-close"></i>
+    	</button>
+	  </div> <!-- /modal-header -->
+	  <div class="modal-body">
+	    <p class="m-bottom-0">此則單集將會被完全刪除，如果你只是想要變更部分內容，可以選擇「編輯」。</p>
+	  </div> <!-- /modal-body -->
+	  <div class="modal-footer">
+	    <button class="btn btn-default btn-cancel" type="button">取消</button>
+	    <button class="btn btn-primary btn-save" type="button">刪除</button>
+	  </div> <!-- /modal-footer -->
+	</div> <!-- /modal-dialog -->
+</div> <!-- /modal --><!-- modal-share-ep
+================================================== -->
+<div id="modal-share-ep" class="modal hide fade">
+  <div class="modal-dialog modal-group">
+  	<div class="modal-header">
+      <ul class="nav-tab tab-underline clearfix">
+				<li class="active">
+					<h4><a href="javascript: void(0)">分享單集</a></h4>
+				</li>
+				<li>
+					<h4><a href="javascript: void(0)">嵌入</a></h4>
+				</li>
+			</ul> <!-- /nav-tab -->
+			<button class="btn btn-transparent btn-icon btn-close-modal" type="button" title="關閉視窗">
+        <i class="ic ic-close"></i>
+      </button>
+  	</div> <!-- /modal-header -->
+    <div class="modal-body">
+    	<div class="modal-content">
+    		<input class="input-page-link m-bottom-3" name="page-link" type="text" value="https://baabao.com/single-episode/2223/">
+    		<!-- addthis --> 
+    		<div class="btn-share-group addthis_inline_share_toolbox"></div>
+    		<!-- /addthis-->
+    	</div> <!-- /modal-content -->
+    	<div class="modal-content hide">
+    		<div class="radio-group m-bottom-2">
+    			<label class="radio-inline">
+    			  <input type="radio" name="embedLayout" checked> 一般
+    			</label>
+    			<label class="radio-inline">
+    		    <input type="radio" name="embedLayout"> 滿版圖片
+    			</label>
+    		</div> <!-- /radio-group -->
+				<div class="embed-demo">
+          <h4>預覽</h4>
+					<iframe src='https://baabao.com/episode/embed/regular/2223' width='100%' height='160px' frameborder='0'></iframe>
+          <textarea class="text-code" rows="3"><iframe src='https://baabao.com/episode/embed/regular/2223' width='100%' height='160px' frameborder='0'></iframe></textarea>
+          <p class="text-des m-bottom-0">高度建議不要小於 150px。</p>
+				</div> <!-- /embed-demo -->
+        <div class="embed-demo hide">
+          <h4>預覽</h4>
+          <iframe src='https://baabao.com/episode/embed/full/2223' width='100%' height='360px' frameborder='0'></iframe>
+          <textarea class="text-code" rows="3"><iframe src='https://baabao.com/episode/embed/full/2223' width='100%' height='360px' frameborder='0'></iframe></textarea>
+          <p class="text-des m-bottom-0">高度建議不要小於 150px。</p>
+        </div> <!-- /embed-demo -->
+    	</div> <!-- /modal-content -->
+    </div> <!-- /modal-body -->
+  </div> <!-- /modal-dialog -->
+</div> <!-- /modal -->
+			  </div> <!-- /inner -->
+			
+		</div> <!-- /content -->
+	  <!-- footer
+================================================== -->
+<footer class="site-footer">
+	<div class="inner">
+    <div class="row p-top-5 p-bottom-5">
+  		<div class="col-7">
+  			<ul class="footer-link m-bottom-3">
+  				<li class="whole-block"><h5 class="m-bottom-1">關於八寶</h5></li>
+  				<li><a href="about.html">關於我們</a></li>
+          <li><a href="faq.html">常見問題</a></li>
+  				<!-- <li><a href="tutorial.html">製作教學</a></li> -->
+  				<li><a href="https://drive.google.com/open?id=1Nn5WlPRJTyReUWDqbLBVG3yZ6o94Ub-e2cQwA7T6fJU" target="_blank">問題回報</a></li>
+  				<li><a href="recruit.html">人才招募</a></li>
+  				<li><a href="terms-of-service.html">使用條款</a></li>
+  				<li><a href="privacy-policy.html">隱私權政策</a></li>
+  			</ul>
+  			<ul class="footer-link">
+  				<li class="whole-block"><h5 class="m-bottom-1">追蹤最新消息</h5></li>
+  				<li><a href="https://www.facebook.com/baabaoradio" target="_blank">Facebook</a></li>
+  				<li><a href="https://baabaoradio.blogspot.tw/" target="_blank">Blog</a></li>
+  			</ul>
+  		</div> <!-- /footer-link -->
+  		<div class="col-5 t-right">
+				<div class="fb-page" data-href="https://www.facebook.com/baabaoradio" data-height="155" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="true"><blockquote cite="https://www.facebook.com/baabaoaudio" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/baabaoaudio">Baabao 八寶</a></blockquote></div>
+        <!-- fb js -->
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v2.8";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+        <!-- /fb js -->
+  		</div> <!-- /footer-fb -->
+    </div> <!-- /row -->
+  </div> <!-- /inner -->
+  <div class="copyright">Copyright © 2017 Baabao. All Rights Reserved.</div> <!-- /copyright -->
+</footer> <!-- /site-footer -->
+		<!-- player
+================================================== -->
+<div class="player">
+	<div class="inner">
+		<div class="row">
+			<div class="col-9 player-control">
+				<div class="player-btn-group">
+					<button class="btn btn-link-reverse btn-icon" typle="button" title="往前15秒">
+						<i class="ic ic-back15s"></i>
+					</button>
+					<div class="play-btn-wrapper">
+						<button class="btn btn-link-reverse btn-icon btn-play" typle="button" title="播放">
+							<i class="ic ic-play"></i>
+						</button>
+						<button class="btn btn-link-reverse btn-icon btn-pause hide" typle="button" title="暫停">
+							<i class="ic ic-pause"></i>
+						</button>
+						<div class="spinner spinner-white btn-spinner hide" title="讀取中"></div>
+					</div> <!-- /play-btn-wrapper -->
+					<button class="btn btn-link-reverse btn-icon" typle="button" title="往後15秒">
+						<i class="ic ic-next15s"></i>
+					</button>
+				</div> <!-- /player-btn-group -->
+				<div class="player-seeking-bar">
+					<span class="time-played t-right">0:00</span>		
+		  		<div class="seeking-bar">
+		  		  <div id="player_seeking_back" class="bar seeking-back"></div>
+		  		  <div id="player_seeking_buffer" class="bar seeking-buffer" style="width: 0%;"></div>
+		  		  <div id="player_seeking_progress" class="bar seeking-progress" style="width: 0%;"></div>
+		  		  <a id="player_seeking_scrubber" class="seeking-handle" style="left: 0%;"></a>
+		  		</div> <!-- /seeking-bar -->
+		  		<span class="time-remaining pull-right">--:--</span>
+				</div> <!-- /player-seeking-bar -->
+			</div> <!-- /player-control -->
+			<div class="col-3 player-ep">
+				<a href="episode.html" title="超無狄der。婚禮歌手趴趴趴%%%"><img class="player-ep-cover" src="static/images/cover.jpg" alt="超無狄der。婚禮歌手趴趴趴%%%"></a>
+				<div class="player-ep-info">
+					<a href="episode.html" class="player-ep-title ellipsis">超無狄der。婚禮歌手趴趴趴%%%</a>
+					<a href="program.html" class="player-pg-title ellipsis">超無狄der</a>
+				</div> <!-- /player-ep-info -->
+			</div> <!-- /player-ep -->
+		</div> <!-- /row -->
+	</div> <!-- /inner -->
+</div> <!-- /player -->
+		<!-- modal-login
+================================================== -->
+<div id="modal-login" class="modal hide fade">
+  <div class="modal-dialog modal-group modal-sm">
+    <div class="modal-header">
+      <h4>登入 Baabao</h4>
+      <button class="btn btn-transparent btn-icon btn-close-modal" type="button" title="關閉視窗">
+        <i class="ic ic-close"></i>
+      </button>
+    </div> <!-- /modal-header -->
+    <div class="modal-body">
+    	<p>成為 Baabao 會員可以訂閱喜歡的頻道，記錄你的收聽動態，擁有更好更方便的使用體驗。</p>
+      <button type="button" class="btn btn-block btn-fb m-bottom-2"><i class="ic ic-fb"></i> 使用 Facebook 帳號登入</button>
+      <button type="button" class="btn btn-block btn-google"><i class="ic ic-google"></i> 使用 Google 帳號登入</button>
+    </div> <!-- /modal-body -->
+  </div> <!-- /modal-dialog -->
+</div> <!-- /modal -->
+		<!-- modal-apply
+================================================== -->
+<div id="modal-apply" class="modal hide fade">
+	<div class="modal-dialog modal-group">
+	  <div class="modal-header">
+	    <h4>成為八寶網播 DJ</h4>
+	    <button class="btn btn-transparent btn-icon btn-close-modal" type="button" title="關閉視窗">
+	    	<i class="ic ic-close"></i>
+    	</button>
+	  </div> <!-- /modal-header -->
+	  <div class="modal-body">
+	    <p>想讓世界聽見屬於你的獨特觀點嗎？想在茫茫人海中找到最了解你的知音嗎？立刻加入八寶，開始累積你的影響力吧。</p>
+	    <label for="producer-name">DJ 暱稱</label>
+	    <input name="producer-name" type="text" value="">
+	    
+			<p class="text-warning hide"><i class="ic ic-alert"></i> 這個 DJ 暱稱已經存在。</p>
+	    <p class="text-des">你稍後仍可以在「帳號設定」中修改名稱。</p>
+	    <label class="checkbox" for="agree-term">
+	    	<input type="checkbox" checked="checked" name="agree-terms"> <span>我同意遵守 <a href="terms-of-service.html" target="_blank">使用條款</a> 及 <a href="privacy-policy.html" target="_blank">隱私權政策</a></span>
+	    </label>
+	  </div> <!-- /modal-body -->
+	  <div class="modal-footer">
+	    <button class="btn btn-default btn-cancel" type="button">取消</button>
+	    <a href="management_empty.html" class="btn btn-primary btn-save disabled">申請</a>
+	  </div> <!-- /modal-footer -->
+	</div> <!-- /modal-dialog -->
+</div> <!-- /modal -->
+		
+		<!-- addthis js -->
+		<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-581fdf5ceac27020"></script>
+
+		<!-- * Only for prototype, do not add in the prodution files -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="static/js/prototype.js"></script>
+		
+	</div> <!-- /wrapper -->
+</body>
+</html>

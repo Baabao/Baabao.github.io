@@ -1,0 +1,90 @@
+/* card style */
+.card {
+  position: relative;
+  // overflow: hidden;
+  .card-title {
+    font-size: 1em;
+  }
+}
+.card-artwork {
+  position: relative;
+  display: block;
+  margin-bottom: 20px;
+  @include border-radius(5px);
+  overflow: hidden;
+  transition: box-shadow .2s linear;
+  img {
+    display: block;
+    width: 100%;
+  }
+  &:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,.3);
+    .card-overlay {
+      visibility: visible;
+    }
+  }
+}
+.card-artwork-link {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  visibility: hidden;
+  .btn {
+    position: relative;
+    z-index: 1;
+    font-size: 24px;
+    .ic {
+      top: 2px;
+    }
+  }
+}
+.card-title {
+  margin-bottom: 10px;
+  max-height: 46px;
+  font-size: 1em;
+  a {
+    color: $dark-gray;
+    &:hover {
+      color: $purple;
+    }
+  } 
+}
+.card-meta {
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: normal;
+  font-size: .9em;
+  color: $light-gray;
+  line-height: 1;
+  a {
+    color: $light-gray;
+    &:hover {
+      color: $purple;
+    }
+  }
+}
+
+// card-ep style
+.card-ep {
+  height: 330px;
+}
+
+// card-pg style
+.card-pg {
+  height: 305px;
+  .card-title {
+    max-height: 23px;
+  }
+}

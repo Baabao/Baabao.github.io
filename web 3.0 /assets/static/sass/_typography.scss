@@ -1,0 +1,69 @@
+h1, h2, h3, h4, h5 {
+	margin: 0 0 20px;
+	color: $dark-gray;
+	line-height: 1.3;
+}
+h1 {
+	font-size: 28px;
+	margin-bottom: 30px;
+}
+h2 {
+	font-size: 24px;
+	margin-bottom: 30px;
+}
+h3 {
+	font-size: 20px;
+}
+h4 {
+	font-size: 1em;
+}
+h5 {
+	font-size: .9em;
+}
+ul, ol {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+p {
+	font-size: inherit;
+	margin: 0 0 20px;
+}
+a {
+	color: $purple;
+	text-decoration: none;
+	&:hover{
+		color: $dark-purple;
+		text-decoration: none;
+	}
+}
+.text-code {
+	font-size: 90%;
+	font-family: Menlo,Monaco,Consolas, "Liberation Mono", "Courier New", monospace;
+}
+.text-gray {
+	color: $light-gray;
+}
+.text-lightgray {
+	color: lighten($light-gray, 10%);
+}
+.text-pink {
+	color: $pink;
+}
+.text-purple {
+	color: $purple;
+}
+.text-warning {
+  font-size: .8em;
+  font-weight: normal;
+  color: $dark-pink;
+  + .text-des {
+		margin-top: -20px;
+		margin-bottom: 30px;
+  }
+}
+.text-des {
+  font-size: .8em;
+  font-weight: normal;
+  color: lighten($light-gray, 10%);
+}

@@ -1,0 +1,71 @@
+<% @title= "節目管理 - Baabao 八寶網路廣播" %>
+
+<% content_for :alert_text do %>單集已新增。<% end %>
+<%= render :partial => "alert" %>
+
+<div class="row m-bottom-3">
+	<div class="col-10">
+		<h2 class="breadcrumb ellipsis m-bottom-0"><a href="management.html">節目管理</a>超無狄der</h2>
+	</div> <!-- /col-10 -->
+	<div class="col-2 t-right">
+		<button class="btn btn-primary btn-create-ep" type="button">
+      <i class="ic ic-add"></i> 新增單集
+    </button>
+	</div> <!-- /col-10 -->
+</div>  <!-- /row -->
+<div class="table-cms-wrapper">
+  <table class="table table-hover table-cms m-bottom-8">
+    <thead>
+      <tr>
+        <th style="width: 54%">單集</th>
+        <th style="width: 10%"><a class="sorting" href="javascript: void(0)">長度</a></th>
+        <th style="width: 14%"><a class="sorting sorting-desc" href="javascript: void(0)">發佈時間</i></a></th>
+        <th style="width: 22%" class="t-right">
+          <span>編輯</span>
+          <span>檢視</span>
+          <span>更多</span>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% 10.times do%>
+      <tr>
+        <td>
+          <div class="cms-cover">
+            <img src="static/images/cover.jpg" alt="單集名稱">
+          </div> <!-- /cms-cover -->
+          <div class="cms-content">
+            <div class="vertical-wrapper">超無狄der。帥帥的韓國歐巴日本求學記</div> <!-- /vertical-wrapper -->
+          </div> <!-- /cms-content -->
+        </td>
+        <td>
+          <span class="cms-meta">25:16</span>
+        </td>
+        <td>
+          <span class="cms-meta">2016/11/11</span>
+        </td>
+        <td class="t-right">
+          <div class="cms-action">
+            <button class="btn btn-icon btn-edit-ep" type="button" title="編輯單集"><i class="ic ic-edit"></i></button>
+            <a href="episode.html" class="btn btn-icon" title="檢視頁面"><i class="ic ic-preview"></i></a>
+            <div class="dropdown-cms-more dropdown">
+              <button class="btn btn-icon btn-dropdown-toggle" type="button" title="更多選項"><i class="ic ic-more"></i></button>
+              <ul class="dropdown-menu right bottom">
+                <li><a href="analytics-episode.html"><i class="ic ic-analytics"></i> 數據</a></li>
+                <li><a href="javascript: void(0)" class="btn-share-ep"><i class="ic ic-share"></i> 分享</a></li>
+                <li><a href="javascript: void(0)" class="btn-delete-ep"><i class="ic ic-delete"></i> 刪除</a></li>
+              </ul>
+            </div> <!-- /dropdown-cms-more -->  
+          </div> <!-- /cms-action --> 
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table> <!-- /table-cms -->
+</div> <!-- /table-cms-wrapper -->
+
+<%= render :partial => "pagination" %>
+<%= render :partial => "modal-create-ep" %>
+<%= render :partial => "modal-edit-ep" %>
+<%= render :partial => "modal-delete-ep" %>
+<%= render :partial => "modal-share-ep" %>

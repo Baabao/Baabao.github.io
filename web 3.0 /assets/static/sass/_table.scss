@@ -1,0 +1,224 @@
+/* table style */
+table {
+  border-collapse: collapse;
+  background-color: transparent;
+}
+.table {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 20px;
+  thead {
+    th {
+      padding: 10px 15px;
+      vertical-align: middle;
+      color: $dark-gray;
+      font-size: .9em;
+      font-weight: normal;
+      text-align: left;
+      background-color: $gray-bg;
+      border-top: 1px solid $gray-border;
+      border-bottom: 1px solid $gray-border;
+    }
+  }
+  td {
+    padding: 20px 15px;
+    vertical-align: middle;
+    border-bottom: 1px solid $gray-border;
+    word-break: break-all;
+  }
+  a {
+    color: inherit;
+    &:hover {
+      color: $purple;
+    }
+  }
+}
+.table-hover {
+  tbody {
+    tr:hover {
+      background-color: $gray-bg;
+      td {
+        background-color: $gray-bg;
+      }
+    }
+  }
+}
+
+// table-cms style
+.table-cms-wrapper {
+  position: relative;
+  min-height: 166px;
+  &:before {
+    content: '目前沒有資料';
+    position: absolute;
+    top: 47px;
+    left: 0;
+    width: 100%;
+    font-size: 1em;
+    color: $gray;
+    text-align: center;
+    line-height: 120px;
+    border-bottom: 1px solid $gray-border;
+  }
+}
+.table-cms {
+  td {
+    min-height: 120px;
+    background-color: #fff;
+  }
+  th {
+    span {
+      display: inline-block;
+      margin-left: 5px;
+      width: 44px;
+      text-align: center;
+    }
+  }
+}
+.sorting {
+  position: relative;
+  padding-right: 15px;
+  &:before, &:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    display: block;
+    width: 0;
+    height: 0;
+    color: darken($gray-border, 20%);
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+  }
+  &:before {
+    top: 5px;
+    border-bottom: 5px solid; 
+  }
+  &:after {
+    bottom: 5px;
+    border-top: 5px solid;
+  }
+  &:hover {
+    &:before, &:after {
+      color: $purple;
+    }
+  }
+}
+.sorting-asc {
+  &:before {
+    color: $gray;
+    top: 9px;
+  }
+  &:after {
+    display: none;
+  }
+  &:hover {
+    &:before {
+      color: $purple;
+    }
+  }
+}
+.sorting-desc {
+  &:before {
+    display: none;
+  }
+  &:after {
+    bottom: 9px;
+    color: $gray;
+  }
+  &:hover {
+    &:after {
+      color: $purple;
+    }
+  }
+}
+.cms-action {
+  .btn {
+    margin-left: 5px;
+    color: $gray;
+    background-color: transparent;
+    &:hover {
+      color: $dark-gray;
+    }
+    &:active {
+      color: $gray;
+    }
+  }
+  .btn-create-ep {
+    color: $pink;
+    &:hover {
+      color: $dark-pink;
+    }
+  }
+  .tooltip-top {
+    &:before {
+      left: 15px;
+    }
+    &:after {
+      left: -50px;
+      width: 140px;
+      white-space: normal;
+    }
+    &:before, &:after {
+      bottom: 90%;
+      transform: scale(0);
+      @include animation-name(bounce);
+      @include animation-duration(4s);
+      @include animation-delay(3s);
+      @include animation-iteration-count(infinite);
+      @include animation-fill-mode(both);
+      @include transform-origin(center bottom);
+    }
+  }
+}
+@keyframes bounce {
+  from, 5%, 12%, 20%, to {
+    @include animation-timing-function(cubic-bezier(0.215, 0.610, 0.355, 1.000));
+    @include transform(translate3d(0,0,0));
+  }
+
+  10%, 11% {
+    @include animation-timing-function(cubic-bezier(0.755, 0.050, 0.855, 0.060));
+    @include transform(translate3d(0, -30px, 0));
+  }
+
+  17% {
+    @include animation-timing-function(cubic-bezier(0.755, 0.050, 0.855, 0.060));
+    @include transform(translate3d(0, -15px, 0));
+  }
+}
+.cms-cover {
+  float: left;
+  width: 80px;
+  height: 80px;
+  background-color: $dark-gray;
+  background-image: url(../images/cover-default.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  @include border-radius(5px);
+  overflow: hidden;
+  img {
+    display: block;
+    width: 100%;
+  } 
+}
+.cms-meta {
+  display: block;
+  font-size: .9em;
+  color: $light-gray;
+}
+.cms-content {
+  display: table;
+  margin-left: 95px;
+  height: 80px;
+  .cms-meta {
+    margin-top: 5px;
+  }
+  a {
+    color: inherit;
+    &:hover {
+      color: $purple;
+    }
+  }
+}
+/* table style end */

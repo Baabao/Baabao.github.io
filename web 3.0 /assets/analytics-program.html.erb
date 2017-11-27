@@ -1,0 +1,255 @@
+<% @title= "數據統計 - Baabao 八寶網路廣播" %>
+<h2 class="breadcrumb ellipsis m-bottom-5">
+	<a href="analytics.html">數據統計</a>超無狄der
+</h2> <!-- /breadcrumb -->
+<div class="chart-header m-bottom-5 clearfix">
+  <ul class="nav-tab tab-underline">
+		<li class="active"><a href="javascript: void(0)"><span>1,253</span>收聽次數</a></li>
+		<li><a href="javascript: void(0)"><span>569</span>收聽人數</a></li>
+		<li><a href="javascript: void(0)"><span>2:35</span>平均時間</a></li>
+		<li><a href="javascript: void(0)"><span>08:00</span>收聽時段</a></li>
+		<li><a href="javascript: void(0)"><span>147</span>訂閱數</a></li>
+	</ul> <!-- /nav-tab -->
+	<%= render :partial => "datepicker" %>
+</div> <!-- /chart-header -->
+<div class="m-bottom-8 chart-area">
+  <div id="chart-pg-play"></div> <!-- /chart-pg-play -->
+  <script>
+    var chart = c3.generate({
+      bindto: '#chart-pg-play',
+      size: {
+        height: 320
+      },
+      padding: {
+        right: 30
+      },
+      color: {
+        pattern: ['#7876DD']
+      },
+      legend: {
+        show: false
+      },
+      data: {
+        x: 'x',
+        columns: [
+          ['x', '2016-11-15', '2016-11-16', '2016-11-17', '2016-11-18', '2016-11-19', '2016-11-20', '2016-11-21'],
+          ['超無狄der', 260, 220, 250, 300, 180, 250, 120]
+        ],
+        type: 'area'
+      },
+      axis: {
+        x: {
+          type: 'timeseries',
+          tick: {
+            format: '%Y/%m/%d'
+          }
+        },
+        y: {
+          label: {
+            text: '單位(次數)',
+            position: 'outer-middle'
+          }
+        }
+      }
+    });
+  </script>
+</div> <!-- /m-bottom-8 -->
+<div class="m-bottom-8 chart-area hide">
+  <div id="chart-pg-listener"></div> <!-- /chart-pg-listener -->
+  <script>
+    var chart = c3.generate({
+      bindto: '#chart-pg-listener',
+      size: {
+        height: 320
+      },
+      padding: {
+        right: 30
+      },
+      color: {
+        pattern: ['#7876DD']
+      },
+      legend: {
+        show: false
+      },
+      data: {
+        x: 'x',
+        columns: [
+          ['x', '2016-11-15', '2016-11-16', '2016-11-17', '2016-11-18', '2016-11-19', '2016-11-20', '2016-11-21'],
+          ['超無狄der', 22, 46, 35, 32, 28, 45, 32]
+        ],
+        type: 'area'
+      },
+      axis: {
+        x: {
+          type: 'timeseries',
+          tick: {
+            format: '%Y/%m/%d'
+          }
+        },
+        y: {
+          label: {
+            text: '單位(人數)',
+            position: 'outer-middle'
+          }
+        }
+      }
+    });
+  </script>
+</div> <!-- /m-bottom-8 -->
+<div class="m-bottom-8 chart-area hide">
+  <div id="chart-pg-duration"></div> <!-- /chart-pg-duration -->
+  <script>
+    var chart = c3.generate({
+      bindto: '#chart-pg-duration',
+      size: {
+        height: 320
+      },
+      padding: {
+        right: 30
+      },
+      color: {
+        pattern: ['#7876DD']
+      },
+      legend: {
+        show: false
+      },
+      data: {
+        x: 'x',
+        columns: [
+          ['x', '2016-11-15', '2016-11-16', '2016-11-17', '2016-11-18', '2016-11-19', '2016-11-20', '2016-11-21'],
+          ['超無狄der', '145', '135', '225', '305', '165', '125', '100']
+        ],
+        type: 'area'
+      },
+      axis: {
+        x: {
+          type: 'timeseries',
+          tick: {
+            format: '%Y/%m/%d'
+          }
+        },
+        y: {
+          label: {
+            text: '單位(人數)',
+            position: 'outer-middle'
+          }
+        }
+      }
+    });
+  </script>
+</div> <!-- /m-bottom-8 -->
+<div class="m-bottom-8 chart-area hide">
+  <div id="chart-pg-time"></div> <!-- /chart-pg-time -->
+  <script>
+    var chart = c3.generate({
+      bindto: '#chart-pg-time',
+      size: {
+        height: 320
+      },
+      padding: {
+        right: 30
+      },
+      color: {
+        pattern: ['#7876DD']
+      },
+      legend: {
+        show: false
+      },
+      data: {
+        x: 'x',
+        columns: [
+          ['x', '00:00','01:00','02:00','03:00','04:00','05:00','06:00','07:00','08:00','09:00','10:00','11:00','12:00','13:00','14:00','15:00','16:00','17:00','18:00','19:00','20:00','21:00','22:00','23:00'],
+          ['超無狄der', '18', '12', '8', '3', '3', '5', '8', '25', '35', '32', '28', '25', '25', '28', '22', '20', '10', '8', '22', '18', '19', '12', '15', '20']
+        ],
+        type: 'area'
+      },
+      axis: {
+        x: {
+            type: 'category'
+        },
+        y: {
+          label: {
+            text: '單位(人數)',
+            position: 'outer-middle'
+          }
+        }
+      }
+    });
+  </script>
+</div> <!-- /m-bottom-8 -->
+<div class="m-bottom-8 chart-area hide">
+  <div id="chart-pg-subscription"></div> <!-- /chart-pg-subscription -->
+  <script>
+    var chart = c3.generate({
+      bindto: '#chart-pg-subscription',
+      size: {
+        height: 320
+      },
+      padding: {
+        right: 30
+      },
+      color: {
+        pattern: ['#7876DD']
+      },
+      legend: {
+        show: false
+      },
+      data: {
+        x: 'x',
+        columns: [
+          ['x', '2016-11-15', '2016-11-16', '2016-11-17', '2016-11-18', '2016-11-19', '2016-11-20', '2016-11-21'],
+          ['超無狄der', '20', '15', '25', '30', '15', '12', '10']
+        ],
+        type: 'area'
+      },
+      axis: {
+        x: {
+          type: 'timeseries',
+          tick: {
+            format: '%Y/%m/%d'
+          }
+        },
+        y: {
+          label: {
+            text: '單位(人數)',
+            position: 'outer-middle'
+          }
+        }
+      }
+    });
+  </script>
+</div> <!-- /m-bottom-8 -->
+<%= render :partial => "chart-pie" %>
+<div class="table-cms-wrapper">
+  <table class="table table-hover table-cms m-bottom-8">
+    <thead>
+      <tr>
+        <th style="width: 55%">單集</th>
+        <th style="width: 15%"><a class="sorting" href="javascript: void(0)">收聽次數</a></th>
+        <th style="width: 15%"><a class="sorting" href="javascript: void(0)">收聽人數</a></th>
+        <th style="width: 15%"><a class="sorting" href="javascript: void(0)">平均時間</a></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% 10.times do%>
+      <tr>
+        <td>
+          <a class="cms-cover" href="analytics-episode.html" title="超無狄der。青少年變種忍者龜與電影忍者龜變種世代">
+            <img src="static/images/cover.jpg" alt="超無狄der。青少年變種忍者龜與電影忍者龜變種世代">
+          </a>
+          <div class="cms-content">
+            <div class="vertical-wrapper">
+              <a class="cms-title" href="analytics-episode.html">超無狄der。青少年變種忍者龜與電影忍者龜變種世代</a>
+            </div> <!-- /vertical-wrapper -->
+          </div> <!-- /cms-content -->
+        </td>
+        <td>856</td>
+        <td>265</td>
+        <td>2:35</td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table> <!-- /table-cms -->
+</div> <!-- /table-cms-wrapper -->
+
+<%= render :partial => "pagination" %>

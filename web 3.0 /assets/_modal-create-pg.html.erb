@@ -1,0 +1,55 @@
+<!-- modal-create-pg
+================================================== -->
+<div id="modal-create-pg" class="modal hide fade">
+	<div class="modal-dialog modal-group modal-lg">
+	  <div class="modal-header">
+	    <h4>建立新節目</h4>
+	    <button class="btn btn-transparent btn-icon btn-close-modal" type="button" title="關閉視窗">
+	    	<i class="ic ic-close"></i>
+    	</button>
+	  </div> <!-- /modal-header -->
+	  <div class="modal-body">
+		  <div class="row">
+		  	<div class="col-4">
+		  		<label for="program-cvoer"><span class="text-warning tooltip tooltip-left" data-tooltip="必填">＊</span>節目封面</label>
+		  		<div class="upload-cover">
+		  			<img src="static/images/cover.jpg" class="hide">
+	  				<div class="upload-cover-bottom">
+	  					<a href="javascript:void(0)" class="btn btn-default btn-upload btn-upload-cover">上傳封面
+	  						<input type="file">
+  						</a>
+	  				</div> <!-- /upload-cover-bottom -->
+	  				<%= render :partial => "modal-spinner" %>
+		  		</div> <!-- /upload-cover -->
+		  		<%= render :partial => "modal-upload-cover" %>
+		  		<% content_for :wran_text do %>上傳失敗，圖片不符合規定。<% end %>
+					<%= render :partial => "text-warning" %>
+		  		<p class="text-des">僅支援 jpg 格式，檔案不得超過 2MB，長寬不得小於 400px。</p>
+		  	</div> <!-- /col-4 -->
+		  	<div class="col-8">
+  		    <label for="program-title"><span class="text-warning tooltip tooltip-left" data-tooltip="必填">＊</span>節目名稱</label>
+  		    <input name="program-title" type="text" value="" maxlength="40">
+  		    <p class="text-des">最多40個中文字</p>
+  				<label for="program-des">節目介紹</label>
+  				<textarea name="program-des" rows="5"></textarea>
+					<label for="program-catgory">分類</label>
+					<select name="program-catgory" class="m-bottom-0">
+					  <option value="cat-talkshow">脫口秀</option>
+					  <option value="cat-life">生活</option>
+					  <option value="cat-health">健康</option>
+					  <option value="cat-music">音樂</option>
+					  <option value="cat-movie">電影</option>
+					  <option value="cat-spirit">心靈</option>
+					  <option value="cat-news">新聞</option>
+					  <option value="cat-game">遊戲</option>
+					  <option value="cat-entertainment">娛樂</option>
+					</select>
+		  	</div> <!-- /col-8 -->
+		  </div> <!-- /row -->
+	  </div> <!-- /modal-body -->
+	  <div class="modal-footer">
+	    <button class="btn btn-default btn-cancel" type="button">取消</button>
+	    <button class="btn btn-primary btn-save disabled" type="button">儲存</button>
+	  </div> <!-- /modal-footer -->
+	</div> <!-- /modal-dialog -->	
+</div> <!-- /modal -->

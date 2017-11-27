@@ -1,0 +1,287 @@
+.emoji {
+  background-image: url('../images/emoji-all.png');
+  background-repeat: no-repeat;
+  height: 120px;
+  width: 120px;
+}
+
+.emoji1 {
+  background-position: 0 0;
+  &:before {
+		background-position: 0 0;
+  }
+}
+
+.emoji2 {
+  background-position: 0 -120px;
+  &:before {
+		background-position: 0 -120px;
+  }
+}
+
+.emoji3 {
+  background-position: 0 -240px;
+  &:before {
+		background-position: 0 -240px;
+  }
+}
+
+.emoji4 {
+  background-position: 0 -360px;
+  &:before {
+		background-position: 0 -360px;
+  }
+}
+
+.emoji5 {
+  background-position: 0 -480px;
+	&:before {
+		background-position: 0 -480px;
+  }
+}
+
+.emoji6 {
+  background-position: 0 -600px;
+	&:before {
+		background-position: 0 -600px;
+  }
+}
+
+.emoji7 {
+  background-position: 0 -720px;
+	&:before {
+		background-position: 0 -720px;
+  }
+}
+
+.emoji8 {
+  background-position: 0 -840px;
+	&:before {
+		background-position: 0 -840px;
+  }
+}
+
+.emoji9 {
+  background-position: 0 -960px;
+	&:before {
+		background-position: 0 -960px;
+  }
+}
+
+.emoji10 {
+  background-position: 0 -1080px;
+	&:before {
+		background-position: 0 -1080px;
+  }
+}
+
+.emoji11 {
+  background-position: 0 -1200px;
+	&:before {
+		background-position: 0 -1200px;
+  }
+}
+
+.emoji12 {
+  background-position: 0 -1320px;
+	&:before {
+		background-position: 0 -1320px;
+  }
+}
+
+.emoji13 {
+  background-position: 0 -1440px;
+	&:before {
+		background-position: 0 -1440px;
+  }
+}
+
+.emoji14 {
+  background-position: 0 -1560px;
+	&:before {
+		background-position: 0 -1560px;
+  }
+}
+
+.emoji15 {
+  background-position: 0 -1680px;
+	&:before {
+		background-position: 0 -1680px;
+  }
+}
+
+.btn-emoji {
+	padding: 0 20px;
+	margin-right: 10px;
+	&.active {
+		position: relative;
+		background-color: #fff;
+		border-color: $purple;
+		color: $purple;
+    cursor: not-allowed;
+    .emoji-overlay {
+    	display: block;
+    }
+	}
+	&.tooltip-top {
+		&:before {
+			left: calc(50% - 5px);
+		}
+		&:after {
+			width: 68px;
+			text-align: center;
+			left: calc(50% - 34px);
+		}
+	}
+	&.btn-lg {
+		font-size: 1em;
+	}
+	.emoji {
+		top: -2px;
+		margin-right: 5px;
+	}
+}
+
+.emoji {
+	position: relative;
+	top: -4px;
+	left: 0;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background-size: cover;
+  vertical-align: middle;
+  &.emoji1 {
+    background-position: 0 0;
+  }
+  &.emoji2 {
+    background-position: 0 -40px;
+  }
+  &.emoji3 {
+    background-position: 0 -80px;
+  }
+  &.emoji4 {
+    background-position: 0 -120px;
+  }
+  &.emoji5 {
+    background-position: 0 -160px;
+  }
+  &.emoji6 {
+    background-position: 0 -200px;
+  }
+  &.emoji7 {
+    background-position: 0 -240px;
+  }
+  &.emoji8 {
+    background-position: 0 -280px;
+  }
+  &.emoji9 {
+    background-position: 0 -320px;
+  }
+  &.emoji10 {
+    background-position: 0 -360px;
+  }
+  &.emoji11 {
+    background-position: 0 -400px;
+  }
+  &.emoji12 {
+    background-position: 0 -440px;
+  }
+  &.emoji13 {
+    background-position: 0 -480px;
+  }
+  &.emoji14 {
+    background-position: 0 -520px;
+  }
+  &.emoji15 {
+    background-position: 0 -560px;
+  }
+}
+
+.emoji-overlay {
+	position: absolute;
+	top: -1px;
+	left: -1px;
+	display: none;
+	width: calc(100% + 2px);
+	height: calc(100% + 2px);
+	z-index: 1;
+	background-color: rgba(255,255,255,.5);
+}
+
+.explosion {
+  &:before, &:after {
+		content: '';
+		position: fixed;
+		background-size: cover;
+		background-repeat: no-repeat;
+		opacity: 1;
+		z-index: 2;
+	  @include animation-duration(2s);
+		@include animation-fill-mode(forwards);
+	}
+	&:before {
+		top: calc(50vh - 60px);
+		left: calc(50vw - 60px);
+		width: 120px;
+		height: 120px;
+		background-image: url('../images/emoji-all.png');
+		@include animation-name(emoji-explosion);
+	}
+	@keyframes emoji-explosion {
+		0% {
+			transform: scale(0, 0);
+			opacity: 0;
+		}
+		15% {
+			transform: scale(1.5, 1.5);
+			opacity: 1;
+		}
+		25% {
+			transform: scale(.8, .8);
+		}
+		30% {
+			transform: scale(1.2, 1.2);
+		}
+		33% {
+			transform: scale(.9, .9);
+		}
+		35% {
+			transform: scale(1, 1);
+		}
+		90% {
+			transform: scale(1, 1);
+			opacity: 1;
+		}
+		100% {
+			transform: scale(0, 0);
+			opacity: 0;
+		}
+	}
+	&:after {
+    top: calc(50vh - 110px);
+    left: calc(50vw - 105px);
+		width: 210px;
+		height: 220px;
+		background-image: url('../images/dot-circle.png');
+		@include animation-name(dot-explosion);
+	}
+	@keyframes dot-explosion {
+		0% {
+			transform: scale(0, 0);
+			opacity: 0;
+		}
+		15% {
+			transform: scale(1, 1);
+			opacity: 1;
+		}
+		90% {
+			transform: scale(1, 1);
+			opacity: 1;
+		}
+		100% {
+			transform: scale(0, 0);
+			opacity: 0;
+		}
+	}
+}

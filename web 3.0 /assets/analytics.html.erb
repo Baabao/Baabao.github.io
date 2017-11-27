@@ -1,0 +1,211 @@
+<% @title= "數據統計 - Baabao 八寶網路廣播" %>
+<h2 class="breadcrumb ellipsis m-bottom-5">數據統計</h2> <!-- /breadcrumb -->
+<div class="chart-header m-bottom-5 clearfix">
+  <ul class="nav-tab tab-underline">
+		<li class="active"><a href="javascript: void(0)"><span>1,253</span>收聽次數</a></li>
+		<li><a href="javascript: void(0)"><span>569</span>收聽人數</a></li>
+		<li><a href="javascript: void(0)"><span>2:35</span>平均時間</a></li>
+		<li><a href="javascript: void(0)"><span>147</span>訂閱數</a></li>
+	</ul> <!-- /nav-tab -->
+	<%= render :partial => "datepicker" %>
+</div> <!-- /chart-header -->
+<div class="m-bottom-8 chart-area">
+	<div id="chart-total-play"></div> <!-- /chart-total-play -->
+	<script>
+		var chart = c3.generate({
+			bindto: '#chart-total-play',
+	    size: {
+      	height: 320
+	    },
+	    padding: {
+        right: 30
+	    },
+      color: {
+        pattern: ['#7876DD', '#F97676', '#55CF5B', '#F58B38', '#F86CB2', '#557FE6', '#EFC90C', '#0DC892', '#06AED7', '#D767E8']
+      },
+	    data: {
+        x: 'x',
+        columns: [
+          ['x', '2016-11-15', '2016-11-16', '2016-11-17', '2016-11-18', '2016-11-19', '2016-11-20', '2016-11-21'],
+          ['超無狄der', 260, 220, 250, 300, 180, 250, 120],
+          ['明星專訪', 40, 140, 80, 450, 120, 300, 350],
+          ['啊你多久沒逛唱片行了', 150, 110, 120, 150, 50, 180, 100]
+        ],
+        type: 'area'
+	    },
+	    axis: {
+        x: {
+          type: 'timeseries',
+          tick: {
+            format: '%Y/%m/%d'
+          }
+        },
+        y: {
+          label: {
+            text: '單位(次數)',
+            position: 'outer-middle'
+          }
+        }
+	    }
+		});
+	</script>
+</div> <!-- /m-bottom-8 -->
+<div class="m-bottom-8 chart-area hide">
+  <div id="chart-total-listener"></div> <!-- /chart-total-listener -->
+  <script>
+    var chart = c3.generate({
+      bindto: '#chart-total-listener',
+      size: {
+        height: 320
+      },
+      padding: {
+        right: 30
+      },
+      color: {
+        pattern: ['#7876DD', '#F97676', '#55CF5B', '#F58B38', '#F86CB2', '#557FE6', '#EFC90C', '#0DC892', '#06AED7', '#D767E8']
+      },
+      data: {
+        x: 'x',
+        columns: [
+          ['x', '2016-11-15', '2016-11-16', '2016-11-17', '2016-11-18', '2016-11-19', '2016-11-20', '2016-11-21'],
+          ['超無狄der', 22, 46, 35, 32, 28, 45, 32],
+          ['明星專訪', 30, 32, 28, 24, 26, 30, 22],
+          ['啊你多久沒逛唱片行了', 15, 19, 14, 22, 16, 24, 28]
+        ],
+        type: 'area'
+      },
+      axis: {
+        x: {
+          type: 'timeseries',
+          tick: {
+            format: '%Y/%m/%d'
+          }
+        },
+        y: {
+          label: {
+            text: '單位(人數)',
+            position: 'outer-middle'
+          }
+        }
+      }
+    });
+  </script>
+</div> <!-- /m-bottom-8 -->
+<div class="m-bottom-8 chart-area hide">
+  <div id="chart-total-duration"></div> <!-- /chart-total-duration -->
+  <script>
+    var chart = c3.generate({
+      bindto: '#chart-total-duration',
+      size: {
+        height: 320
+      },
+      padding: {
+        right: 30
+      },
+      color: {
+        pattern: ['#7876DD', '#F97676', '#55CF5B', '#F58B38', '#F86CB2', '#557FE6', '#EFC90C', '#0DC892', '#06AED7', '#D767E8']
+      },
+      data: {
+        x: 'x',
+        columns: [
+          ['x', '2016-11-15', '2016-11-16', '2016-11-17', '2016-11-18', '2016-11-19', '2016-11-20', '2016-11-21'],
+          ['超無狄der', '145', '135', '225', '305', '165', '125', '100'],
+          ['明星專訪', '105', '95', '80', '105', '90', '60', '180'],
+          ['啊你多久沒逛唱片行了', '15', '25', '115', '35', '20', '10', '50']
+        ],
+        type: 'area'
+      },
+      axis: {
+        x: {
+          type: 'timeseries',
+          tick: {
+            format: '%Y/%m/%d'
+          }
+        },
+        y: {
+          label: {
+            text: '單位(分鐘)',
+            position: 'outer-middle'
+          }
+        }
+      }
+    });
+  </script>
+</div> <!-- /m-bottom-8 -->
+<div class="m-bottom-8 chart-area hide">
+  <div id="chart-total-subscription"></div> <!-- /chart-total-subscription -->
+  <script>
+    var chart = c3.generate({
+      bindto: '#chart-total-subscription',
+      size: {
+        height: 320
+      },
+      padding: {
+        right: 30
+      },
+      color: {
+        pattern: ['#7876DD', '#F97676', '#55CF5B', '#F86CB2', '#557FE6', '#EFC90C', '#0DC892', '#F58B38', '#06AED7', '#D767E8']
+      },
+      data: {
+        x: 'x',
+        columns: [
+          ['x', '2016-11-15', '2016-11-16', '2016-11-17', '2016-11-18', '2016-11-19', '2016-11-20', '2016-11-21'],
+          ['超無狄der', '20', '15', '25', '30', '15', '12', '10'],
+          ['明星專訪', '10', '9', '8', '12', '9', '6', '18'],
+          ['啊你多久沒逛唱片行了', '15', '25', '22', '8', '9', '10', '5']
+        ],
+        type: 'area'
+      },
+      axis: {
+        x: {
+          type: 'timeseries',
+          tick: {
+            format: '%Y/%m/%d'
+          }
+        },
+        y: {
+          label: {
+            text: '單位(人數)',
+            position: 'outer-middle'
+          }
+        }
+      }
+    });
+  </script>
+</div> <!-- /m-bottom-8 -->
+<div class="table-cms-wrapper">
+  <table class="table table-hover table-cms">
+    <thead>
+      <tr>
+        <th style="width: 4%"><input type="checkbox" checked></th>
+        <th style="width: 44%">節目</th>
+        <th style="width: 13%"><a class="sorting" href="javascript: void(0)">收聽次數</a></th>
+        <th style="width: 13%"><a class="sorting" href="javascript: void(0)">收聽人數</a></th>
+        <th style="width: 13%"><a class="sorting" href="javascript: void(0)">平均時間</a></th>
+        <th style="width: 13%"><a class="sorting" href="javascript: void(0)">訂閱數</a></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% 3.times do%>
+      <tr>
+        <td><input type="checkbox" checked></td>
+        <td>
+          <a href="analytics-program.html" title="超無狄der" class="cms-cover">
+            <img src="static/images/cover.jpg" alt="超無狄der">
+          </a>
+          <div class="cms-content">
+            <div class="vertical-wrapper">
+              <a class="cms-title" href="analytics-program.html">超無狄der</a>
+              <span class="cms-meta">共23集</span>
+            </div> <!-- /vertical-wrapper -->
+          </div> <!-- /cms-content -->
+        </td>
+        <td>856</td>
+        <td>265</td>
+        <td>2:35</td>
+        <td>82</td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table> <!-- /table-cms -->
+</div> <!-- /table-cms-wrapper -->

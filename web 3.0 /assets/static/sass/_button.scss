@@ -1,0 +1,342 @@
+@import "compass/css3";
+/* button style */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: 'HanHei TC', 'PingFang TC', 'Helvetica Neue', Helvetica, 'Microsoft JhengHei', Arial, sans-serif;
+}
+.btn {
+  display: inline-block;
+  padding: 0 20px;
+  height: 44px;
+  line-height: 42px;
+  color: $gray;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  background-image: none;
+  background-color: $gray-border;
+  border: 1px solid transparent;
+  @include border-radius(22px);
+  white-space: nowrap;
+  touch-action: manipulation;
+  cursor: pointer;
+  &:focus,
+  &.focus {
+		background-color: $gray-bg;
+  }
+  &:hover {
+    color: darken($gray, 5%);
+    text-decoration: none;
+    background-color: darken($gray-bg, 5%);
+  }
+  &:active,
+  &.active {
+  	color: darken($gray, 10%);
+    outline: 0;
+    background-image: none;
+    background-color: darken($gray-bg, 10%);
+  }
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    pointer-events: none;
+    cursor: not-allowed;
+    @include opacity(.5);
+    @include box-shadow(none);
+  }
+  &.white-outline {
+		border-color: #fff;
+		&:hover {
+		  border-color: darken(#fff, 5%);
+		}
+		&:active,
+    &.active {
+		  border-color: darken(#fff, 10%);
+		}
+	}
+  &-block {
+    display: block;
+    width: 100%;
+  }
+  &-spinner {
+    pointer-events: none;
+  }
+}
+a.btn {
+  &.disabled,
+  fieldset[disabled] & {
+    pointer-events: none;
+  }
+}
+.btn-lg {
+  padding: 0 30px;
+  height: 56px;
+  line-height: 54px;
+  font-size: 1.2em;
+  @include border-radius(28px);
+}
+.btn-primary {
+	&,
+	&:focus,
+  &.focus {
+  	color: #fff;
+		background-color: $pink;
+  }
+	&:hover {
+		color: #fff;
+	  background-color: darken($pink, 5%);
+	}
+	&:active,
+  &.active {
+		color: #fff;
+	  background-color: darken($pink, 10%);
+	}
+}
+.btn-secondary {
+	&,
+	&:focus,
+  &.focus {
+  	color: #fff;
+		background-color: $purple;
+  }
+	&:hover {
+		color: #fff;
+	  background-color: darken($purple, 5%);
+	}
+	&:active,
+  &.active {
+		color: #fff;
+	  background-color: darken($purple, 10%);
+	}
+}
+.btn-default {
+	&,
+	&:focus,
+  &.focus {
+  	border-color: #B4B4B4;
+		background-color: #fff;
+  }
+	&:hover {
+	  border-color: darken(#B4B4B4, 5%);
+	  background-color: darken(#fff, 5%);
+	}
+  &:active,
+  &.active {
+	  border-color: darken(#B4B4B4, 10%);
+	  background-color: darken(#fff, 10%);
+	}
+}
+.btn-outline-primary {
+  &,
+  &:focus,
+  &.focus {
+    color: $pink;
+    border-color: $pink;
+    background-color: transparent;
+  }
+  &:hover {
+    color: #fff;
+    border-color: transparent;
+    background-color: $pink;
+  }
+  &:active,
+  &.active {
+    color: #fff;
+    border-color: transparent;
+    background-color: darken($pink, 10%);
+  }
+}
+.btn-outline-secondary {
+  &,
+  &:focus,
+  &.focus {
+    color: $purple;
+    border-color: $purple;
+    background-color: transparent;
+  }
+  &:hover {
+    color: #fff;
+    background-color: $purple;
+  }
+  &:active,
+  &.active {
+    color: #fff;
+    background-color: darken($purple, 10%);
+  }
+}
+.btn-outline-default {
+  &,
+  &:focus,
+  &.focus {
+    color: #fff;
+    border-color: #fff;
+    background-color: transparent;
+  }
+  &:hover {
+    color: #fff;
+    background-color: rgba(0,0,0,.1);
+  }
+  &:active,
+  &.active {
+    color: #fff;
+    background-color: rgba(0,0,0,.2);
+  }
+}
+.btn-icon {
+	padding: 0;
+	width: 44px;
+	height: 44px;
+}
+.btn-transparent {
+  padding: 0;
+  background-color: transparent;
+  @include border-radius(0);
+  &:focus,
+  &.focus {
+    background-color: transparent;
+  }
+  &:hover {
+    background-color: transparent;
+  }
+  &:active,
+  &.active {
+    background-color: transparent;
+  }
+}
+.btn-link {
+  color: $purple;
+  border-color: none;
+  background-color: transparent;
+  @include border-radius(0);
+  &:focus,
+  &.focus {
+    color: $purple;
+    border-color: none;
+    background-color: transparent;
+  }
+  &:hover {
+    color: darken($purple, 5%);
+    border-color: none;
+    background-color: transparent;
+  }
+  &:active,
+  &.active {
+    color: darken($purple, 10%);
+    border-color: none;
+    background-color: transparent;
+  }
+}
+.btn-link-reverse {
+  color: #fff;
+  border-color: none;
+  background-color: transparent;
+  @include border-radius(0);
+  &:focus,
+  &.focus {
+    color: #fff;
+    border-color: none;
+    background-color: transparent;
+  }
+  &:hover {
+    color: rgba(255,255,255,.8);
+    border-color: none;
+    background-color: transparent;
+  }
+  &:active,
+  &.active {
+    color: rgba(255,255,255,.6);
+    border-color: none;
+    background-color: transparent;
+  }
+}
+.btn-fb {
+  &,
+  &:focus,
+  &.focus {
+    color: #fff;
+    background-color: #4353B2;
+  }
+  &:hover {
+    color: #fff;
+    background-color: darken(#4353B2, 10%);
+  }
+  &:active,
+  &.active {
+    color: #fff;
+    background-color: darken(#4353B2, 15%);
+  }
+}
+.btn-google {
+  &,
+  &:focus,
+  &.focus {
+    color: #fff;
+    background-color: #DF4930;
+  }
+  &:hover {
+    color: #fff;
+    background-color: darken(#DF4930, 10%);
+  }
+  &:active,
+  &.active {
+    color: #fff;
+    background-color: darken(#DF4930, 15%);
+  }
+}
+.btn-group {
+  display: inline-block;
+  vertical-align: middle;
+  @extend .clearfix;
+  .btn {
+    float: left;
+    position: relative;
+    margin-left: -1px;
+    @include border-radius(0);
+    &:first-child {
+      margin-left: 0;
+      @include border-radius(22px 0 0 22px);
+    }
+    &:last-child {
+      @include border-radius(0 22px 22px 0);
+    }
+  }
+}
+/* button style end */
+
+/* pagination style */
+.pagination-wrap {
+  text-align: center;
+}
+.pagination {
+  display: inline-block;
+  @extend .clearfix;
+  li {
+    float: left;
+    position: relative;
+    margin-left: -1px;
+    &:first-child {
+      margin-left: 0;
+      .btn {
+        @include border-radius(22px 0 0 22px);
+      }
+    }
+    &:last-child {
+      .btn {
+        @include border-radius(0 22px 22px 0);
+      }
+    }
+    .btn {
+      @include border-radius(0);
+      font-weight: normal;
+      margin-right: 0;
+    }
+    .active {
+      pointer-events: none;
+      cursor: not-allowed;
+    }
+  }
+}
+/* pagination style end */

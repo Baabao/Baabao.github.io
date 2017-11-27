@@ -1,0 +1,27 @@
+<!-- modal-apply
+================================================== -->
+<div id="modal-apply" class="modal hide fade">
+	<div class="modal-dialog modal-group">
+	  <div class="modal-header">
+	    <h4>成為八寶網播 DJ</h4>
+	    <button class="btn btn-transparent btn-icon btn-close-modal" type="button" title="關閉視窗">
+	    	<i class="ic ic-close"></i>
+    	</button>
+	  </div> <!-- /modal-header -->
+	  <div class="modal-body">
+	    <p>想讓世界聽見屬於你的獨特觀點嗎？想在茫茫人海中找到最了解你的知音嗎？立刻加入八寶，開始累積你的影響力吧。</p>
+	    <label for="producer-name">DJ 暱稱</label>
+	    <input name="producer-name" type="text" value="">
+	    <% content_for :wran_text do %>這個 DJ 暱稱已經存在。<% end %>
+			<%= render :partial => "text-warning" %>
+	    <p class="text-des">你稍後仍可以在「帳號設定」中修改名稱。</p>
+	    <label class="checkbox" for="agree-term">
+	    	<input type="checkbox" checked="checked" name="agree-terms"> <span>我同意遵守 <a href="terms-of-service.html" target="_blank">使用條款</a> 及 <a href="privacy-policy.html" target="_blank">隱私權政策</a></span>
+	    </label>
+	  </div> <!-- /modal-body -->
+	  <div class="modal-footer">
+	    <button class="btn btn-default btn-cancel" type="button">取消</button>
+	    <a href="management_empty.html" class="btn btn-primary btn-save disabled">申請</a>
+	  </div> <!-- /modal-footer -->
+	</div> <!-- /modal-dialog -->
+</div> <!-- /modal -->

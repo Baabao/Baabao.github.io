@@ -1,0 +1,108 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+	$(document).ready(function(){
+        // 切換數據圖表
+        $('.chart-header > .nav-tab > li').click(function() {
+            $('.chart-area').addClass('hide');
+            var index = $(this).index();
+            $('.chart-area').eq(index).removeClass('hide');
+        });
+
+        // 點擊空白處關閉 Dropdown
+        $('body').mouseup(function(e){
+            if($('.dropdown-menu').hasClass('show')) {
+                var _con = $('.dropdown');
+                if(!_con.is(e.target) && _con.has(e.target).length === 0){
+                    $('.dropdown-menu').removeClass('show');
+                }
+            };
+        });
+
+        // 開關 Dropdown
+        $.fn.toggleNav = function(){
+      		$(this).click(function(){
+     			$(this).next('.dropdown-menu').toggleClass('show');
+      		});
+        };
+
+        $('.btn-dropdown-toggle').toggleNav();
+
+        // 點擊選項切換高亮效果
+        $('.list > li > a').click(function(){
+        	$('.list li').removeClass('active');
+        	$(this).parent('li').addClass('active');
+        });
+
+        $('.nav-tab a').click(function(){
+        	$('.nav-tab li').removeClass('active');
+        	$(this).parent('li').addClass('active');
+        });
+
+        // 點擊按鈕關閉 Modal
+        $.fn.closeModal = function(){
+            $(this).click(function(){
+                $('.modal').removeClass('in');
+                setTimeout(function(){
+                    $('body').removeClass('modal-open');
+                    $('.modal-backdrop').removeClass('in');
+                    $('.modal-backdrop').addClass('hide');
+                    $('.modal').addClass('hide');
+                }, 200);
+            });
+        };
+
+    	$('.btn-close-modal').closeModal();
+
+    	$('.modal-footer .btn').closeModal();
+
+        $('#modal-login .btn').closeModal();
+
+        // 點擊空白處關閉 Modal
+        $('.modal').mousedown(function(e){
+            var _con = $(' .modal-dialog ');
+            if(!_con.is(e.target) && _con.has(e.target).length === 0){
+                $('.modal').removeClass('in');
+                setTimeout(function(){
+                    $('body').removeClass('modal-open');
+                    $('.modal-backdrop').removeClass('in');
+                    $('.modal-backdrop').addClass('hide');
+                    $('.modal').addClass('hide');
+                }, 200);
+            }
+        });
+
+        //建立精選集
+        $('.btn-create-collection').click(function(){
+            $('body').addClass('modal-open');
+            $('#modal-create-collection').removeClass('hide');
+            setTimeout(function(){
+                $('#modal-create-collection').addClass('in');
+            }, 200);
+        });
+        //編輯精選集
+        $('.btn-edit-collection').click(function(){
+            $('body').addClass('modal-open');
+            $('#modal-edit-collection').removeClass('hide');
+            setTimeout(function(){
+                $('#modal-edit-collection').addClass('in');
+            }, 200);
+        });
+        //刪除精選集
+        $('.btn-delete-collection').click(function(){
+            $('body').addClass('modal-open');
+            $('#modal-delete-collection').removeClass('hide');
+            setTimeout(function(){
+                $('#modal-delete-collection').addClass('in');
+            }, 200);
+        });
+        //加入單集
+        $('.btn-add-ep').click(function(){
+            $('body').addClass('modal-open');
+            $('#modal-add-ep').removeClass('hide');
+            setTimeout(function(){
+                $('#modal-add-ep').addClass('in');
+            }, 200);
+        });
+
+    });
+</script>

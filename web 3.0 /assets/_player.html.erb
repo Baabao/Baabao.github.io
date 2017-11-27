@@ -1,0 +1,44 @@
+<!-- player
+================================================== -->
+<div class="player">
+	<div class="inner">
+		<div class="row">
+			<div class="col-9 player-control">
+				<div class="player-btn-group">
+					<button class="btn btn-link-reverse btn-icon" typle="button" title="往前15秒">
+						<i class="ic ic-back15s"></i>
+					</button>
+					<div class="play-btn-wrapper">
+						<button class="btn btn-link-reverse btn-icon btn-play" typle="button" title="播放">
+							<i class="ic ic-play"></i>
+						</button>
+						<button class="btn btn-link-reverse btn-icon btn-pause hide" typle="button" title="暫停">
+							<i class="ic ic-pause"></i>
+						</button>
+						<div class="spinner spinner-white btn-spinner hide" title="讀取中"></div>
+					</div> <!-- /play-btn-wrapper -->
+					<button class="btn btn-link-reverse btn-icon" typle="button" title="往後15秒">
+						<i class="ic ic-next15s"></i>
+					</button>
+				</div> <!-- /player-btn-group -->
+				<div class="player-seeking-bar">
+					<span class="time-played t-right">0:00</span>		
+		  		<div class="seeking-bar">
+		  		  <div id="player_seeking_back" class="bar seeking-back"></div>
+		  		  <div id="player_seeking_buffer" class="bar seeking-buffer" style="width: 0%;"></div>
+		  		  <div id="player_seeking_progress" class="bar seeking-progress" style="width: 0%;"></div>
+		  		  <a id="player_seeking_scrubber" class="seeking-handle" style="left: 0%;"></a>
+		  		</div> <!-- /seeking-bar -->
+		  		<span class="time-remaining pull-right">--:--</span>
+				</div> <!-- /player-seeking-bar -->
+			</div> <!-- /player-control -->
+			<div class="col-3 player-ep">
+				<a href="episode.html" title="超無狄der。婚禮歌手趴趴趴%%%"><img class="player-ep-cover" src="static/images/cover.jpg" alt="超無狄der。婚禮歌手趴趴趴%%%"></a>
+				<div class="player-ep-info">
+					<a href="episode.html" class="player-ep-title ellipsis">超無狄der。婚禮歌手趴趴趴%%%</a>
+					<a href="program.html" class="player-pg-title ellipsis">超無狄der</a>
+				</div> <!-- /player-ep-info -->
+			</div> <!-- /player-ep -->
+		</div> <!-- /row -->
+	</div> <!-- /inner -->
+</div> <!-- /player -->

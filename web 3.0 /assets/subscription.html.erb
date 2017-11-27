@@ -1,0 +1,76 @@
+<% @title= "我的訂閱 - Baabao 八寶網路廣播" %>
+<h2>我的訂閱</h2>
+<ul class="list-sb-pg m-bottom-8">
+	<li>
+		<div class="row">
+			<div class="col-2">
+				<a href="program.html" title="超無狄der"><img class="sb-pg-cover" src="static/images/cover.jpg" alt="超無狄der"></a> <!-- /sb-pg-cover -->
+			</div> <!-- /col-2 -->
+			<div class="col-10 sb-pg-content">
+				<h3 class="sb-pg-title ellipsis m-bottom-1"><a href="program.html">超無狄der</a></h3>
+				<p class="sb-pg-des webkit-ellipsis-2 m-bottom-3">陳小狄+吳阿超=無敵脫口秀。 什麼都能聊，什麼都敢聊，聊到停不了!! 什麼都能喬，什麼都敢喬，喬到停不了!! 什麼都能笑，什麼都好笑，笑到彎腰了!!</p>
+				<ul class="list list-hover list-other-ep">
+					<li>
+						<div class="row">
+							<div class="col-8 other-ep-title">
+								<span class="dot tooltip tooltip-left" data-tooltip="已播放"></span>
+								<h4><a class="ellipsis" href="episode.html">超無狄der。一刀不剪的馬來西亞變性歌手</a></h4>
+							</div> <!-- /other-ep-title -->
+							<div class="col-2">
+								<div class="ep-clap">
+									<img src="static/images/clap-purple.png" alt="鼓掌數"> <span class="text-gray">123</span>
+								</div><!-- /ep-clap  -->
+								<button class="btn btn-primary btn-icon btn-play" type="button">
+									<i class="ic ic-play"></i>
+								</button>
+							</div> <!-- /col-2 -->
+							<div class="col-2 other-ep-date">
+								<span>2016/11/12</span>
+							</div> <!-- /other-ep-date -->
+						</div> <!-- /row -->
+					</li>
+				</ul> <!-- /list-other-ep -->
+			</div> <!-- /sb-pg-content -->
+		</div> <!-- /row -->
+	</li>
+	<% 9.times do %>
+	<li class="with-toggle">
+		<div class="row">
+			<div class="col-2">
+				<a href="program.html" title="超無狄der"><img class="sb-pg-cover" src="static/images/cover.jpg" alt="超無狄der"></a> <!-- /sb-pg-cover -->
+			</div> <!-- /col-2 -->
+			<div class="col-10 sb-pg-content">
+				<h3 class="sb-pg-title ellipsis m-bottom-1"><a href="program.html">超無狄der</a></h3>
+				<p class="sb-pg-des webkit-ellipsis-2 m-bottom-3">陳小狄+吳阿超=無敵脫口秀。 什麼都能聊，什麼都敢聊，聊到停不了!! 什麼都能喬，什麼都敢喬，喬到停不了!! 什麼都能笑，什麼都好笑，笑到彎腰了!!</p>
+				<ul class="list list-hover list-other-ep">
+					<% 10.times do %>
+					<li>
+						<div class="row">
+							<div class="col-8 other-ep-title">
+								<span class="dot tooltip tooltip-left" data-tooltip="尚未播放"></span>
+								<h4><a class="ellipsis.html" href="episode.html">超無狄der。一刀不剪的馬來西亞變性歌手</a></h4>
+							</div> <!-- /other-ep-title -->
+							<div class="col-2">
+								<div class="ep-clap">
+									<img src="static/images/clap-purple.png" alt="鼓掌數"> <span class="text-gray">123</span>
+								</div> <!-- /ep-clap -->
+								<button class="btn btn-primary btn-icon btn-play" type="button">
+									<i class="ic ic-play"></i>
+								</button>
+							</div> <!-- /col-2 -->
+							<div class="col-2 other-ep-date">
+								<span>2016/11/12</span>
+							</div> <!-- /other-ep-date -->
+						</div>
+					</li> <!-- /row -->
+					<% end %>
+					<li class="toggle">
+						<a href="javascript:void(0)" class="is-block t-center"><i class="ic-caret"></i></a>
+					</li>
+				</ul> <!-- /list-other-ep -->
+			</div> <!-- /sb-pg-content -->
+		</div> <!-- /row -->
+	</li>
+	<% end %>
+</ul> <!-- /sb-pg-wrapper -->
+<%= render :partial => "pagination" %>

@@ -1,0 +1,120 @@
+<div class="dropdown dropdown-emoji">
+	<button class="btn btn-icon btn-transparent btn-dropdown-toggle" type="button" title="編輯表情按鈕">
+		<i class="ic ic-edit"></i>
+	</button>
+  <div class="dropdown-menu top">
+		<ul class="emoji-list clearfix m-bottom-1">
+			<li>
+  			<button class="btn btn-icon btn-transparent btn-emoji tooltip tooltip-top" type="button" data-tooltip="笑到飆淚">
+  				<span class="emoji emoji02"></span>
+				</button>
+				<a class="btn btn-default btn-icon btn-close">
+					<i class="ic ic-close"></i>
+				</a>
+			</li>
+			<li>
+				<button class="btn btn-icon btn-transparent btn-emoji tooltip tooltip-top" type="button" data-tooltip="超級喜歡">
+  				<span class="emoji emoji03"></span>
+				</button>
+				<a class="btn btn-default btn-icon btn-close">
+					<i class="ic ic-close"></i>
+				</a>
+			</li>
+			<li>
+  			<button class="btn btn-icon btn-transparent btn-emoji tooltip tooltip-top" type="button" data-tooltip="搞怪逗趣">
+  				<span class="emoji emoji04"></span>
+				</button>
+				<a class="btn btn-default btn-icon btn-close">
+					<i class="ic ic-close"></i>
+				</a>
+			</li>
+			<li>
+  			<button class="btn btn-icon btn-transparent btn-emoji tooltip tooltip-top" type="button" data-tooltip="幸福滿意">
+  				<span class="emoji emoji05"></span>
+				</button>
+				<a class="btn btn-default btn-icon btn-close">
+					<i class="ic ic-close"></i>
+				</a>
+			</li>
+			<li>
+  			<button class="btn btn-icon btn-transparent btn-emoji tooltip tooltip-top" type="button" data-tooltip="臉紅害羞">
+  				<span class="emoji emoji06"></span>
+				</button>
+				<a class="btn btn-default btn-icon btn-close">
+					<i class="ic ic-close"></i>
+				</a>
+			</li>
+			<li>
+  			<button class="btn btn-icon btn-transparent btn-emoji tooltip tooltip-top" type="button" data-tooltip="酷炫">
+  				<span class="emoji emoji07"></span>
+				</button>
+				<a class="btn btn-default btn-icon btn-close">
+					<i class="ic ic-close"></i>
+				</a>
+			</li>
+			<li>
+  			<button class="btn btn-icon btn-transparent btn-emoji tooltip tooltip-top" type="button" data-tooltip="驚喜新奇">
+  				<span class="emoji emoji08"></span>
+				</button>
+				<a class="btn btn-default btn-icon btn-close">
+					<i class="ic ic-close"></i>
+				</a>
+			</li>
+			<li>
+  			<button class="btn btn-icon btn-transparent btn-emoji tooltip tooltip-top" type="button" data-tooltip="獲得啟發">
+  				<span class="emoji emoji09"></span>
+				</button>
+				<a class="btn btn-default btn-icon btn-close">
+					<i class="ic ic-close"></i>
+				</a>
+			</li>
+			<li>
+  			<button class="btn btn-icon btn-transparent btn-emoji tooltip tooltip-top" type="button" data-tooltip="祝福滿滿">
+  				<span class="emoji emoji10"></span>
+				</button>
+				<a class="btn btn-default btn-icon btn-close">
+					<i class="ic ic-close"></i>
+				</a>
+			</li>
+			<li>
+  			<button class="btn btn-icon btn-transparent btn-emoji tooltip tooltip-top" type="button" data-tooltip="十分好奇">
+  				<span class="emoji emoji11"></span>
+				</button>
+				<a class="btn btn-default btn-icon btn-close">
+					<i class="ic ic-close"></i>
+				</a>
+			</li>
+			<li>
+  			<button class="btn btn-icon btn-transparent btn-emoji tooltip tooltip-top" type="button" data-tooltip="值得一看">
+  				<span class="emoji emoji12"></span>
+				</button>
+				<a class="btn btn-default btn-icon btn-close">
+					<i class="ic ic-close"></i>
+				</a>
+			</li>
+			<li>
+  			<button class="btn btn-icon btn-transparent btn-emoji tooltip tooltip-top" type="button" data-tooltip="享受音樂">
+  				<span class="emoji emoji13"></span>
+				</button>
+				<a class="btn btn-default btn-icon btn-close">
+					<i class="ic ic-close"></i>
+				</a>
+			</li>
+			<li>
+  			<button class="btn btn-icon btn-transparent btn-emoji tooltip tooltip-top" type="button" data-tooltip="意志堅定">
+  				<span class="emoji emoji14"></span>
+				</button>
+				<a class="btn btn-default btn-icon btn-close">
+					<i class="ic ic-close"></i>
+				</a>
+			</li>
+		</ul> <!-- /emoji-list -->
+		<div class="divider m-bottom-2"></div>
+		<% content_for :wran_text do %>最多只能選擇2組按鈕。<% end %>
+		<%= render :partial => "text-warning" %>
+		<div class="t-right">
+			<button class="btn btn-default btn-cancel" type="button">取消</button>
+			<button class="btn btn-primary btn-save-emoji" type="button">套用</button>
+		</div> <!-- /t-right -->
+  </div> <!-- /dropdown-menu -->
+</div> <!-- /dropdown-emoji -->

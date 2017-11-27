@@ -1,0 +1,32 @@
+<div class="dropdown-datepicker dropdown">
+  <button class="btn btn-transparent btn-dropdown-toggle" type="button">
+    <span>近7天</span>
+    2016/11/10 - 2016/11/16 <i class="ic ic-caret"></i>
+  </button>
+  <div class="dropdown-menu right bottom">
+  	<div class="row">
+  		<div class="col-9 p-right-3">
+  			<div class="col-6 p-right-2 p-left-0 start-date">
+  				<input id="start-date" class="m-bottom-1" type="text" value="2016/11/10">
+  				<div id="start-calendar"></div>
+  			</div> <!-- /col-6 -->
+  			<div class="col-6 p-right-0 p-left-2">
+  				<input id="end-date" class="m-bottom-1" type="text" value="2016/11/16">
+  				<div id="end-calendar"></div>
+  			</div> <!-- /col-6 -->
+  			<%= render :partial => "js-pickday" %>
+  		</div> <!-- /col-9 -->
+  		<div class="col-3 p-left-3 datepicker-range">
+  			<ul class="list list-hover list-date-range">
+  				<li><a class="is-block" href="javascript: void(0)">今天</a></li>
+  				<li class="active"><a class="is-block" href="javascript: void(0)">近7天</a></li>
+  				<li><a class="is-block" href="javascript: void(0)">近14天</a></li>
+  				<li><a class="is-block" href="javascript: void(0)">近30天</a></li>
+  				<li><a href="javascript: void(0)">自訂</a></li>
+  			</ul> <!-- /list-date-range -->
+  			<button class="btn btn-default btn-cancel" type="button">取消</button>
+  			<button class="btn btn-primary" type="button">套用</button>
+  		</div> <!-- /col-3 -->
+  	</div> <!-- /row -->
+  </div> <!-- /dropdown-menu -->
+</div> <!-- /dropdown-datepicker -->

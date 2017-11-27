@@ -1,0 +1,127 @@
+<% @title= "搜尋結果 - Baabao 八寶網路廣播" %>
+<% content_for :fullpage do %>
+<div class="inner">
+	<h2>“關鍵字”的搜尋結果</h2>
+</div>
+<div class="search-nav m-bottom-3">
+	<div class="inner">
+		<ul class="nav-tab tab-underline">
+			<li class="active"><a href="javascript: void(0)">全部</a></li>
+			<li><a href="javascript: void(0)">節目</a></li>
+			<li><a href="javascript: void(0)">單集</a></li>
+		</ul> <!-- /nav-rab -->
+	</div> <!-- /inner -->
+</div> <!-- /search-nav -->
+<div class="inner">
+	<div class="t-center m-top-2">
+		<div class="spinner spinner-l"></div> <!-- /spinner -->
+	</div> <!-- /t-center -->
+	
+	<p class="t-center m-top-2">找不到與 "關鍵字" 相符的內容</p>
+
+	<div class="search-content search-all">
+		<h3>節目</h3>
+		<ul class="row">
+			<% 8.times do %>
+			<li class="col-3 m-bottom-5">
+				<div class="card card-pg">
+					<a class="card-artwork m-bottom-2" href="program.html">
+						<img src="static/images/cover.jpg" alt="超無狄der">
+					</a>
+					<h3 class="card-title ellipsis">
+						<a href="program.html">超無狄der</a>
+					</h3>
+					<span class="card-meta ellipsis">DJ阿超</span>
+				</div><!-- /card-pg -->
+			</li><!-- /col-md-3 -->
+			<% end %>
+		</ul>
+		<div class="t-center">
+			<button class="btn btn-default" type="button">載入更多</button>
+		</div> <!-- /t-center -->
+		<h3 class="m-top-8">單集</h3>
+		<ul class="list list-hover list-ep-results m-bottom-3">
+			<% 10.times do %>
+			<li>
+				<div class="row">
+					<div class="col-9">
+						<a class="result-cover" href="episode.html">
+						  <img src="static/images/cover.jpg" alt="超無狄der。青少年變種忍者龜與電影忍者龜變種世代">
+						</a>
+				    <h3 class="result-title ellipsis">
+				    	<a href="episode.html">超無狄der。青少年變種忍者龜與電影忍者龜變種世代</a>
+			    	</h3>
+				    <h4 class="meta result-meta"><a href="program.html">超無狄der</a></h4>
+					</div> <!-- /col-9 -->
+					<div class="col-3">
+						<div class="row p-top-3">
+							<div class="col-6 ep-clap">
+								<img src="static/images/clap-purple.png" alt="鼓掌數"> <span>123</span>
+							</div> <!-- /ep-clap -->
+							<div class="col-6 meta t-right">
+								<span>2016/11/12</span>
+							</div> <!-- /meta -->
+						</div> <!-- /row -->
+					</div> <!-- /col-3 -->
+				</div> <!-- /row -->
+			</li>
+			<% end %>
+		</ul> <!-- /list-ep-results -->
+		<div class="t-center">
+			<button class="btn btn-default" type="button">載入更多</button>
+		</div> <!-- /t-center -->
+	</div> <!-- /search-all -->
+	<div class="search-content search-program hide">
+		<ul class="results-pg row">
+			<% 12.times do %>
+			<li class="col-3 m-bottom-5">
+				<div class="card card-pg">
+					<a class="card-artwork m-bottom-2" href="program.html">
+						<img src="static/images/cover.jpg" alt="超無狄der">
+					</a>
+					<h3 class="card-title ellipsis">
+						<a href="program.html">超無狄der</a>
+					</h3>
+					<span class="card-meta ellipsis">DJ阿超</span>
+				</div><!-- /card-pg -->
+			</li><!-- /col-md-3 -->
+			<% end %>
+		</ul><!-- /results-pg -->
+		<div class="t-center">
+			<button class="btn btn-default" type="button">載入更多</button>
+		</div> <!-- /t-center -->
+	</div> <!-- /search-program -->
+	<div class="search-content search-episode hide">
+		<ul class="list list-hover list-ep-results m-bottom-3">
+			<% 10.times do %>
+			<li>
+				<div class="row">
+					<div class="col-9">
+						<a class="result-cover" href="program.html" title="超無狄der。青少年變種忍者龜與電影忍者龜變種世代">
+						  <img src="static/images/cover.jpg" alt="超無狄der。青少年變種忍者龜與電影忍者龜變種世代">
+						</a>
+					    <h3 class="result-title ellipsis">
+					    	<a href="episode.html">超無狄der。青少年變種忍者龜與電影忍者龜變種世代</a>
+				    	</h3>
+					    <h4 class="meta result-meta"><a href="program.html">超無狄der</a></h4>
+					</div> <!-- /col-9 -->
+					<div class="col-3">
+						<div class="row p-top-3">
+							<div class="col-6 ep-clap">
+								<img src="static/images/clap-purple.png" alt="鼓掌數"> <span>123</span>
+							</div> <!-- /ep-clap -->
+							<div class="col-6 meta t-right">
+								<span>2016/11/12</span>
+							</div> <!-- /other-ep-date -->
+						</div> <!-- /row -->
+					</div> <!-- /col-3 -->
+				</div> <!-- /row -->
+			</li>
+			<% end %>
+		</ul> <!-- /list-ep-results -->
+		<div class="t-center">
+			<button class="btn btn-default" type="button">載入更多</button>
+		</div> <!-- /t-center -->
+	</div>
+</div> <!-- /inner -->
+<% end %>

@@ -1,0 +1,72 @@
+<div class="row m-bottom-8">
+	<div class="col-4">
+		<div class="chart-wrapper chart-pie">
+			<h4>年齡 <div class="tooltip tooltip-top tooltip-center" data-tooltip="有登入八寶的聽眾的年齡資料統計。"><i class="ic ic-tip text-lightgray"></i></div></h4>
+			<div id="chart-age" class="chart"></div>  <!--/chart-age -->
+		</div> <!-- /chart-wrapper -->
+	</div> <!-- /col-4 -->
+	<script>
+		var chart = c3.generate({
+			bindto: '#chart-age',
+			color: {
+        pattern: ['#7876DD', '#F97676', '#55CF5B', '#F58B38', '#F86CB2', '#557FE6', '#EFC90C', '#0DC892', '#06AED7', '#D767E8']
+      },
+	    data: {
+        columns: [
+          ['17歲以下', 20],
+          ['18~29歲', 90],
+          ['30~39歲', 110],
+          ['40歲以上', 30]
+        ],
+        type : 'pie'
+	    }
+		});
+	</script>
+	<div class="col-4">
+		<div class="chart-wrapper chart-pie">
+			<h4>地區 <div class="tooltip tooltip-top tooltip-center" data-tooltip="有登入八寶的聽眾的地區資料統計。"><i class="ic ic-tip text-lightgray"></i></div></h4>
+			<div id="chart-sex" class="chart"></div> <!-- /chart-sex -->
+		</div> <!-- /chart-wrapper -->
+		<script>
+			var chartP2 = c3.generate({
+				bindto: '#chart-sex',
+				color: {
+	        pattern: ['#7876DD', '#F97676', '#55CF5B', '#F58B38', '#AAAAAA']
+	      },
+		    data: {
+	        columns: [
+	          ['Taipei, Taiwan', 44],
+	          ['Taichung, Taiwan', 21],
+	          ['Los Angeles, USA', 13],
+	          ['Paris, French', 8],
+	          ['Others', 14]
+	        ],
+	        type : 'pie'
+		    }
+			});
+		</script>
+	</div> <!-- /col-4 -->
+	<div class="col-4">
+		<div class="chart-wrapper chart-pie">
+			<h4>來源 <div class="tooltip tooltip-top tooltip-center" data-tooltip="所有聽眾的收聽來源資料統計。"><i class="ic ic-tip text-lightgray"></i></div></h4>
+			<div id="chart-source" class="chart"></div> <!-- /chart-source -->
+		</div> <!-- /chart-wrapper -->
+	</div>  <!-- /col-4 -->
+	<script>
+		var chart = c3.generate({
+			bindto: '#chart-source',
+			color: {
+        pattern: ['#7876DD', '#F97676', '#55CF5B', '#F58B38', '#F86CB2', '#557FE6', '#EFC90C', '#0DC892', '#06AED7', '#D767E8']
+      },
+	    data: {
+        columns: [
+          ['Website', 45],
+          ['iOS', 60],
+          ['Android', 90],
+          ['Embedded', 15]
+        ],
+        type : 'pie'
+	    }
+		});
+	</script>
+</div> <!-- /row -->

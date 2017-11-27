@@ -1,0 +1,26 @@
+<!-- header
+================================================== -->
+<header class="site-header">
+	<div class="inner">
+		<h1 class="site-header-logo pull-left"><a class="hide-text" href="overview.html" title="返回首頁">Baabao 八寶管理系統</a></h1>
+		<div class="pull-right">
+			<% if content_for? :login %>
+				<%= yield :login %>
+				<% else %>
+			  <div class="site-header-login">
+			  	<div class="dropdown dropdown-member">
+			  	  <button class="btn btn-transparent btn-link-reverse btn-dropdown-toggle btn-member" type="button">
+			  		  <img class="member-img" src="../static/images/member.jpg" alt="八寶熊貓">
+			  		  <span class="member-name ellipsis">八寶熊貓<i class="ic-caret"></i></span>
+			  		</button>
+			  	  <ul class="dropdown-menu right bottom">
+			  	  	<li><a href="overview.html">數據總覽</a></li>
+			  	  	<li><a href="collection.html">精選管理</a></li>
+			  	    <li><a href="login.html">登出</a></li>
+			  	  </ul> <!-- /dropdown-menu -->
+			  	</div> <!-- /dropdown-member -->
+			  </div> <!-- /site-header-login -->
+			<% end %>	
+		</div> <!-- /pull-right -->
+	</div> <!-- /inner -->
+</header> <!-- /site-header -->

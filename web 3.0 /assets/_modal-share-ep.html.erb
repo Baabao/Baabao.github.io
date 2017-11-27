@@ -1,0 +1,49 @@
+<!-- modal-share-ep
+================================================== -->
+<div id="modal-share-ep" class="modal hide fade">
+  <div class="modal-dialog modal-group">
+  	<div class="modal-header">
+      <ul class="nav-tab tab-underline clearfix">
+				<li class="active">
+					<h4><a href="javascript: void(0)">分享單集</a></h4>
+				</li>
+				<li>
+					<h4><a href="javascript: void(0)">嵌入</a></h4>
+				</li>
+			</ul> <!-- /nav-tab -->
+			<button class="btn btn-transparent btn-icon btn-close-modal" type="button" title="關閉視窗">
+        <i class="ic ic-close"></i>
+      </button>
+  	</div> <!-- /modal-header -->
+    <div class="modal-body">
+    	<div class="modal-content">
+    		<input class="input-page-link m-bottom-3" name="page-link" type="text" value="https://baabao.com/single-episode/2223/">
+    		<!-- addthis --> 
+    		<div class="btn-share-group addthis_inline_share_toolbox"></div>
+    		<!-- /addthis-->
+    	</div> <!-- /modal-content -->
+    	<div class="modal-content hide">
+    		<div class="radio-group m-bottom-2">
+    			<label class="radio-inline">
+    			  <input type="radio" name="embedLayout" checked> 一般
+    			</label>
+    			<label class="radio-inline">
+    		    <input type="radio" name="embedLayout"> 滿版圖片
+    			</label>
+    		</div> <!-- /radio-group -->
+				<div class="embed-demo">
+          <h4>預覽</h4>
+					<iframe src='https://baabao.com/episode/embed/regular/2223' width='100%' height='160px' frameborder='0'></iframe>
+          <textarea class="text-code" rows="3"><iframe src='https://baabao.com/episode/embed/regular/2223' width='100%' height='160px' frameborder='0'></iframe></textarea>
+          <p class="text-des m-bottom-0">高度建議不要小於 150px。</p>
+				</div> <!-- /embed-demo -->
+        <div class="embed-demo hide">
+          <h4>預覽</h4>
+          <iframe src='https://baabao.com/episode/embed/full/2223' width='100%' height='360px' frameborder='0'></iframe>
+          <textarea class="text-code" rows="3"><iframe src='https://baabao.com/episode/embed/full/2223' width='100%' height='360px' frameborder='0'></iframe></textarea>
+          <p class="text-des m-bottom-0">高度建議不要小於 150px。</p>
+        </div> <!-- /embed-demo -->
+    	</div> <!-- /modal-content -->
+    </div> <!-- /modal-body -->
+  </div> <!-- /modal-dialog -->
+</div> <!-- /modal -->

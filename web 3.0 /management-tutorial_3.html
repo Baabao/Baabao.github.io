@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+	<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta name="description" content="最好聽的網播節目都在八寶網路廣播。八寶匯集音樂、電影、心靈成長等各種最具原創性的網路自製有聲節目，加入八寶社群，讓你再也不孤單。">
+<meta name="keywords" content="網播, 網路廣播, 電台, 電台DJ, 廣播">
+<title>節目管理 - Baabao 八寶網路廣播</title>
+
+<!-- og meta -->
+<meta property="og:title" content="節目管理 - Baabao 八寶網路廣播"/>
+<meta property="og:description" content="最好聽的網播節目都在八寶網路廣播。八寶匯集音樂、電影、心靈成長等各種最具原創性的網路自製有聲節目，加入八寶社群，讓你再也不孤單。"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content=""/>
+<meta property="og:image" itemprop="image" content="static/images/og-img.jpg"/>
+<meta property="og:site_name" content="Baabao 八寶網路廣播"/>
+
+<!-- fav icon -->
+<link rel="shortcut icon" href="static/images/ico/favicon.ico">
+	<!-- c3.css -->
+	<link href="static/css/c3.css" rel="stylesheet" type="text/css">
+	<link href="static/css/cropper.css" rel="stylesheet">
+
+	<!-- style -->
+	<link href="static/css/main.css" rel="stylesheet">
+
+	<!-- d3.and c3.js -->
+	<script src="static/js/d3.min.js"></script>
+	<script src="static/js/c3.min.js"></script>
+
+	<!-- moment and pikaday js -->
+	<script src="static/js/moment.js"></script>
+	<script src="static/js/pikaday.js"></script>
+
+	<!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div class="wrapper" id="top">
+		<!-- header
+================================================== -->
+<header class="site-header">
+	<div class="inner">
+		<h1 class="site-header-logo pull-left"><a class="hide-text" href="./" title="返回首頁">Baabao 八寶網路廣播</a></h1>
+		<div class="site-header-search input-group pull-left m-left-2">
+			<input type="text" class="input-search with-icon" placeholder="搜尋">
+			<i class="ic ic-search"></i>
+		</div>
+		<div class="pull-right">
+			<ul class="site-header-link pull-left">
+				<li><a href="category.html" title="節目分類">節目分類</a></li>
+				<li class="hide"><a href="tutorial.html" title="製作教學">製作教學</a></li>
+			</ul> <!-- /site-header-link -->
+			<div class="site-header-login pull-left m-left-2">
+				<button class="btn btn-outline-default btn-apply hide" type="button">成為 DJ</button>
+				<button class="btn btn-outline-default btn-login hide" type="button">登入/註冊</button>
+				<div class="dropdown dropdown-member">
+				  <button class="btn btn-transparent btn-link-reverse btn-dropdown-toggle btn-member" type="button">
+					  <img class="member-img" src="static/images/member.jpg" alt="八寶熊貓">
+					  <span class="member-name ellipsis">八寶熊貓<i class="ic-caret"></i></span>
+					</button>
+				  <ul class="dropdown-menu right bottom">
+				  	<li><a href="management.html">節目管理</a></li>
+				  	<li><a href="analytics.html">數據統計</a></li>
+				    <li><a href="subscription.html">我的訂閱</a></li>
+				    <li><a href="account.html">帳號設定</a></li>
+				    <li><a href="javascript: void(0)">登出</a></li>
+				  </ul> <!-- /dropdown-menu -->
+				</div> <!-- /dropdown-member -->
+			</div> <!-- /site-header-login -->
+		</div> <!-- /pull-right -->
+	</div> <!-- /inner -->
+</header> <!-- /site-header -->
+		<!-- content
+		================================================== -->
+		<div class="content">
+			
+			  <div class="inner">
+					<div class="row m-bottom-3">
+  <div class="col-10">
+    <h2 class="breadcrumb ellipsis m-bottom-0"><a href="management_empty.html">節目管理</a>新手教學</h2>
+  </div> <!-- /col-10 -->
+</div> <!-- /row -->
+<ul class="nav-tab is-divided nav-tutorial-step m-bottom-5">
+	<li class="done"><a href="management-tutorial.html" class="is-block">1. 建立節目</a></li>
+	<li class="done"><a href="management-tutorial_2.html" class="is-block">2. 上傳檔案</a></li>
+	<li class="active"><a href="javascript: void(0)" class="is-block">3. 分享</a></li>
+</ul> <!-- /nav-tutotial -->
+<div class="step-content clearfix m-bottom-3">
+	<h3 class="t-center">太棒了！節目已經成功發佈</h3>
+	<p>現在就把節目分享至社群媒體或嵌入網站、部落格，讓聽眾可以立即聽到節目。另外，建議詳細地填寫節目及單集介紹，這將會為節目吸引更多聽眾。</p>
+</div> <!-- /step-content -->
+<div class="t-center">
+	<a href="management.html" class="btn btn-default m-right-1">完成</a>
+	<a href="javascript: void(0)" class="btn btn-primary btn-share-ep">立刻分享</a>
+</div> <!-- /t-center -->
+<!-- modal-share-ep
+================================================== -->
+<div id="modal-share-ep" class="modal hide fade">
+  <div class="modal-dialog modal-group">
+  	<div class="modal-header">
+      <ul class="nav-tab tab-underline clearfix">
+				<li class="active">
+					<h4><a href="javascript: void(0)">分享單集</a></h4>
+				</li>
+				<li>
+					<h4><a href="javascript: void(0)">嵌入</a></h4>
+				</li>
+			</ul> <!-- /nav-tab -->
+			<button class="btn btn-transparent btn-icon btn-close-modal" type="button" title="關閉視窗">
+        <i class="ic ic-close"></i>
+      </button>
+  	</div> <!-- /modal-header -->
+    <div class="modal-body">
+    	<div class="modal-content">
+    		<input class="input-page-link m-bottom-3" name="page-link" type="text" value="https://baabao.com/single-episode/2223/">
+    		<!-- addthis --> 
+    		<div class="btn-share-group addthis_inline_share_toolbox"></div>
+    		<!-- /addthis-->
+    	</div> <!-- /modal-content -->
+    	<div class="modal-content hide">
+    		<div class="radio-group m-bottom-2">
+    			<label class="radio-inline">
+    			  <input type="radio" name="embedLayout" checked> 一般
+    			</label>
+    			<label class="radio-inline">
+    		    <input type="radio" name="embedLayout"> 滿版圖片
+    			</label>
+    		</div> <!-- /radio-group -->
+				<div class="embed-demo">
+          <h4>預覽</h4>
+					<iframe src='https://baabao.com/episode/embed/regular/2223' width='100%' height='160px' frameborder='0'></iframe>
+          <textarea class="text-code" rows="3"><iframe src='https://baabao.com/episode/embed/regular/2223' width='100%' height='160px' frameborder='0'></iframe></textarea>
+          <p class="text-des m-bottom-0">高度建議不要小於 150px。</p>
+				</div> <!-- /embed-demo -->
+        <div class="embed-demo hide">
+          <h4>預覽</h4>
+          <iframe src='https://baabao.com/episode/embed/full/2223' width='100%' height='360px' frameborder='0'></iframe>
+          <textarea class="text-code" rows="3"><iframe src='https://baabao.com/episode/embed/full/2223' width='100%' height='360px' frameborder='0'></iframe></textarea>
+          <p class="text-des m-bottom-0">高度建議不要小於 150px。</p>
+        </div> <!-- /embed-demo -->
+    	</div> <!-- /modal-content -->
+    </div> <!-- /modal-body -->
+  </div> <!-- /modal-dialog -->
+</div> <!-- /modal -->
+			  </div> <!-- /inner -->
+			
+		</div> <!-- /content -->
+	  <!-- footer
+================================================== -->
+<footer class="site-footer">
+	<div class="inner">
+    <div class="row p-top-5 p-bottom-5">
+  		<div class="col-7">
+  			<ul class="footer-link m-bottom-3">
+  				<li class="whole-block"><h5 class="m-bottom-1">關於八寶</h5></li>
+  				<li><a href="about.html">關於我們</a></li>
+          <li><a href="faq.html">常見問題</a></li>
+  				<!-- <li><a href="tutorial.html">製作教學</a></li> -->
+  				<li><a href="https://drive.google.com/open?id=1Nn5WlPRJTyReUWDqbLBVG3yZ6o94Ub-e2cQwA7T6fJU" target="_blank">問題回報</a></li>
+  				<li><a href="recruit.html">人才招募</a></li>
+  				<li><a href="terms-of-service.html">使用條款</a></li>
+  				<li><a href="privacy-policy.html">隱私權政策</a></li>
+  			</ul>
+  			<ul class="footer-link">
+  				<li class="whole-block"><h5 class="m-bottom-1">追蹤最新消息</h5></li>
+  				<li><a href="https://www.facebook.com/baabaoradio" target="_blank">Facebook</a></li>
+  				<li><a href="https://baabaoradio.blogspot.tw/" target="_blank">Blog</a></li>
+  			</ul>
+  		</div> <!-- /footer-link -->
+  		<div class="col-5 t-right">
+				<div class="fb-page" data-href="https://www.facebook.com/baabaoradio" data-height="155" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="true"><blockquote cite="https://www.facebook.com/baabaoaudio" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/baabaoaudio">Baabao 八寶</a></blockquote></div>
+        <!-- fb js -->
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v2.8";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+        <!-- /fb js -->
+  		</div> <!-- /footer-fb -->
+    </div> <!-- /row -->
+  </div> <!-- /inner -->
+  <div class="copyright">Copyright © 2017 Baabao. All Rights Reserved.</div> <!-- /copyright -->
+</footer> <!-- /site-footer -->
+		<!-- player
+================================================== -->
+<div class="player">
+	<div class="inner">
+		<div class="row">
+			<div class="col-9 player-control">
+				<div class="player-btn-group">
+					<button class="btn btn-link-reverse btn-icon" typle="button" title="往前15秒">
+						<i class="ic ic-back15s"></i>
+					</button>
+					<div class="play-btn-wrapper">
+						<button class="btn btn-link-reverse btn-icon btn-play" typle="button" title="播放">
+							<i class="ic ic-play"></i>
+						</button>
+						<button class="btn btn-link-reverse btn-icon btn-pause hide" typle="button" title="暫停">
+							<i class="ic ic-pause"></i>
+						</button>
+						<div class="spinner spinner-white btn-spinner hide" title="讀取中"></div>
+					</div> <!-- /play-btn-wrapper -->
+					<button class="btn btn-link-reverse btn-icon" typle="button" title="往後15秒">
+						<i class="ic ic-next15s"></i>
+					</button>
+				</div> <!-- /player-btn-group -->
+				<div class="player-seeking-bar">
+					<span class="time-played t-right">0:00</span>		
+		  		<div class="seeking-bar">
+		  		  <div id="player_seeking_back" class="bar seeking-back"></div>
+		  		  <div id="player_seeking_buffer" class="bar seeking-buffer" style="width: 0%;"></div>
+		  		  <div id="player_seeking_progress" class="bar seeking-progress" style="width: 0%;"></div>
+		  		  <a id="player_seeking_scrubber" class="seeking-handle" style="left: 0%;"></a>
+		  		</div> <!-- /seeking-bar -->
+		  		<span class="time-remaining pull-right">--:--</span>
+				</div> <!-- /player-seeking-bar -->
+			</div> <!-- /player-control -->
+			<div class="col-3 player-ep">
+				<a href="episode.html" title="超無狄der。婚禮歌手趴趴趴%%%"><img class="player-ep-cover" src="static/images/cover.jpg" alt="超無狄der。婚禮歌手趴趴趴%%%"></a>
+				<div class="player-ep-info">
+					<a href="episode.html" class="player-ep-title ellipsis">超無狄der。婚禮歌手趴趴趴%%%</a>
+					<a href="program.html" class="player-pg-title ellipsis">超無狄der</a>
+				</div> <!-- /player-ep-info -->
+			</div> <!-- /player-ep -->
+		</div> <!-- /row -->
+	</div> <!-- /inner -->
+</div> <!-- /player -->
+		<!-- modal-login
+================================================== -->
+<div id="modal-login" class="modal hide fade">
+  <div class="modal-dialog modal-group modal-sm">
+    <div class="modal-header">
+      <h4>登入 Baabao</h4>
+      <button class="btn btn-transparent btn-icon btn-close-modal" type="button" title="關閉視窗">
+        <i class="ic ic-close"></i>
+      </button>
+    </div> <!-- /modal-header -->
+    <div class="modal-body">
+    	<p>成為 Baabao 會員可以訂閱喜歡的頻道，記錄你的收聽動態，擁有更好更方便的使用體驗。</p>
+      <button type="button" class="btn btn-block btn-fb m-bottom-2"><i class="ic ic-fb"></i> 使用 Facebook 帳號登入</button>
+      <button type="button" class="btn btn-block btn-google"><i class="ic ic-google"></i> 使用 Google 帳號登入</button>
+    </div> <!-- /modal-body -->
+  </div> <!-- /modal-dialog -->
+</div> <!-- /modal -->
+		<!-- modal-apply
+================================================== -->
+<div id="modal-apply" class="modal hide fade">
+	<div class="modal-dialog modal-group">
+	  <div class="modal-header">
+	    <h4>成為八寶網播 DJ</h4>
+	    <button class="btn btn-transparent btn-icon btn-close-modal" type="button" title="關閉視窗">
+	    	<i class="ic ic-close"></i>
+    	</button>
+	  </div> <!-- /modal-header -->
+	  <div class="modal-body">
+	    <p>想讓世界聽見屬於你的獨特觀點嗎？想在茫茫人海中找到最了解你的知音嗎？立刻加入八寶，開始累積你的影響力吧。</p>
+	    <label for="producer-name">DJ 暱稱</label>
+	    <input name="producer-name" type="text" value="">
+	    
+			<p class="text-warning hide"><i class="ic ic-alert"></i> 這個 DJ 暱稱已經存在。</p>
+	    <p class="text-des">你稍後仍可以在「帳號設定」中修改名稱。</p>
+	    <label class="checkbox" for="agree-term">
+	    	<input type="checkbox" checked="checked" name="agree-terms"> <span>我同意遵守 <a href="terms-of-service.html" target="_blank">使用條款</a> 及 <a href="privacy-policy.html" target="_blank">隱私權政策</a></span>
+	    </label>
+	  </div> <!-- /modal-body -->
+	  <div class="modal-footer">
+	    <button class="btn btn-default btn-cancel" type="button">取消</button>
+	    <a href="management_empty.html" class="btn btn-primary btn-save disabled">申請</a>
+	  </div> <!-- /modal-footer -->
+	</div> <!-- /modal-dialog -->
+</div> <!-- /modal -->
+		
+		<!-- addthis js -->
+		<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-581fdf5ceac27020"></script>
+
+		<!-- * Only for prototype, do not add in the prodution files -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="static/js/prototype.js"></script>
+		
+	</div> <!-- /wrapper -->
+</body>
+</html>

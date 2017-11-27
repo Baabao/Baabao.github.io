@@ -1,0 +1,53 @@
+<% @title= "管理精選 - Baabao 八寶管理系統" %>
+
+<% content_for :alert_text do %>單集已加入精選集。<% end %>
+<%= render :partial => "../alert" %>
+
+<div class="row m-bottom-3">
+	<div class="col-10">
+		<h2 class="m-bottom-0 breadcrumb ellipsis"><a href="collection.html">精選管理</a>新鮮上架</h2>
+	</div> <!-- /col-10 -->
+	<div class="col-2 t-right">
+		<button class="btn btn-primary btn-add-ep" type="button">加入單集</button>
+	</div> <!-- /col-10 -->
+</div>  <!-- /row -->
+<div class="table-cms-wrapper">
+  <table class="table table-hover table-cms m-bottom-8">
+    <thead>
+      <tr>
+      	<th style="width: 8%"><a class="sorting" href="javascript: void(0)">ID</a></th>
+        <th style="width: 38%">單集名稱</th>
+        <th style="width: 15%">節目名稱</th>
+        <th style="width: 15%">DJ</th>
+        <th style="width: 12%"><a class="sorting sorting-desc" href="javascript: void(0)">發佈時間</a></th>
+        <th style="width: 7%" class="t-center">移除</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% 20.times do%>
+      <tr>
+    	  <td>
+    	  	<span class="cms-meta">12345</span>
+    		</td>
+        <td>超無狄der。青少年變種忍者龜與電影忍者龜變種世代</td>
+        <td>
+        	<span class="cms-meta">超無狄der</span>
+      	</td>
+      	<td>
+        	<span class="cms-meta">DJ小狄</span>
+      	</td>
+        <td>
+          <span class="cms-meta">2016/11/11<br>15:00</span>
+        </td>
+        <td class="t-center">
+          <a class="btn-remove-ep" href="javascript: void(0)"><i class="ic ic-close"></i></a>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table> <!-- /table-cms -->
+  <div class="t-center">
+    <%= render :partial => "../pagination" %>
+  </div>
+</div> <!-- /table-cms-wrapper -->
+<%= render :partial => "modal-add-ep" %>

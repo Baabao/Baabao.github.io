@@ -1,0 +1,85 @@
+/* header style */
+.site-header {
+	width: 100%;
+	height: 80px;
+	background-color: $purple;
+}
+.site-header-logo {
+	margin: 24px 0 0;
+	a {
+		display: block;
+		width: 140px;
+		height: 30px;
+		background: url(../images/logo.png);
+	  background-image: url(../images/logo.svg), none;
+	  background-size: cover;
+	}
+}
+.site-header-search {
+	display: inline-block;
+	margin-top: 18px;
+	width: 250px;
+	color: #fff;
+	input {
+		margin-bottom: 0;
+		border-color: transparent;
+		background-color: $dark-purple;
+		color: #fff;
+		&:focus {
+			border-color: #fff;
+		}
+		&::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+		  color: rgba(255,255,255,.7);
+		}
+		&::-moz-placeholder { /* Firefox 19+ */
+		  color: rgba(255,255,255,.7);
+		}
+		&:-ms-input-placeholder { /* IE 10+ */
+		  color: rgba(255,255,255,.7);
+		}
+	}
+}
+.site-header-link {
+	float: left;
+	margin-top: 26px;
+	border-right: 1px solid rgba(255,255,255,.2);
+	li {
+		display: inline-block;
+		margin-right: 20px;
+	}
+	a {
+		color: #fff;
+		line-height: 30px;
+		&:hover {
+			color: rgba(255,255,255,.8);
+		}
+	}
+}
+.site-header-login {
+	margin-top: 18px;
+	text-align: right;
+	> .btn {
+		margin-right: 10px;
+	}
+}
+.member-img {
+	margin-right: 5px;
+	width: 44px;
+	height: 44px;
+	@include border-radius(50%);
+	vertical-align: middle;
+}
+.member-name {
+	position: relative;
+	display: inline-block;
+	padding-right: 15px;
+  max-width: 120px;
+  text-align: left;
+  vertical-align: middle;
+  .ic-caret {
+  	position: absolute;
+  	top: 18px;
+  	right: 0;
+  }
+}
+/* header style end */
