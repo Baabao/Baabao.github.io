@@ -279,7 +279,14 @@ template {
   padding-right: 15px;
   width: 30%;
 }
-
+.col-4-1 {
+  position: relative;
+  float: left;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 33.33%;
+  text-align: center;
+}
 .col-5 {
   position: relative;
   float: left;
